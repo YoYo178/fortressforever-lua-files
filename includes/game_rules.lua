@@ -1,0 +1,1 @@
+require "globalscripts.main"
