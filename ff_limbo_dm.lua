@@ -1,0 +1,138 @@
+
+-- ff_limbo_dm.lua
+
+-----------------------------------------------------------------------------
+-- includes
+-----------------------------------------------------------------------------
+
+IncludeScript("base_ctf")
+IncludeScript("base_location");
+
+function startup()
+	-- set up team limits (only red & blue)
+	SetPlayerLimit( Team.kBlue, 0 )
+	SetPlayerLimit( Team.kRed, 0 )
+	SetPlayerLimit( Team.kYellow, -1 )
+	SetPlayerLimit( Team.kGreen, -1 )
+
+	SetTeamName( Team.kRed, "Red " )
+	SetTeamName( Team.kBlue, "Blue" )
+end
+
+function precache()
+	PrecacheSound( "Backpack.Touch" )
+end
+
+
+
+-- Everyone to spawns with everything
+function player_spawn( player_entity )
+	-- 400 for overkill. of course the values
+	-- get clamped in game code
+	--local player = GetPlayer(player_id)
+	local player = CastToPlayer( player_entity )
+	
+	player:AddHealth( 400 )
+	player:AddArmor( 400 )
+
+	player:AddAmmo( Ammo.kNails, 400 )
+	player:AddAmmo( Ammo.kShells, 400 )
+	player:AddAmmo( Ammo.kRockets, 400 )
+	player:AddAmmo( Ammo.kCells, 400 )
+	player:AddAmmo( Ammo.kDetpack, -1 )
+	player:AddAmmo( Ammo.kGren1, 4 )
+	player:AddAmmo( Ammo.kGren2, -4 )
+	
+end
+
+
+-- Get team points for killing a player
+function player_killed( player_entity, damageinfo )
+	-- suicides have no damageinfo
+	if damageinfo ~= nil then
+		local killer = damageinfo:GetAttacker()
+		
+		local player = CastToPlayer( player_entity )
+		if IsPlayer(killer) then
+			killer = CastToPlayer(killer)
+			--local victim = GetPlayer(player_id)
+			
+			if not (player:GetTeamId() == killer:GetTeamId()) then
+				local killersTeam = killer:GetTeam()	
+				killersTeam:AddScore(1)
+			end
+		end	
+	end
+end
+
+-- Just here because
+function player_ondamage( player_entity, damageinfo )
+end
+
+---------------------------------
+-- Allstuffs
+---------------------------------
+
+fullpack = genericbackpack:new({
+	grenades = 50,
+	bullets = 0,
+	nails = 0,
+	shells = 100,
+	rockets = 50,
+	gren1 = 4,
+	gren2 = 3,
+	cells = 0,
+	armor = 300,
+	health = 100,
+    respawntime = 3,
+	model = "models/items/backpack/backpack.mdl",
+	materializesound = "Item.Materialize",
+	touchsound = "Backpack.Touch",
+	touchflags = {},
+	botgoaltype = Bot.kBackPack_Ammo
+	})
+function fullpack:touch( touch_entity )
+	if IsPlayer( touch_entity ) then
+		local player = CastToPlayer( touch_entity )
+		local dispensed = 0
+		
+		-- give player some health and armor
+		if self.health ~= nil then dispensed = dispensed + player:AddHealth( self.health ) end
+		if self.armor ~= nil then dispensed = dispensed + player:AddArmor( self.armor ) end
+		
+		-- give player ammo
+		if self.nails ~= nil then dispensed = dispensed + player:AddAmmo(Ammo.kNails, self.nails) end
+		if self.shells ~= nil then dispensed = dispensed + player:AddAmmo(Ammo.kShells, self.shells) end
+		if self.rockets ~= nil then dispensed = dispensed + player:AddAmmo(Ammo.kRockets, self.rockets) end
+		if self.cells ~= nil then dispensed = dispensed + player:AddAmmo(Ammo.kCells, self.cells) end
+		if self.detpacks ~= nil then dispensed = dispensed + player:AddAmmo(Ammo.kDetpack, self.detpacks) end
+		if self.gren1 ~= nil then dispensed = dispensed + player:AddAmmo(Ammo.kGren1, self.gren1) end
+		
+		-- gives 
+		local class = player:GetClass()
+		if class == Player.kScout or class == Player.kMedic then
+			if self.gren2 ~= nil then dispensed = dispensed + player:AddAmmo(Ammo.kGren2, self.gren2) end
+		end
+		
+		-- if the player took ammo, then have the backpack respawn with a delay
+		if dispensed >= 1 then
+			local backpack = CastToInfoScript(entity);
+			if (backpack ~= nil) then
+				backpack:EmitSound(self.touchsound);
+				backpack:Respawn(self.respawntime);
+			end
+		end
+	end
+end
+
+function fullpack :dropatspawn() return false end
+
+red_fullpack = fullpack:new({ touchflags = {AllowFlags.kRed} })
+blue_fullpack = fullpack:new({ touchflags = {AllowFlags.kBlue} })
+
+
+
+---------------------------------
+-- Locations
+---------------------------------
+location_limbo = location_info:new({ text = "Empty Void", team = NO_TEAM })
