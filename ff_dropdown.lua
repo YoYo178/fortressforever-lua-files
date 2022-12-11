@@ -411,8 +411,7 @@ end
 nobuild = trigger_ff_script:new({})
 
 function nobuild:onbuild( build_entity )
-	local player = CastToPlayer( build_entity )
-	if player:GetClass() == Player.kScout then
+	if IsJumpPad(build_entity) then
 		DisplayMessage( player, "#HINT_NOJUMPPAD" )
 		return EVENT_DISALLOWED
 	end
