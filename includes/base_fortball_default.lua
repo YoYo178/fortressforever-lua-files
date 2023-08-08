@@ -4,7 +4,7 @@
 -- into your map's lua file, edit what you want, and then include base_fortball.lua
 
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_teamplay");
 IncludeScript("base_location");

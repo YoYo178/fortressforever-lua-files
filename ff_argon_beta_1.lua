@@ -1,7 +1,7 @@
 -- ff_argon_beta_1.lua
 
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_teamplay")
 IncludeScript("base_location");
@@ -139,7 +139,6 @@ function argon_baseflag:onownerdie( owner_entity )
 	UpdateTeamObjectiveIcon( GetTeam(Team.kRed), GetEntityByName("red_flag") )
 
 	-- log action in stats
-	-- player:AddAction(nil, "ctf_flag_died", flag:GetName())
 	LogLuaEvent(player:GetId(), 0, "flag_dropped", "flag_name", flag:GetName(), "player_origin", (string.format("%0.2f",player:GetOrigin().x) .. ", " .. string.format("%0.2f",player:GetOrigin().y) .. ", " .. string.format("%0.1f",player:GetOrigin().z) ));	
 end
 
@@ -398,7 +397,6 @@ function argoncap:ontrigger ( trigger_entity )
 					local team = player:GetTeam()
 					team:AddScore(POINTS_PER_CAPTURE)
 					-- log action in stats
-					--player:AddAction(nil, "ctf_flag_cap", flag:GetName())
           LogLuaEvent(player:GetId(), 0, "flag_capture","flag_name",flag:GetName())	
 					
 					-- clear the objective icon

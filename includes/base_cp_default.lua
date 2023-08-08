@@ -4,7 +4,7 @@
 -- into your map's lua file, edit what you want, and then include base_cp.lua
 
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_teamplay")
 IncludeScript("base_location")

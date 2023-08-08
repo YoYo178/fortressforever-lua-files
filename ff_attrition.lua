@@ -2,7 +2,7 @@
 -- attrition.lua
 
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_respawnturret");
 IncludeScript("base_teamplay");

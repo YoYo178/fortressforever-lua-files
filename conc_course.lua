@@ -11,28 +11,28 @@ IncludeScript("base_conc")
 -- Globals
 -----------------------------------------------------------------------------
 
-SOLDIER = 1
-SCOUT = 1
-MEDIC = 1
-DEMOMAN = 1
-ENGINEER = 1
-PYRO = 1
+SOLDIER          = 1
+SCOUT            = 1
+MEDIC            = 1
+DEMOMAN          = 1
+ENGINEER         = 1
+PYRO             = 1
 
 playerStateTable = {}
 
-ammobag = concbackpack
+ammobag          = concbackpack
 
 function ammobag:touch(touch_entity)
 	if IsPlayer(touch_entity) then
-		local player = CastToPlayer(touch_entity)
+		local player    = CastToPlayer(touch_entity)
 
 		local dispensed = 0
 
 		-- give player some health and armor
-		dispensed = dispensed + player:AddHealth(self.health)
-		dispensed = dispensed + player:AddArmor(self.armor)
-		dispensed = dispensed + player:AddAmmo(Ammo.kRockets, self.rockets)
-		class = player:GetClass()
+		dispensed       = dispensed + player:AddHealth(self.health)
+		dispensed       = dispensed + player:AddArmor(self.armor)
+		dispensed       = dispensed + player:AddAmmo(Ammo.kRockets, self.rockets)
+		class           = player:GetClass()
 		if class == Player.kSoldier or class == Player.kPyro or class == Player.kDemoman then
 			dispensed = dispensed + player:AddAmmo(Ammo.kGren1, self.gren)
 		else
@@ -92,14 +92,14 @@ set_jumppos     = trigger_ff_script:new({ pos = 0, pointmsg = 'Starting', points
 takebonus       = trigger_ff_script:new({ pos = 0, pointmsg = 'Starting', points = 0 })
 conctimer_start = trigger_ff_script:new({ timer = 0, pos = 0 })
 conctimer_end   = trigger_ff_script:new({
-	timer = 0,
-	pos = 0,
-	bronzetime = 150,
-	silvertime = 100,
-	goldtime = 50,
+	timer        = 0,
+	pos          = 0,
+	bronzetime   = 150,
+	silvertime   = 100,
+	goldtime     = 50,
 	bronzepoints = 50,
 	silverpoints = 100,
-	goldpoints = 150
+	goldpoints   = 150
 })
 
 function messagetrigger:onendtouch(touch_entity)
@@ -131,7 +131,7 @@ function set_jumppos:onendtouch(touch_entity)
 			player:AddFortPoints(self.points, self.pointmsg);
 		end
 		local jumpposition = self.pos + 1;
-		team = player:GetTeam()
+		team               = player:GetTeam()
 		player:SetLocation(self.pos, 'Jump ' .. jumpposition, team:GetTeamId())
 	end
 end
@@ -161,13 +161,13 @@ function spawn_check(self, player_entity)
 end
 
 function player_disconnect(player_entity)
-	local player = CastToPlayer(player_entity)
+	local player                     = CastToPlayer(player_entity)
 	playerStateTable[player:GetId()] = nil;
 	return true;
 end
 
 function player_switchteam(player_entity)
-	local player = CastToPlayer(player_entity)
+	local player                     = CastToPlayer(player_entity)
 	playerStateTable[player:GetId()] = nil;
 	return true;
 end
@@ -205,9 +205,9 @@ concspawn_29     = { validspawn = spawn_check, checkpoint = 29 }
 concspawn_30     = { validspawn = spawn_check, checkpoint = 30 }
 
 endmessage       = messagetrigger:new({
-	msg = 'Gratz! You have reached the end of the course!',
+	msg      = 'Gratz! You have reached the end of the course!',
 	location = 'The end!',
-	id = 1
+	id       = 1
 })
 
 concbonus1       = takebonus:new({ pos = 1, pointmsg = 'Taking Bonus Route', points = 25 })
@@ -218,43 +218,43 @@ concbonus5       = takebonus:new({ pos = 5, pointmsg = 'Taking Bonus Route', poi
 
 conctimer1_start = conctimer_start:new({ timer = 1, pos = 27 });
 conctimer1_end   = conctimer_start:new({
-	timer = 1,
-	pos = 27,
-	bronzetime = 150,
-	silvertime = 100,
-	goldtime = 50,
+	timer        = 1,
+	pos          = 27,
+	bronzetime   = 150,
+	silvertime   = 100,
+	goldtime     = 50,
 	bronzepoints = 50,
 	silverpoints = 100,
-	goldpoints = 150
+	goldpoints   = 150
 });
 
-conctrigger1  = set_jumppos:new({ pos = 1, pointmsg = 'Reaching 1st Checkpoint', points = 25 })
-conctrigger2  = set_jumppos:new({ pos = 2, pointmsg = 'Reaching 2nd Checkpoint', points = 50 })
-conctrigger3  = set_jumppos:new({ pos = 3, pointmsg = 'Reaching 3rd Checkpoint', points = 10 })
-conctrigger4  = set_jumppos:new({ pos = 4, pointmsg = 'Reaching 4th Checkpoint', points = 75 })
-conctrigger5  = set_jumppos:new({ pos = 5, pointmsg = 'Reaching 5th Checkpoint', points = 30 })
-conctrigger6  = set_jumppos:new({ pos = 6, pointmsg = 'Reaching 6th Checkpoint', points = 10 })
-conctrigger7  = set_jumppos:new({ pos = 7, pointmsg = 'Reaching 7th Checkpoint', points = 25 })
-conctrigger8  = set_jumppos:new({ pos = 8, pointmsg = 'Reaching 8th Checkpoint', points = 125 })
-conctrigger9  = set_jumppos:new({ pos = 9, pointmsg = 'Reaching 9th Checkpoint', points = 150 })
-conctrigger10 = set_jumppos:new({ pos = 10, pointmsg = 'Reaching 10th Checkpoint', points = 10 })
-conctrigger11 = set_jumppos:new({ pos = 11, pointmsg = 'Reaching 11th Checkpoint', points = 25 })
-conctrigger12 = set_jumppos:new({ pos = 12, pointmsg = 'Reaching 12th Checkpoint', points = 50 })
-conctrigger13 = set_jumppos:new({ pos = 13, pointmsg = 'Reaching 13th Checkpoint', points = 75 })
-conctrigger14 = set_jumppos:new({ pos = 14, pointmsg = 'Reaching 14th Checkpoint', points = 10 })
-conctrigger15 = set_jumppos:new({ pos = 15, pointmsg = 'Reaching 15th Checkpoint', points = 10 })
-conctrigger16 = set_jumppos:new({ pos = 16, pointmsg = 'Reaching 16th Checkpoint', points = 10 })
-conctrigger17 = set_jumppos:new({ pos = 17, pointmsg = 'Reaching 17th Checkpoint', points = 10 })
-conctrigger18 = set_jumppos:new({ pos = 18, pointmsg = 'Reaching 18th Checkpoint', points = 10 })
-conctrigger19 = set_jumppos:new({ pos = 19, pointmsg = 'Reaching 19th Checkpoint', points = 10 })
-conctrigger20 = set_jumppos:new({ pos = 20, pointmsg = 'Reaching 20th Checkpoint', points = 10 })
-conctrigger21 = set_jumppos:new({ pos = 21, pointmsg = 'Reaching 21st Checkpoint', points = 10 })
-conctrigger22 = set_jumppos:new({ pos = 22, pointmsg = 'Reaching 22nd Checkpoint', points = 10 })
-conctrigger23 = set_jumppos:new({ pos = 23, pointmsg = 'Reaching 23rd Checkpoint', points = 10 })
-conctrigger24 = set_jumppos:new({ pos = 24, pointmsg = 'Reaching 24th Checkpoint', points = 10 })
-conctrigger25 = set_jumppos:new({ pos = 25, pointmsg = 'Reaching 25th Checkpoint', points = 10 })
-conctrigger26 = set_jumppos:new({ pos = 26, pointmsg = 'Reaching 26th Checkpoint', points = 10 })
-conctrigger27 = set_jumppos:new({ pos = 27, pointmsg = 'Reaching 27th Checkpoint', points = 10 })
-conctrigger28 = set_jumppos:new({ pos = 28, pointmsg = 'Reaching 28th Checkpoint', points = 10 })
-conctrigger29 = set_jumppos:new({ pos = 29, pointmsg = 'Reaching 29th Checkpoint', points = 10 })
-conctrigger30 = set_jumppos:new({ pos = 30, pointmsg = 'Reaching 30th Checkpoint', points = 10 })
+conctrigger1     = set_jumppos:new({ pos = 1, pointmsg = 'Reaching 1st Checkpoint', points = 25 })
+conctrigger2     = set_jumppos:new({ pos = 2, pointmsg = 'Reaching 2nd Checkpoint', points = 50 })
+conctrigger3     = set_jumppos:new({ pos = 3, pointmsg = 'Reaching 3rd Checkpoint', points = 10 })
+conctrigger4     = set_jumppos:new({ pos = 4, pointmsg = 'Reaching 4th Checkpoint', points = 75 })
+conctrigger5     = set_jumppos:new({ pos = 5, pointmsg = 'Reaching 5th Checkpoint', points = 30 })
+conctrigger6     = set_jumppos:new({ pos = 6, pointmsg = 'Reaching 6th Checkpoint', points = 10 })
+conctrigger7     = set_jumppos:new({ pos = 7, pointmsg = 'Reaching 7th Checkpoint', points = 25 })
+conctrigger8     = set_jumppos:new({ pos = 8, pointmsg = 'Reaching 8th Checkpoint', points = 125 })
+conctrigger9     = set_jumppos:new({ pos = 9, pointmsg = 'Reaching 9th Checkpoint', points = 150 })
+conctrigger10    = set_jumppos:new({ pos = 10, pointmsg = 'Reaching 10th Checkpoint', points = 10 })
+conctrigger11    = set_jumppos:new({ pos = 11, pointmsg = 'Reaching 11th Checkpoint', points = 25 })
+conctrigger12    = set_jumppos:new({ pos = 12, pointmsg = 'Reaching 12th Checkpoint', points = 50 })
+conctrigger13    = set_jumppos:new({ pos = 13, pointmsg = 'Reaching 13th Checkpoint', points = 75 })
+conctrigger14    = set_jumppos:new({ pos = 14, pointmsg = 'Reaching 14th Checkpoint', points = 10 })
+conctrigger15    = set_jumppos:new({ pos = 15, pointmsg = 'Reaching 15th Checkpoint', points = 10 })
+conctrigger16    = set_jumppos:new({ pos = 16, pointmsg = 'Reaching 16th Checkpoint', points = 10 })
+conctrigger17    = set_jumppos:new({ pos = 17, pointmsg = 'Reaching 17th Checkpoint', points = 10 })
+conctrigger18    = set_jumppos:new({ pos = 18, pointmsg = 'Reaching 18th Checkpoint', points = 10 })
+conctrigger19    = set_jumppos:new({ pos = 19, pointmsg = 'Reaching 19th Checkpoint', points = 10 })
+conctrigger20    = set_jumppos:new({ pos = 20, pointmsg = 'Reaching 20th Checkpoint', points = 10 })
+conctrigger21    = set_jumppos:new({ pos = 21, pointmsg = 'Reaching 21st Checkpoint', points = 10 })
+conctrigger22    = set_jumppos:new({ pos = 22, pointmsg = 'Reaching 22nd Checkpoint', points = 10 })
+conctrigger23    = set_jumppos:new({ pos = 23, pointmsg = 'Reaching 23rd Checkpoint', points = 10 })
+conctrigger24    = set_jumppos:new({ pos = 24, pointmsg = 'Reaching 24th Checkpoint', points = 10 })
+conctrigger25    = set_jumppos:new({ pos = 25, pointmsg = 'Reaching 25th Checkpoint', points = 10 })
+conctrigger26    = set_jumppos:new({ pos = 26, pointmsg = 'Reaching 26th Checkpoint', points = 10 })
+conctrigger27    = set_jumppos:new({ pos = 27, pointmsg = 'Reaching 27th Checkpoint', points = 10 })
+conctrigger28    = set_jumppos:new({ pos = 28, pointmsg = 'Reaching 28th Checkpoint', points = 10 })
+conctrigger29    = set_jumppos:new({ pos = 29, pointmsg = 'Reaching 29th Checkpoint', points = 10 })
+conctrigger30    = set_jumppos:new({ pos = 30, pointmsg = 'Reaching 30th Checkpoint', points = 10 })

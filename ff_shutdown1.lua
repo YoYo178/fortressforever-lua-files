@@ -2,7 +2,7 @@
 -- based on openfire.lua 15/09/07
 
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base");
 IncludeScript("base_ctf");
@@ -106,9 +106,6 @@ function baseflag:touch( touch_entity )
 		RemoveHudItemFromAll( flag:GetName() .. "_d" )
 		AddHudIconToAll( self.hudstatusiconhome, ( flag:GetName() .. "_h" ), self.hudstatusiconx, self.hudstatusicony, self.hudstatusiconw, self.hudstatusiconh, self.hudstatusiconalign )
 		AddHudIconToAll( self.hudstatusiconcarried, ( flag:GetName() .. "_c" ), self.hudstatusiconx, self.hudstatusicony, self.hudstatusiconw, self.hudstatusiconh, self.hudstatusiconalign )
-
-		-- log action in stats
-		player:AddAction(nil, "ctf_flag_touch", flag:GetName())
 
 		-- 100 points for initial touch on flag
 		if self.status == 0 then player:AddFortPoints(FORTPOINTS_PER_INITIALTOUCH, "#FF_FORTPOINTS_INITIALTOUCH") end

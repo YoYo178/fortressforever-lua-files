@@ -1,7 +1,7 @@
 -- ff_waterpolo.lua
 
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_fortball_default")
 IncludeScript("base_fortball")

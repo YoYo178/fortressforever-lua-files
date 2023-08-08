@@ -2,7 +2,7 @@
 -- Author: NzNexus (a.k.a Ambex)
 
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_respawnturret");
 IncludeScript("base_ctf")

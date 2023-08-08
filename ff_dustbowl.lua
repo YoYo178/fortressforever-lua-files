@@ -1,7 +1,7 @@
 
 -- ff_dustbowl.lua
 
--- includes
+-- Includes
 IncludeScript("base_ad");
 IncludeScript("base_location");
 

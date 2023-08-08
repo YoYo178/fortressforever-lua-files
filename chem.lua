@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------------
 -- chem.lua
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 
 IncludeScript("base_ctf")
@@ -13,73 +13,73 @@ IncludeScript("base_respawnturret")
 -----------------------------------------------------------------------------
 
 ff_cannon_genericpack = genericbackpack:new({
-	health = 400,
-	armor = 400,
+	health           = 400,
+	armor            = 400,
 
-	grenades = 400,
-	nails = 400,
-	shells = 400,
-	rockets = 400,
-	cells = 400,
+	grenades         = 400,
+	nails            = 400,
+	shells           = 400,
+	rockets          = 400,
+	cells            = 400,
 
-	respawntime = 10,
-	model = "models/items/backpack/backpack.mdl",
+	respawntime      = 10,
+	model            = "models/items/backpack/backpack.mdl",
 	materializesound = "Item.Materialize",
-	touchsound = "Backpack.Touch",
-	botgoaltype = Bot.kBackPack_Ammo
+	touchsound       = "Backpack.Touch",
+	botgoaltype      = Bot.kBackPack_Ammo
 })
 
 function ff_cannon_genericpack:dropatspawn() return false end
 
 blue_cannon_genericpack = ff_cannon_genericpack:new({ touchflags = { AllowFlags.kOnlyPlayers, AllowFlags.kBlue } })
-red_cannon_genericpack = ff_cannon_genericpack:new({ touchflags = { AllowFlags.kOnlyPlayers, AllowFlags.kRed } })
+red_cannon_genericpack  = ff_cannon_genericpack:new({ touchflags = { AllowFlags.kOnlyPlayers, AllowFlags.kRed } })
 
-ff_cannon_grenpack = genericbackpack:new({
-	health = 400,
-	armor = 400,
+ff_cannon_grenpack      = genericbackpack:new({
+	health           = 400,
+	armor            = 400,
 
-	grenades = 400,
-	nails = 400,
-	shells = 400,
-	rockets = 400,
-	cells = 400,
+	grenades         = 400,
+	nails            = 400,
+	shells           = 400,
+	rockets          = 400,
+	cells            = 400,
 
-	gren1 = 2,
-	gren2 = 2,
+	gren1            = 2,
+	gren2            = 2,
 
-	respawntime = 20,
-	model = "models/items/backpack/backpack.mdl",
+	respawntime      = 20,
+	model            = "models/items/backpack/backpack.mdl",
 	materializesound = "Item.Materialize",
-	touchsound = "Backpack.Touch",
-	botgoaltype = Bot.kBackPack_Ammo
+	touchsound       = "Backpack.Touch",
+	botgoaltype      = Bot.kBackPack_Ammo
 })
 
 function ff_cannon_grenpack:dropatspawn() return false end
 
 blue_cannon_grenpack = ff_cannon_grenpack:new({ touchflags = { AllowFlags.kOnlyPlayers, AllowFlags.kBlue } })
-red_cannon_grenpack = ff_cannon_grenpack:new({ touchflags = { AllowFlags.kOnlyPlayers, AllowFlags.kRed } })
+red_cannon_grenpack  = ff_cannon_grenpack:new({ touchflags = { AllowFlags.kOnlyPlayers, AllowFlags.kRed } })
 
-ff_cannon_fr_bag = genericbackpack:new({
-	health = 35,
-	armor = 35,
+ff_cannon_fr_bag     = genericbackpack:new({
+	health           = 35,
+	armor            = 35,
 
-	grenades = 0,
-	nails = 75,
-	shells = 50,
-	rockets = 15,
-	cells = 100,
+	grenades         = 0,
+	nails            = 75,
+	shells           = 50,
+	rockets          = 15,
+	cells            = 100,
 
-	respawntime = 10,
-	model = "models/items/backpack/backpack.mdl",
+	respawntime      = 10,
+	model            = "models/items/backpack/backpack.mdl",
 	materializesound = "Item.Materialize",
-	touchsound = "Backpack.Touch",
-	botgoaltype = Bot.kBackPack_Ammo
+	touchsound       = "Backpack.Touch",
+	botgoaltype      = Bot.kBackPack_Ammo
 })
 
 function ff_cannon_fr_bag:dropatspawn() return false end
 
-blue_fr_bag = ff_cannon_fr_bag:new({ touchflags = { AllowFlags.kOnlyPlayers, AllowFlags.kBlue } })
-red_fr_bag = ff_cannon_fr_bag:new({ touchflags = { AllowFlags.kOnlyPlayers, AllowFlags.kRed } })
+blue_fr_bag   = ff_cannon_fr_bag:new({ touchflags = { AllowFlags.kOnlyPlayers, AllowFlags.kBlue } })
+red_fr_bag    = ff_cannon_fr_bag:new({ touchflags = { AllowFlags.kOnlyPlayers, AllowFlags.kRed } })
 
 -----------------------------------------------------------------------------
 -- aardvark resupply (bagless)
@@ -142,21 +142,21 @@ function KILL_KILL_KILL:allowed(activator)
 	return EVENT_DISALLOWED
 end
 
-blue_slayer = KILL_KILL_KILL:new({ team = Team.kBlue })
-red_slayer = KILL_KILL_KILL:new({ team = Team.kRed })
+blue_slayer      = KILL_KILL_KILL:new({ team = Team.kBlue })
+red_slayer       = KILL_KILL_KILL:new({ team = Team.kRed })
 
 -----------------------------------------------------------------------------
 -- aardvark security
 -----------------------------------------------------------------------------
-red_aardvarksec = trigger_ff_script:new()
+red_aardvarksec  = trigger_ff_script:new()
 blue_aardvarksec = trigger_ff_script:new()
-bluesecstatus = 1
-redsecstatus = 1
+bluesecstatus    = 1
+redsecstatus     = 1
 
-sec_iconx = 60
-sec_icony = 30
-sec_iconw = 16
-sec_iconh = 16
+sec_iconx        = 60
+sec_icony        = 30
+sec_iconw        = 16
+sec_iconh        = 16
 
 function red_aardvarksec:ontouch(touch_entity)
 	if IsPlayer(touch_entity) then
@@ -225,7 +225,7 @@ end
 -----------------------------------------------------------------------------
 -- aardvark lasers and respawn shields
 -----------------------------------------------------------------------------
-KILL_KILL_KILL = trigger_ff_script:new({ team = Team.kUnassigned })
+KILL_KILL_KILL        = trigger_ff_script:new({ team = Team.kUnassigned })
 lasers_KILL_KILL_KILL = trigger_ff_script:new({ team = Team.kUnassigned })
 
 function KILL_KILL_KILL:allowed(activator)
@@ -257,7 +257,7 @@ function lasers_KILL_KILL_KILL:allowed(activator)
 	return EVENT_DISALLOWED
 end
 
-blue_slayer = KILL_KILL_KILL:new({ team = Team.kBlue })
-red_slayer = KILL_KILL_KILL:new({ team = Team.kRed })
-red_laser_hurt = lasers_KILL_KILL_KILL:new({ team = Team.kBlue })
+blue_slayer     = KILL_KILL_KILL:new({ team = Team.kBlue })
+red_slayer      = KILL_KILL_KILL:new({ team = Team.kRed })
+red_laser_hurt  = lasers_KILL_KILL_KILL:new({ team = Team.kBlue })
 blue_laser_hurt = lasers_KILL_KILL_KILL:new({ team = Team.kRed })

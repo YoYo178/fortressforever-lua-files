@@ -3,7 +3,7 @@
 -- Invade / Defend gametype 
 -- New scoring system included
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_teamplay")
 

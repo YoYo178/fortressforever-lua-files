@@ -4,7 +4,7 @@
 -- AIM: toaogatortfc
 -- Steam Friends Name: alligator123
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_ctf");
 IncludeScript("base_location");

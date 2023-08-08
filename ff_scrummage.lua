@@ -33,7 +33,7 @@
 -- So, add a fucking bag, fool! :D (anything defined in base_teamplay is good)
 
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_teamplay")
 

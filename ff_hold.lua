@@ -5,7 +5,7 @@
 -----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_teamplay")
 IncludeScript("base_location")
@@ -397,9 +397,6 @@ function baseflag:touch( touch_entity )
 	end
 	
 	SmartMessage(player,"You gain Quad Damage!  Hold the flag on the Hold Area!", "Your team has the flag!", "The " .. teamname .. " team has the flag!")
-
-	-- log action in stats
-	player:AddAction(nil, "ctf_flag_touch", flag:GetName())
 	
 end
 

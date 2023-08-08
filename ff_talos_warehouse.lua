@@ -2,7 +2,7 @@
 -----------------------------------------------------------------------------
 -- a custom alternate lua made by -_YoYo178_- (a edited version of ff_aardvark.lua)
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_shutdown");
 IncludeScript("base_location");

@@ -1,7 +1,7 @@
 -- ff_heavy-machinery.lua
 
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_teamplay");
 IncludeScript("base_location");

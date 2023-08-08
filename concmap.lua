@@ -392,9 +392,6 @@ function baseflag:touch(touch_entity)
 	AddHudIconToAll(self.hudstatusiconcarried, (flag:GetName() .. "_c"), self.hudstatusiconx, self.hudstatusicony,
 		self.hudstatusiconw, self.hudstatusiconh, self.hudstatusiconalign)
 
-	-- log action in stats
-	player:AddAction(nil, "ctf_flag_touch", flag:GetName())
-
 	-- 100 points for initial touch on flag
 	if self.status == 0 then player:AddFortPoints(FORTPOINTS_PER_INITIALTOUCH, "#FF_FORTPOINTS_INITIALTOUCH") end
 	self.status = 1
@@ -460,11 +457,7 @@ function basecap:ontrigger(trigger_entity)
 					-- reward player for capture
 					player:AddFortPoints(FORTPOINTS_PER_CAPTURE, "#FF_FORTPOINTS_CAPTUREFLAG")
 
-					-- log action in stats
-					player:AddAction(nil, "ctf_flag_cap", flag:GetName())
-
 					-- Remove any hud icons
-					-- local flag2										 = CastToInfoScript(flag)
 					RemoveHudItem(player, flag:GetName())
 					RemoveHudItemFromAll(flag:GetName() .. "_c")
 					RemoveHudItemFromAll(flag:GetName() .. "_d")

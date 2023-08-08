@@ -50,7 +50,7 @@ captured = Collection()
 phase = 1
 
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_location");
 IncludeScript("base_teamplay");

@@ -24,21 +24,21 @@ end
 ------------------------------------------------------------------
 
 grenadebackpack = genericbackpack:new({
-	health = 200,
-	armor = 150,
-	grenades = 60,
-	bullets = 60,
-	nails = 60,
-	shells = 60,
-	rockets = 60,
-	cells = 60,
-	gren1 = 4,
-	gren2 = 4,
-	respawntime = 1,
-	model = "models/items/backpack/backpack.mdl",
+	health           = 200,
+	armor            = 150,
+	grenades         = 60,
+	bullets          = 60,
+	nails            = 60,
+	shells           = 60,
+	rockets          = 60,
+	cells            = 60,
+	gren1            = 4,
+	gren2            = 4,
+	respawntime      = 1,
+	model            = "models/items/backpack/backpack.mdl",
 	materializesound = "Item.Materialize",
-	touchsound = "Backpack.Touch",
-	botgoaltype = Bot.kBackPack_Ammo
+	touchsound       = "Backpack.Touch",
+	botgoaltype      = Bot.kBackPack_Ammo
 })
 
 function grenadebackpack:dropatspawn() return false end

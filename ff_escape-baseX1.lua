@@ -1,7 +1,7 @@
 -- ff_escape-baseX1.lua
 
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_teamplay");
 IncludeScript("base_location");

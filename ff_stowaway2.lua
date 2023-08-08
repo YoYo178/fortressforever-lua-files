@@ -3,7 +3,7 @@
 -- texture thanks: PhilipK
 
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_ctf");
 IncludeScript("base_location");

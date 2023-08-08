@@ -8,7 +8,7 @@ IncludeScript("base_ctf");
 SNIPER_LIMIT = 0;
 
 -----------------------------------------------------------------------------
--- includes
+-- Includes
 -----------------------------------------------------------------------------
 IncludeScript("base_shutdown");
 IncludeScript("base_location");
