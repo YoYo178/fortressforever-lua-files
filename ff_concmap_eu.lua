@@ -1,15 +1,24 @@
-IncludeScript("base_teamplay");
-IncludeScript("base_quad");
-
-function startup()
-SetTeamName( Team.kBlue, "Conc Jumpers" )
-SetTeamName( Team.kRed, "Quad Jumpers" )
-SetTeamName( Team.kGreen, "The Plaza People" )
+IncludeScript("base_teamplay");
 
-SetPlayerLimit( Team.kBlue, 0 )
-SetPlayerLimit( Team.kRed, 0 )
-SetPlayerLimit( Team.kYellow, -1 )
-SetPlayerLimit( Team.kGreen, 0 )
+IncludeScript("base_quad");
+
+
+function startup()
+
+SetTeamName( Team.kBlue, "Conc Jumpers" )
+
+SetTeamName( Team.kRed, "Quad Jumpers" )
+SetTeamName( Team.kGreen, "The Plaza People" )
+
+
+SetPlayerLimit( Team.kBlue, 0 )
+
+SetPlayerLimit( Team.kRed, 0 )
+
+SetPlayerLimit( Team.kYellow, -1 )
+
+SetPlayerLimit( Team.kGreen, 0 )
+
 
 -- BLUE TEAM
 local team = GetTeam( Team.kBlue )
@@ -49,9 +58,8 @@ team:SetAllies( Team.kBlue )
 team:SetAllies( Team.kRed )
 
 team:SetClassLimit( Player.kHwguy, -1 )
-team:SetClassLimit( Player.kSpy, -1 )
-team:SetClassLimit( Player.kCivilian, 0 )
-team:SetClassLimit( Player.kSniper, -1 )
+tea
+
 team:SetClassLimit( Player.kScout, -1 )
 team:SetClassLimit( Player.kMedic, -1 )
 team:SetClassLimit( Player.kSoldier, -1 )
@@ -62,12 +70,17 @@ end
 
 
 
------------------------------------------------------------------------------
--- global overrides
------------------------------------------------------------------------------
-
--- Disable conc effect
-CONC_EFFECT = 0
+-----------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------
+
+
+
+-- Disable conc effect
+
+CONC_EFFECT = 0
+
 LEET_POINTS = 1337
 END_POINTS = 2000
 
@@ -103,19 +116,28 @@ end
 
 finished = trigger_ff_script:new({pos = 0})
 takesecret = trigger_ff_script:new({pos = 0})
-
+
+
 -----------------------------------------------------------------------------
 -- CHECK IF DIZZYNESS SHOULD BE TURNED ON
 -----------------------------------------------------------------------------
-
-function player_onconc( player_entity, concer_entity )
-
-	if CONC_EFFECT == 0 then
-		return EVENT_DISALLOWED
-	end
-
-	return EVENT_ALLOWED
-end
+
+
+
+
+
+	if CONC_EFFECT == 0 then
+
+		return EVENT_DISALLOWED
+
+	end
+
+
+
+	return EVENT_ALLOWED
+
+end
+
 
 -----------------------------------------------------------------------------
 -- Precache Sounds
@@ -127,9 +149,11 @@ function precache()
 end
 
 
------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
 -- Auto health
------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
 
 		
 function GiveHealth(player_entity)
@@ -182,38 +206,60 @@ function finished:onendtouch(touch_entity)
 	end		
 end
 
-------------------------------------------------------------------
--- FREE THE ID IF SOMEONE DISCONNECT
 ------------------------------------------------------------------
 
-function player_disconnect( player_entity )
-  local player = CastToPlayer(player_entity)
+-- FREE THE ID IF SOMEONE DISCONNECT
+
+------------------------------------------------------------------
+
+
   playerFinishTable[player:GetId()] = nil;  
   playerSecretTable[player:GetId()] = nil;  
   return true;
 end
 
-------------------------------------------------------------------
--- BAGS
-------------------------------------------------------------------
-
-grenadebackpack = genericbackpack:new({
-	health = 200,
-	armor = 150,
-	grenades = 60,
-	bullets = 60,
-	nails = 60,
-	shells = 60,
-	rockets = 60,
-	cells = 60,
-	gren1 = 0,
-	gren2 = 4,
-	respawntime = 1,
-	model = "models/items/backpack/backpack.mdl",
-	materializesound = "Item.Materialize",
-	touchsound = "Backpack.Touch",
-	botgoaltype = Bot.kBackPack_Ammo
-})
+------------------------------------------------------------------
+
+-- BAGS
+
+------------------------------------------------------------------
+
+
+
+grenadebackpack = genericbackpack:new({
+
+	health = 200,
+
+	armor = 150,
+
+	grenades = 60,
+
+	bullets = 60,
+
+	nails = 60,
+
+	shells = 60,
+
+	rockets = 60,
+
+	cells = 60,
+
+	gren1 = 0,
+
+	gren2 = 4,
+
+	respawntime = 1,
+
+	model = "models/items/backpack/backpack.mdl",
+
+	materializesound = "Item.Materialize",
+
+	touchsound = "Backpack.Touch",
+
+	botgoaltype = Bot.kBackPack_Ammo
+
+})
+
 function grenadebackpack:dropatspawn() return false end
 
 

@@ -10,7 +10,6 @@ IncludeScript("base_teamplay")
 IncludeScript("base_location")
 IncludeScript("base_respawnturret")
 
-
 -----------------------------------------------------------------------------
 -- overrides
 -----------------------------------------------------------------------------

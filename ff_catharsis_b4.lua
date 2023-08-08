@@ -169,7 +169,6 @@ blue_laser_hurt = hurt:new({ team = Team.kRed })
 -- end
 
 
-
 -------------------------
 -- flaginfo
 -------------------------
@@ -198,7 +197,6 @@ function flaginfo( player_entity )
 			AddHudIcon( player, button_red.sec_down_icon, "red-sec-down", button_red.iconx, button_red.icony, button_red.iconw, button_red.iconh, button_red.iconalign )
 		end
 end
-
 
 ---------------------MY LUA
 --IncludeScript("base_shutdown");

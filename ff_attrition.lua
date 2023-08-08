@@ -49,7 +49,6 @@ CONTROL_TIME_MAX = 3
 local c = Collection()
 
 
-
 -- This is the goal name for the trigger_ff_script in the
 -- middle of the map that you are trying to hold
 center = trigger_ff_script:new({})
@@ -120,7 +119,6 @@ function center:oninactive()
 	CONTROL_TIME = 0
 end
 
-
 -- Utility function - checks to see if everyone
 -- in the collection is on the same team
 function AllTheSame( team )
@@ -134,7 +132,6 @@ function AllTheSame( team )
 
 	return true
 end
-
 
 
 

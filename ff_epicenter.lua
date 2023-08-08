@@ -42,14 +42,12 @@ hud_status = {
 	[6] = { team = Team.kUnassigned, hudslot = 6, hudposx = 100, hudposy = 24, hudalign = 3, hudwidth = 16, hudheight = 16 }
 }
 
-
 -- defines which icons to use for each team (saves repeating this info exactly for each entry in above table).
 icons = {
 	[Team.kBlue] = { teamicon = "hud_cp_blue.vtf" },
 	[Team.kRed] = { teamicon = "hud_cp_red.vtf" },
 	[Team.kUnassigned] = { teamicon = "hud_cp_neutral.vtf" }
 }
-
 
 -----------------------------------------------------------------------------
 -- flag definitions
@@ -94,7 +92,6 @@ red_flag = baseflag:new({team = Team.kRed,
 						 status = "home",
 						 touchflags = {AllowFlags.kOnlyPlayers,AllowFlags.kBlue,AllowFlags.kYellow,AllowFlags.kGreen}})
 
-
 -----------------------------------------------------------------------------
 -- startup 
 -----------------------------------------------------------------------------
@@ -120,7 +117,6 @@ function startup()
 	setup_door_timer(Team.kUnassigned, INITIAL_ROUND_LENGTH)
 
 end
-
 
 -----------------------------------------------------------------------------
 -- Altered flag functions. Mostly to remove flag stolen messages.
@@ -167,7 +163,6 @@ function setup_door_timer(team, duration)
 	if duration > 15 then AddSchedule("round_warn_10", duration-10, round_warn, team, 10) end
 end
 
-
 -- This now does different things depending on who capped a flag, or if it's starting a new round for both teams
 function round_start(team)
 	if ( team == Team.kBlue ) then
@@ -183,7 +178,6 @@ function round_start(team)
 	end
 end
 
-
 -- I combined all the warning functions into one.
 function round_warn(team, duration)
 	if ( team == Team.kBlue ) then
@@ -195,11 +189,9 @@ function round_warn(team, duration)
 	end
 end
 
-
 function reset_door(doorname)
 	CloseDoor(doorname)
 end
-
 
 -- This now does different things depending on who captures the flag, and if the team has captured 3 flags
 function basecap:oncapture(player, item)
@@ -219,7 +211,6 @@ function basecap:oncapture(player, item)
 
 	-- This might require some changes for the flags, I just changed the "ApplyToAll" to "ApplyToPlayer"
 	--ApplyToPlayer({ AT.kReturnCarriedItems, AT.kReturnDroppedItems, AT.kRemovePacks, AT.kRemoveProjectiles, AT.kRemoveBuildables, AT.kRemoveRagdolls, AT.kStopPrimedGrens, AT.kReloadClips, AT.kRespawnPlayers})
-
 
 	if  BLUE_WINS == 3  then
 		-- let the teams know that a capture occured - Change these to something like "Your team wins the round", "The enemy team wins the round" or something
@@ -269,7 +260,6 @@ function end_game(team)
 	
 	setup_door_timer(Team.kUnassigned, 65)
 end
-
 
 ----------------------------------------
 -- HUD Status Icons (caps out of 3) 
@@ -328,7 +318,6 @@ function flaginfo( player_entity )
 	end
 end
 
-
 -----------------------------------------------------------------------------
 -- Ammo Kit (backpack-based) **Adjusted from base lua as I am lazy**
 -----------------------------------------------------------------------------
@@ -347,7 +336,6 @@ ammobackpack = genericbackpack:new({
 })
 
 function ammobackpack:dropatspawn() return false end
-
 
 
 -----------------------------------------------------------------------------

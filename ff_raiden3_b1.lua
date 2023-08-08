@@ -55,10 +55,8 @@ blue_slayer = KILL_KILL_KILL:new({ team = Team.kBlue })
 red_slayer = KILL_KILL_KILL:new({ team = Team.kRed })
 
 
-
 ------------------------------------------------------My lua below
 --IncludeScript("base_shutdown");
-
 
 -----------------------------------------------------------------------------
 -- Resupply and Bags
@@ -96,7 +94,6 @@ grenadebag = genericbackpack:new({
 	touchsound = "Backpack.Touch",
 })
 
-
 topbag = genericbackpack:new({
 	grenades = 0,
 	bullets = 0,
@@ -113,7 +110,6 @@ topbag = genericbackpack:new({
 	materializesound = "Item.Materialize",
 	touchsound = "Backpack.Touch",
 })
-
 
 flagroombag_blue = genericbackpack:new({
 	grenades = 0,
@@ -151,7 +147,6 @@ flagroombag_red = genericbackpack:new({
 	touchflags = {AllowFlags.kRed},
 })
 
-
 blue_supply = aardvarkresup:new({ team = Team.kBlue })
 red_supply = aardvarkresup:new({ team = Team.kRed })
 
@@ -172,7 +167,6 @@ red_flagroombag_2 = flagroombag_red:new({ team = Team.kRed })
 
 blue_only = function(self,player) return ((player:GetTeamId() == Team.kBlue)) end
 blue_spawn = { validspawn = blue_only }
-
 
 red_only = function(self,player) return ((player:GetTeamId() == Team.kRed)) end
 

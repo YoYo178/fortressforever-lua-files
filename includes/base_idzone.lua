@@ -373,7 +373,6 @@ function zone_cap( cap_phase )
 	
 end
 
-
 -----------------------------------------------------------------------------
 -- round functions
 -----------------------------------------------------------------------------
@@ -454,7 +453,6 @@ function onroundreset()
 	
 	onswitch()
 end
-
 
 -----------------------------------------------------------------------------
 -- zone functions
@@ -765,7 +763,6 @@ end
 function schedulesound( sound )
 	BroadCastSound( sound )
 end
-
 
 function schedulecountdown( time )
 	BroadCastMessage( ""..time.."" )

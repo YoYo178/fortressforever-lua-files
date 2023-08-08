@@ -14,7 +14,6 @@ POINTS_PER_CAPTURE = 10;
 FLAG_RETURN_TIME = 60;
 SECURITY_LENGTH = 30;
 
-
 -----------------------------------------------------------------------------
 -- bagless resupply
 -----------------------------------------------------------------------------
@@ -36,7 +35,6 @@ end
 
 blue_aardvarkresup = aardvarkresup:new({ team = Team.kBlue })
 red_aardvarkresup = aardvarkresup:new({ team = Team.kRed })
-
 
 -----------------------------------------------------------------------------
 -- security
@@ -80,7 +78,6 @@ red_slayer = not_blue_trigger:new()
 sec_blue_slayer = not_red_trigger:new()
 sec_red_slayer = not_blue_trigger:new()
 
-
 -----------------------------------------------------------------------------
 -- bouncepads for lifts
 -----------------------------------------------------------------------------
@@ -99,7 +96,6 @@ lift_red = base_jump:new({ pushz = 1200 })
 lift_blue = base_jump:new({ pushz = 1200 })
 lift_red_small = base_jump:new({ pushz = 700 })
 lift_blue_small = base_jump:new({ pushz = 700 })
-
 
 -----------------------------------------------------------------------------
 -- custom packs
@@ -179,7 +175,6 @@ red_healthkit, red_armorkit, red_ammobackpack, red_bigpack, red_grenadebackpack,
 yellow_healthkit, yellow_armorkit, yellow_ammobackpack, yellow_bigpack, yellow_grenadebackpack, yellow_aardvarkpack_fr, yellow_aardvarkpack_ramp, yellow_aardvarkpack_sec = build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kYellow})
 green_healthkit, green_armorkit, green_ammobackpack, green_bigpack, green_grenadebackpack, green_aardvarkpack_fr, green_aardvarkpack_ramp, green_aardvarkpack_sec = build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kGreen})
 
-
 -----------------------------------------------------------------------------
 -- SPAWNS
 -----------------------------------------------------------------------------
@@ -194,6 +189,5 @@ blue_d_only = function(self,player) return ((player:GetTeamId() == Team.kBlue) a
 
 bluespawn_balc = { validspawn = blue_o_only }
 bluespawn_fr = { validspawn = blue_d_only }
-
 
 

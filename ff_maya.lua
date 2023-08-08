@@ -6,13 +6,11 @@
 -- For more information, please see ff_lastteamstanding.README.txt
 -------------------------------------------------------------------------------------------------------------
 
-
 ---------------------------------
 -- Includes
 ---------------------------------
 
 IncludeScript("base_teamplay");
-
 
 ---------------------------------
 -- Global Variables (these can be changed to whatever you want)
@@ -21,7 +19,6 @@ IncludeScript("base_teamplay");
 TEAM_POINTS_PER_WIN = 10
 BLUE_TEAM_NAME = "Blue Orcas"
 RED_TEAM_NAME = "Red Gazelles"
-
 
 ---------------------------------
 -- Functions
@@ -67,7 +64,6 @@ function startup()
 	team:SetClassLimit( Player.kCivilian, -1 )
 end
 
-
 -- Everyone to spawn with everything.
 function player_spawn( player_entity )
 	local player = CastToPlayer( player_entity )
@@ -88,7 +84,6 @@ function precache()
 	PrecacheSound("misc.bloop")
 end
 
-
 -- Calls a function to check if a team has won every time someone dies
 function player_killed( killed_entity )
 	local player = CastToPlayer( killed_entity )
@@ -97,11 +92,9 @@ function player_killed( killed_entity )
 	CheckTeamAliveState( killed_entity)
 end
 
-
 function Spectate( player )
 	player:Spectate( SpecMode.kRoaming )
 end 
-
 
 -- Checks to see if people are still alive. If one team is all dead, declare the other team the winners.
 function CheckTeamAliveState(killed_player)
@@ -118,7 +111,6 @@ function CheckTeamAliveState(killed_player)
 	if (blue:Count() == 0) or (red:Count() == 0) then
 		AddSchedule("respawnall", 1 , respawnall)
 	end
-
 
 	local bAlive = 0
 	local rAlive = 0
@@ -157,7 +149,6 @@ function CheckTeamAliveState(killed_player)
 	end
 end
 
-
 -- checks that enemies are damaging, not self or fall damage
 function player_ondamage( player, damageinfo )
 	-- Entity that is attacking
@@ -189,12 +180,10 @@ function player_ondamage( player, damageinfo )
   	end
 end
 
-
 -- Respawns all players.
 function RespawnEveryone()
 	ApplyToAll({ AT.kRemovePacks, AT.kRemoveProjectiles, AT.kRespawnPlayers, AT.kRemoveBuildables, AT.kRemoveRagdolls, AT.kStopPrimedGrens, AT.kReloadClips, AT.kAllowRespawn, AT.kReturnDroppedItems })
 end
-
 
 ---------------------------------
 -- Scheduled functions
@@ -203,7 +192,6 @@ end
 function respawnall()
 	RespawnEveryone()
 end
-
 
 -----------------------------------------------------------------------------
 -- bigpack -- has a bit of everything (no grens - backpack-based - 30 secs respawn)
@@ -224,7 +212,6 @@ bigpack = genericbackpack:new({
 })
 
 function bigpack:dropatspawn() return false end
-
 
 -----------------------------------------------------------------------------
 -- spawn validty checking

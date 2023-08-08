@@ -1,7 +1,6 @@
 
 -- base.lua
 
-
 -----------------------------------------------------------------------------
 -- This file is loaded automatically whenever a map is loaded.
 -- Do not change this file.
@@ -18,7 +17,6 @@ Collection = require "util.collection"
 EVENT_ALLOWED = true
 EVENT_DISALLOWED = false
 
-
 -----------------------------------------------------------------------------
 -- set a cvar, but check to make sure it's not already set correctly
 -----------------------------------------------------------------------------
@@ -28,14 +26,12 @@ function set_cvar( cvarname, value )
 	end
 end
 
-
 -----------------------------------------------------------------------------
 -- Output Events
 -----------------------------------------------------------------------------
 function OpenDoor(name) OutputEvent( name, "Open" ) end
 function CloseDoor(name) OutputEvent( name, "Close" ) end
 function ToggleDoor(name) OutputEvent( name, "Toggle" ) end
-
 
 -----------------------------------------------------------------------------
 -- baseclass (everything derives from this guy)
@@ -48,7 +44,6 @@ function baseclass:new (o)
 	self.__index = self
 	return o
 end
-
 
 -----------------------------------------------------------------------------
 -- set up pairs and ipairs for iterating the global entity list
@@ -90,7 +85,6 @@ pairs = function(t)
 	return pairs_base(t)
 end
 
-
 -----------------------------------------------------------------------------
 -- make luabind's class_info function safer
 -- (don't crash if class_info() is called on non-luabind objects)
@@ -104,14 +98,12 @@ class_info = function(obj)
 	return {}
 end
 
-
 -----------------------------------------------------------------------------
 -- reset everything
 -----------------------------------------------------------------------------
 function RespawnAllPlayers()
 	ApplyToAll({ AT.kRemovePacks, AT.kRemoveProjectiles, AT.kRespawnPlayers, AT.kRemoveBuildables, AT.kRemoveRagdolls, AT.kStopPrimedGrens, AT.kReloadClips, AT.kAllowRespawn, AT.kReturnDroppedItems })
 end
-
 
 -----------------------------------------------------------------------------
 -- lowercase c "Broadcast" functions, because uppercase C "BroadCast" functions are lame
@@ -131,7 +123,6 @@ end
 function BroadcastSoundToPlayer( player, soundname )
 	BroadCastSoundToPlayer( player, soundname )
 end
-
 
 -----------------------------------------------------------------------------
 -- trigger_ff_script
@@ -162,7 +153,6 @@ function trigger_ff_script:spawn()
 	end
 end
 
-
 -----------------------------------------------------------------------------
 -- trigger_ff_clip
 -----------------------------------------------------------------------------
@@ -176,7 +166,6 @@ function trigger_ff_clip:spawn()
 	end
 end
 
-
 -----------------------------------------------------------------------------
 -- func_button
 -----------------------------------------------------------------------------
@@ -186,7 +175,6 @@ function func_button:ondamage() end
 function func_button:ontouch() end
 function func_button:onuse() end
 function func_button:onfailuse() end
-
 
 -----------------------------------------------------------------------------
 -- info_ff_script
@@ -246,7 +234,6 @@ end
 function info_ff_script:gettouchsize( mins, maxs ) end
 function info_ff_script:getphysicssize( mins, maxs ) end
 function info_ff_script:getbloatsize() return 12 end
-
 
 -----------------------------------------------------------------------------
 -- info_ff_teamspawn

@@ -9,13 +9,9 @@ IncludeScript("base_location")
 CONC_EFFECT = 0
 
 
-
 function player_onconc( player_entity, concer_entity )
 
-	if CONC_EFFECT == 0 then
-		return EVENT_DISALLOWED
-	end
-
+	if CONC_EFFECT == 0 then return EVENT_DISALLOWED end
 	return EVENT_ALLOWED
 end
 -------------------
@@ -52,7 +48,6 @@ function startup()
 	team:SetClassLimit( Player.kSpy, -1 )
 	team:SetClassLimit( Player.kEngineer, -1 )
 	team:SetClassLimit( Player.kCivilian, -1 )
-
 
         local team = GetTeam( Team.kRed )
 	team:SetAllies( Team.kBlue )
@@ -155,7 +150,6 @@ end
 --Finish Zones
 --------------------
 
-
 finish = trigger_ff_script:new({})
 
 function finish:ontouch(touch_entity)
@@ -184,6 +178,5 @@ function finish2:ontouch(touch_entity)
          end
 end
 --------------------
-
 
          

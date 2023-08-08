@@ -4,7 +4,6 @@
 -- Basic functional hide and seek gameplay Lua
 ------------------------------------------------------
 
-
 -- Entity names used in map:
 
 -- Spawns  (Spawns, possibly.)
@@ -16,11 +15,9 @@
 -- Button  (The button that the hiders can press to release those already captured)
 --	  | captured_door_button |
 
-
 -----------------------------------------------------------------------------
 -- Variables
 -----------------------------------------------------------------------------
-
 
 -- all in seconds. The TIME_PER_ROUND value is a total count for each round, 
 -- not added on to the setup time of the first two values.
@@ -39,7 +36,6 @@ SEEKERS_TEAMNAME = "Seekers"
 -- Maximum Seekers allowed. This setting will really depend on the size of the map - less seekers for smaller maps, and so on.
 MAX_SEEKERS = 5
 
-
 -----------------------------------------------------------------------------
 -- Constants - DO NOT CHANGE!
 -----------------------------------------------------------------------------
@@ -52,7 +48,6 @@ captured = Collection()
 -- used mostly so that the seekers don't win if someone switches team in the setup phase.
 -- 1: setup | 2: game on
 phase = 1
-
 
 -----------------------------------------------------------------------------
 -- includes
@@ -101,7 +96,6 @@ function startup()
 	SetTeamName( HIDERS, HIDERS_TEAMNAME )
 	SetTeamName( SEEKERS, SEEKERS_TEAMNAME )
 
-
 	--Schedule Time!
 	AddSchedule( "hider_door_open", TIME_TO_RELEASE_HIDERS, open_scheduled_door, "hider_door")
 	AddSchedule( "seeker_door_open", TIME_TO_RELEASE_SEEKERS, open_scheduled_door, "seeker_door")
@@ -139,7 +133,6 @@ end
 -- handlers
 -----------------------------------------------------------------------------
 
-
 -- Everyone to spawns with everything
 function player_spawn( player_entity )
 	-- 400 for overkill. of course the values
@@ -160,11 +153,9 @@ function player_spawn( player_entity )
 	player:RemoveAmmo( Ammo.kGren2, 4 )
 	player:RemoveAmmo( Ammo.kGren1, 4 )
 
-
 	update_count()
 
 end
-
 
 -- seekers are invincible
 function player_ondamage( player, damageinfo )
@@ -174,7 +165,6 @@ function player_ondamage( player, damageinfo )
 		return 
   	end
 end
-
 
 function player_killed( player_entity, damageinfo )
 
@@ -217,7 +207,6 @@ function player_switchteam( player, old, new )
 end
 
 
-
 -- Updates the HUD/Objective icon on player connect. Else wouldn't update until next Hill change.
 function flaginfo (player_entity)
 
@@ -228,7 +217,6 @@ function flaginfo (player_entity)
 
 end
 
-
 -----------------------------------------------------------------------------
 -- spawns
 -----------------------------------------------------------------------------
@@ -236,7 +224,6 @@ end
 seeker_spawn = info_ff_teamspawn:new({ validspawn = function(self,player)
 	return player:GetTeamId() == SEEKERS
 end })
-
 
 hider_spawn = info_ff_teamspawn:new({ validspawn = function(self,player)
 	if player:GetTeamId() == HIDERS and captured:HasItem(player) == false then
@@ -253,7 +240,6 @@ captured_spawn = info_ff_teamspawn:new({ validspawn = function(self,player)
 		return EVENT_DISALLOWED
 	end
 end })
-
 
 
 -----------------------------------------------------------------------------
@@ -285,17 +271,14 @@ function captured_door_button:allowed( allowed_entity )
 end
 
 
-
 function update_count()
 
 	RemoveHudItemFromAll("captured_count")
 	RemoveHudItemFromAll("free_count")
 
-
 	AddHudTextToAll("captured_count", tostring( captured:Count() ), 24, 42, 2)
 	AddHudTextToAll("free_count", tostring( GetTeam(HIDERS):GetNumPlayers() - captured:Count() ), 24, 42, 3)
 end
-
 
 -----------------------------------------------------------------------------
 -- scedules

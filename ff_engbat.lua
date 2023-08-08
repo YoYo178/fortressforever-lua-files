@@ -7,7 +7,6 @@ IncludeScript("base_ctf")
 IncludeScript("base_teamplay")
 IncludeScript("backpack")
 
-
 function startup()
       
 	SetPlayerLimit(Team.kBlue, 0)

@@ -10,7 +10,6 @@ local FULL_GAME = false
 local function_table = { player_disconnected = player_disconnected, player_switchteam = player_switchteam, startup = startup }
 function_table.baseflag = { touch = baseflag.touch }
 
-
 -- Functions --
 function startup()
 	if type(function_table.startup) == "function" then

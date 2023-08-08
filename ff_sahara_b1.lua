@@ -163,7 +163,6 @@ blue_laser_hurt = hurt:new({ team = Team.kRed })
 -- end
 
 
-
 -------------------------
 -- flaginfo
 -------------------------

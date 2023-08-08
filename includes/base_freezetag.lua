@@ -498,7 +498,6 @@ end
 -- detect touches
 --------------------------------
 
-
 -- conc tag arena
 arena = trigger_ff_script:new({})
 

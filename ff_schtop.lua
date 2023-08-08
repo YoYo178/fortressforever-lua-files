@@ -39,7 +39,6 @@ location_red_spawn		= location_info:new({ text = "Team Respawn", team = Team.kRe
 
 location_yard			= location_info:new({ text = "Yard", team = Team.kUnassigned })
 
-
 -----------------------------------------------------------------------------
 -- TOUCH RESUP
 -- Brush volume which gives players health, ammo, etc...

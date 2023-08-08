@@ -15,7 +15,6 @@ IncludeScript("base_location");
 POINTS_PER_CAPTURE = 10;
 FLAG_RETURN_TIME = 60;
 
-
 -----------------------------------------------------------------------------
 -- siden resupply
 -----------------------------------------------------------------------------
@@ -101,7 +100,6 @@ end
 
 blue_sidenpack, blue_sidengrepack = siden_build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kBlue})
 red_sidenpack, red_sidengrepack = siden_build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kRed})
-
 
 -----------------------------------------------------------------------------
 -- 

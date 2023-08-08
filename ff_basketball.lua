@@ -2,9 +2,7 @@ IncludeScript("base_fortball_default")
 IncludeScript("base_fortball")
 
 
-
 function startup()
-
 
 
 	-- disable certain teams
@@ -73,11 +71,9 @@ function player_spawn(player_entity)
 	UpdateObjectiveIcon( player, objective_entities[player:GetTeamId()] )
 end
 
-
 function player_onconc(player_entity, effector_entity)
 	return false
 end
-
 
 -- base_fortball.lua
 
@@ -106,7 +102,6 @@ function precache()
 	--PrecacheSound( goalie_sound_pain )
 	--PrecacheSound( goalie_sound_kill )
 end
-
 
 
 function the_wall_reset()
@@ -191,7 +186,6 @@ function reset_ball_carrier()
 	end
 	ball_carrier = nil
 end
-
 
 
 function player_onkill( player )
@@ -285,7 +279,6 @@ function player_ondamage( player, damageinfo )
 
 	end
 end
-
 
 -----------------------------------------------------------------------------
 -- ball information
@@ -518,7 +511,6 @@ ball = base_ball:new({
 
 
 
-
 -- generic goal
 base_goal = trigger_ff_script:new({
 	health = 100,
@@ -593,7 +585,6 @@ red_goal = base_goal:new({ item = "ball", team = TEAM1 })
 
 
 
-
 -- respawns a goalie
 base_goalie_respawner = trigger_ff_script:new({ team = Team.kUnassigned })
 
@@ -613,7 +604,6 @@ end
 -- goalie respawner
 blue_goalie_respawner = base_goalie_respawner:new({ team = TEAM1 })
 red_goalie_respawner = base_goalie_respawner:new({ team = TEAM2 })
-
 
 
 
@@ -674,7 +664,6 @@ redspawn_goalie = { validspawn = function(self,player) return player:GetTeamId()
 bluespawn_sniper = { validspawn = function(self,player) return player:GetTeamId() == TEAM1 and player:GetClass() == Player.kSniper end }
 redspawn_sniper = { validspawn = function(self,player) return player:GetTeamId() == TEAM2 and player:GetClass() == Player.kSniper end }
 
-
 -----------------------------------------------------------------------------
 -- unique fortball locations
 -----------------------------------------------------------------------------
@@ -694,6 +683,5 @@ location_rainy_sky = location_info:new({ text = "Rainy Sky", team = Team.kUnassi
 location_death_hills = location_info:new({ text = "Death Hills", team = Team.kUnassigned })
 location_sideroom1 = location_info:new({ text = "Side Room 1", team = Team.kUnassigned })
 location_sideroom2 = location_info:new({ text = "Side Room 2", team = Team.kUnassigned })
-
 
 

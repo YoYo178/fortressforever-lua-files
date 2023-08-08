@@ -64,7 +64,6 @@ location_jump7 = location_info:new({ text = "Jump 7", team = NO_TEAM })
 -- Jump 8 Location
 location_jump8 = location_info:new({ text = "Jump 8", team = NO_TEAM })
 
-
 -- Disable conc effect
 function player_onconc( player_entity, concer_entity )
 	return EVENT_DISALLOWED

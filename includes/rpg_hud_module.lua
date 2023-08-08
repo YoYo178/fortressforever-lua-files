@@ -20,7 +20,6 @@ function hud_module.UpdateAll(player)
 		local bar_width = current_level	* max_width / next_level
 		-- Hide if at zero XP
 
-
 		--Level bar
         AddHudBox(playerID, "hud_box", 164, 462, 128, 16, hud_color, hud_border_color, 16, 0)
         AddHudBox(playerID, "hud_bar", 165, 463, bar_width, 14, hud_bar_color, 16, 0)

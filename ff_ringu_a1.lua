@@ -11,7 +11,6 @@ IncludeScript("base_shutdown");
 IncludeScript("base_location");
 IncludeScript("base_teamplay");
 
-
 -----------------------------------------------------------------------------
 -- global overrides
 -----------------------------------------------------------------------------
@@ -138,5 +137,4 @@ blue_healthkit, blue_armorkit, blue_ammobackpack, blue_bigpack, blue_grenadeback
 red_healthkit, red_armorkit, red_ammobackpack, red_bigpack ,red_grenadebackpack, red_aardvarkpack = build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kRed})
 yellow_healthkit, yellow_armorkit, yellow_ammobackpack, yellow_bigpack, yellow_grenadebackpack, yellow_aardvarkpack = build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kYellow})
 green_healthkit, green_armorkit, green_ammobackpack, green_bigpack, green_grenadebackpack, green_aardvarkpack = build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kGreen})
-
 

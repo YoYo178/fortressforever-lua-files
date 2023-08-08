@@ -69,7 +69,6 @@ function player_spawn( player_entity )
         
 end
 
-
 -------------------------
 --Team points for kills--
 -------------------------

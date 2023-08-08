@@ -11,7 +11,6 @@ IncludeScript("base_ctf");
 -- global overrides
 -----------------------------------------------------------------------------
 
-
 POINTS_PER_CAPTURE = 10
 FLAG_RETURN_TIME = 60
 

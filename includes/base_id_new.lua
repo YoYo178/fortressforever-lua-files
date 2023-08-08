@@ -391,7 +391,6 @@ end
 backpack_attackers = idbackpack:new({team = attackers})
 backpack_defenders = idbackpack:new({team = defenders})
 
-
 -----------------------------------------
 -- base flag
 -----------------------------------------
@@ -517,7 +516,6 @@ function base_id_cap:oncapture(player, item)
 		end
 	end
 					
-
 
 	--Team gets points for time left on the clock. 
 	local team = player:GetTeam()
@@ -821,7 +819,6 @@ function forceRoundWarn1()
 	SpeakAll("AD_1SEC")
 end
 
-
 function round_30secwarn()
 	BroadCastMessage("#FF_ROUND_30SECWARN")
 end
@@ -848,7 +845,6 @@ function round_1secwarn()
 	BroadCastMessage("1")
 	SpeakAll("AD_1SEC")
 end
-
 
 function flag_start(flagname)
 	BroadCastMessage("#AD_FlagAtBase")
@@ -879,7 +875,6 @@ function flag_start(flagname)
 	AddSchedule("forceRoundWarn2", CAP_TIME_LIMIT-2, forceRoundWarn2)   
 	AddSchedule("forceRoundWarn1", CAP_TIME_LIMIT-1, forceRoundWarn1)
 
-
 	-- change objective icon
 	ATTACKERS_OBJECTIVE_ENTITY = flag
 	if DEFENDERS_OBJECTIVE_ONFLAG then DEFENDERS_OBJECTIVE_ENTITY = flag end
@@ -889,7 +884,6 @@ function flag_start(flagname)
 end
 function flag_30secwarn() BroadCastMessage("#AD_30SecReturn") end
 function flag_10secwarn() BroadCastMessage("#AD_10SecReturn") end
-
 
 function timer_schedule()
 	current_timer = current_timer -1
@@ -1160,7 +1154,6 @@ function update_hud()
 		AddHudTimerToAll("flag_tobase_timer", current_timer, -1, text_hudstatusx, text_hudstatusy+8, text_hudstatusalign, 0, 3)
 		AddHudIconToAll(hudstatusicontobase, ( "cp_flag_h" ), flag_hudstatusiconx, flag_hudstatusicony, flag_hudstatusiconw, flag_hudstatusiconh, flag_hudstatusiconalign )
 	end
-
 
 	RemoveHudItemFromAll( "Zone_Team"..attackers )
 	RemoveHudItemFromAll( "Zone_Team"..defenders )

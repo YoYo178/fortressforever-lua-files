@@ -54,7 +54,6 @@ IncludeScript("base_teamplay");
 --	return triggerresult
 --end
 
-
 --blue_customflagcap = customflagcap:new({ team = Team.kBlue, rmpflag = red_flag })
 --red_customflagcap = customflagcap:new({ team = Team.kRed, rmpflag = blue_flag })
 

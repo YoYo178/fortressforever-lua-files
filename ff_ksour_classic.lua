@@ -249,7 +249,6 @@ function schedulesound( sound )
 	BroadCastSound( sound )
 end
 
-
 function schedulecountdown( time )
 	BroadCastMessage( ""..time.."" )
 	SpeakAll( "AD_" .. time .. "SEC" )
@@ -311,5 +310,4 @@ end
 -- Don't want any body touching/triggering it except the detpack
 function trigger_detpackable_door:allowed( trigger_entity ) return EVENT_DISALLOWED 
 end
-
 

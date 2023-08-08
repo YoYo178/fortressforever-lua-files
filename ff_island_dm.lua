@@ -1,7 +1,6 @@
 
 -- ff_island_dm.lua
 
-
 -----------------------------------------------------------------------------
 -- includes
 -----------------------------------------------------------------------------
@@ -23,7 +22,6 @@ end
 function precache()
 	PrecacheSound( "Backpack.Touch" )
 end
-
 
 
 -- Everyone to spawns with everything
@@ -102,7 +100,6 @@ function fullpack :dropatspawn() return false end
 
 red_fullpack = fullpack:new({ touchflags = {AllowFlags.kRed} })
 blue_fullpack = fullpack:new({ touchflags = {AllowFlags.kBlue} })
-
 
 
 ---------------------------------

@@ -30,7 +30,6 @@ PYRO = 0
 -- Disable/Enable Invunerability
 INVUL = 1
 
-
 ---------------------------------
 -- DO NOT CHANGE THESE
 ---------------------------------
@@ -38,7 +37,6 @@ reached_end = 0
 CONC_FREESTYLE = 0
 CONC_RACE = 1
 ---------------------------------
-
 
 function startup()
 
@@ -93,7 +91,6 @@ function ShouldEnableClass( team, classtype, class )
 	end
 end
 
-
 -----------------------------------------------------------------------------
 -- Invul Check
 -----------------------------------------------------------------------------
@@ -105,19 +102,14 @@ function player_ondamage( player, damageinfo )
 	end
 end
 
-
 -----------------------------------------------------------------------------
 -- Concussion Check
 -----------------------------------------------------------------------------
 function player_onconc( player_entity, concer_entity )
 
-	if CONC_EFFECT == 0 then
-		return EVENT_DISALLOWED
-	end
-
+	if CONC_EFFECT == 0 then return EVENT_DISALLOWED end
 	return EVENT_ALLOWED
 end
-
 
 -----------------------------------------------------------------------------
 -- Ammo Check
@@ -143,7 +135,6 @@ function player_spawn( player_entity )
 
 end
 
-
 -----------------------------------------------------------------------------
 -- Precache Sounds
 -----------------------------------------------------------------------------
@@ -152,7 +143,6 @@ function precache()
 	PrecacheSound("yourteam.flagcap")
 	PrecacheSound("misc.doop")
 end
-
 
 -----------------------------------------------------------------------------
 -- Conc Backpack
@@ -214,7 +204,6 @@ function concbackpack:materialize( )
 	entity:EmitSound(self.materializesound)
 end
 
-
 -----------------------------------------------------------------------------
 -- Health Backpack
 -----------------------------------------------------------------------------
@@ -230,7 +219,6 @@ healthbackpack = concbackpack:new({
 	touchsound = "ArmorKit.Touch",
 	touchflags = {AllowFlags.kOnlyPlayers,AllowFlags.kBlue, AllowFlags.kRed, AllowFlags.kYellow, AllowFlags.kGreen}
 })
-
 
 -----------------------------------------------------------------------------
 -- End Zone Entity
@@ -277,7 +265,6 @@ end
 function RestartPlayer( player )
 	ApplyToPlayer( player, { AT.kRemovePacks, AT.kRemoveProjectiles, AT.kRespawnPlayers, AT.kRemoveBuildables, AT.kRemoveRagdolls, AT.kStopPrimedGrens })
 end
-
 
 -----------------------------------------------------------------------------
 -- Conc Trigger (Gives Ammo, Grenades, HP and ARMOR)

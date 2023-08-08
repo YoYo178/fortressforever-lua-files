@@ -117,7 +117,6 @@ red_clip = clip_brush:new({ clipflags = {ClipFlags.kClipPlayersByTeam, ClipFlags
 blue_clip = clip_brush:new({ clipflags = {ClipFlags.kClipPlayersByTeam, ClipFlags.kClipTeamRed, ClipFlags.kClipAllNonPlayers} })
 
 
-
 -----------------------------------------------------------------------------
 -- custom packs
 -----------------------------------------------------------------------------

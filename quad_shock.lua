@@ -22,10 +22,7 @@ CONC_EFFECT = 0
 
 function player_onconc( player_entity, concer_entity )
 
-	if CONC_EFFECT == 0 then
-		return EVENT_DISALLOWED
-	end
-
+	if CONC_EFFECT == 0 then return EVENT_DISALLOWED end
 	return EVENT_ALLOWED
 end
 
@@ -189,7 +186,6 @@ location_stage16 = location_info:new({ text = "The End", team = NO_TEAM })
 --Finish Zones
 --------------------
 
-
 finish = trigger_ff_script:new({})
 
 function finish:ontouch(touch_entity)
@@ -216,9 +212,7 @@ end
 --FLAGS -- taken from Concmap.lua by Public_Slots_Free
 ------------------------------------------------------
 
-
 local flags = {"red_flag", "blue_flag", "green_flag", "yellow_flag", "red_flag2", "blue_flag2", "green_flag2", "yellow_flag2"}
-
 
 -----------------------------------------------------------------------------
 -- entities
@@ -421,11 +415,9 @@ function baseflag:touch( touch_entity )
 		self.status = 1
 end
 
-
 function baseflag:dropitemcmd( owner_entity )
 
 end
-
 
 function restock_all()
 	local c = Collection()

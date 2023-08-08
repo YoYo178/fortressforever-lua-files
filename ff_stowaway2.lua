@@ -16,7 +16,6 @@ POINTS_PER_CAPTURE = 10;
 FLAG_RETURN_TIME = 60;
 
 
-
 -----------------------------------------------------------------------------
 -- doors
 -----------------------------------------------------------------------------
@@ -38,7 +37,6 @@ function blue_tri_door2:ontrigger( touch_entity )
    end 
 end 
 
-
 blue_tri_door1 = trigger_ff_script:new({ team = Team.kBlue }) 
 
 function blue_tri_door1:allowed( touch_entity ) 
@@ -55,7 +53,6 @@ function blue_tri_door1:ontrigger( touch_entity )
       OutputEvent("blue_door_1", "Open") 
    end 
 end 
-
 
 ---
 
@@ -76,7 +73,6 @@ function red_tri_door2:ontrigger( touch_entity )
    end 
 end 
 
-
 red_tri_door1 = trigger_ff_script:new({ team = Team.kRed }) 
 
 function red_tri_door1:allowed( touch_entity ) 
@@ -95,11 +91,9 @@ function red_tri_door1:ontrigger( touch_entity )
 end 
 
 
-
 -----------------------------------------------------------------------------
 -- locations
 -----------------------------------------------------------------------------
-
 
 
 loc_upper_resup_blue = location_info:new({ text = "upper resup", team = Team.kBlue })
@@ -117,7 +111,6 @@ loc_fr_red = location_info:new({ text = "flag room", team = Team.kRed })
 ------------------------------------------------------------------------------
 -- fr backpacks
 ------------------------------------------------------------------------------
-
 
 bigpack2 = genericbackpack:new({
 	health = 40,
@@ -159,7 +152,6 @@ green_healthkit, green_armorkit, green_ammobackpack, green_bigpack, green_grenad
 -----------------------------------------------------------------------------
 
 
-
 blue_wall_trigger = trigger_ff_script:new({ })
 
 function blue_wall_trigger:onexplode( trigger_entity  ) 
@@ -185,5 +177,4 @@ function red_wall_trigger:onexplode( trigger_entity  )
 end
 function red_wall_trigger:allowed( trigger_entity ) return EVENT_DISALLOWED 
 end
-
 

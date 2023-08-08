@@ -14,7 +14,6 @@ function startup()
 	team = GetTeam(Team.kRed)
 	team:SetClassLimit(Player.kSniper, -1)
 
-
 	-- Because its so small scouts have a 
 	-- field day, so are not included either
 
@@ -23,7 +22,6 @@ function startup()
 
 	team = GetTeam(Team.kRed)
 	team:SetClassLimit(Player.kScout, -1)
-
 
 	-- CTF maps generally don't have civilians
 
@@ -42,7 +40,6 @@ function startup()
 	SetPlayerLimit(Team.kGreen, -1)
 
 end
-
 
 -----------------------------------------------------------------------------
 -- Players Spawn with Full Health/Armor/Ammo

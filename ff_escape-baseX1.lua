@@ -15,9 +15,6 @@ IncludeScript("base_respawnturret");
 
 
 
-
-
-
 function startup()
 
  
@@ -47,10 +44,7 @@ function startup()
 	team:SetClassLimit( Player.kCivilian, 0 )
 
 
-
 end
-
-
 
 
 

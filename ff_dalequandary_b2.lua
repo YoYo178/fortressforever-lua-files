@@ -59,7 +59,6 @@ red_pack = genericbackpack:new({
 
 function red_pack:dropatspawn() return false end
 
-
 blue_pack = genericbackpack:new({
 	grenades = 100,
 	bullets = 100,

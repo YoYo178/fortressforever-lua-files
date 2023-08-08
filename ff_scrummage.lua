@@ -10,16 +10,13 @@
 -- 
 -- [sp_ctr_1 + sp_ctr_2], [sp_red_1 + sp_red_2], [sp_blue_1 + sp_blue_2]
 
-
 -- team-owned scrummage capture points [trigger_ff_script - brush entities]:
 -- 
 -- scrum_red, scrum_blue
 
-
 -- team-owned teleporters [trigger_teleport - brush entities] - _ctr versions require ownership of central arena to work:
 --
 -- blue_teleporter, red_teleporter, blue_teleporter_ctr, red_teleporter_ctr
-
 
 -- warning triggers [trigger_ff_script - brush entities]
 --
@@ -28,7 +25,6 @@
 -- infinite bags - brush based so needs a model or something to show it's there [trigger_ff_script - brush entities]
 --
 -- red_infini_bag, blue_infini_bag, centre_infini_bag
-
 
 -- ADDITIONAL INFORMATION
 -- There must be at least one "genericbackpack" based info_ff_script entity placed in your map for this to work.
@@ -40,7 +36,6 @@
 -- includes
 -----------------------------------------------------------------------------
 IncludeScript("base_teamplay")
-
 
 -----------------------------------------------------------------------------
 -- Global Variables
@@ -59,7 +54,6 @@ MESSAGE_BLUE1 = "Calling teammate to UPPER BLUE Arena!"
 MESSAGE_BLUE2 = "Calling teammate to LOWER BLUE Arena!"
 
 MESSAGE_CENTRE = "Calling teammate to CENTRAL Arena!"
-
 
 local scrummage_state = {
 	["sp_ctr_1"] = { population = Collection(), message = MESSAGE_CENTRE, textcol = Color.kYellow, sound = "scrum.tnacen" },
@@ -94,10 +88,8 @@ local icons = {
 	[Team.kUnassigned] = { teamicon = "hud_cp_neutral.vtf" }
 }
 
-
 -- used so that the scrum cap can't be triggered multiple times during the round reset delay.
 local win_state = false
-
 
 -----------------------------------------------------------------------------
 -- Entity Definitions
@@ -119,13 +111,11 @@ sp_red_2 = base_scrum_pair:new({ name = "sp_red_2", partner = "sp_red_1", pair =
 sp_blue_1 = base_scrum_pair:new({ name = "sp_blue_1", partner = "sp_blue_2", pair = "blue", period_red = 15, period_blue = 30, period_takeover_red = 20, period_takeover_blue = 0 })
 sp_blue_2 = base_scrum_pair:new({ name = "sp_blue_2", partner = "sp_blue_1", pair = "blue", period_red = 15, period_blue = 30, period_takeover_red = 20, period_takeover_blue = 0 })
 
-
 -- base_scrum_cap is used only for the single caps in each base.
 base_scrum_cap = trigger_ff_script:new({ team = Team.kUnassigned })
 
 scrum_red = base_scrum_cap:new({ team = Team.kRed })
 scrum_blue = base_scrum_cap:new({ team = Team.kBlue })
-
 
 -- team-based teleporters. Uses trigger_teleport in-map.
 -- _ctr versions require ownership of the central arena to work
@@ -137,7 +127,6 @@ red_teleporter = base_teleporter:new({ team = Team.kRed, pair_req = "red_base" }
 blue_teleporter_ctr = base_teleporter:new({ team = Team.kBlue, pair_req = "centre" })
 red_teleporter_ctr = base_teleporter:new({ team = Team.kRed, pair_req = "centre" })
 
-
 -- warning trigger for scrummage button - triggers when someone of the opposite team touches it.
 
 base_warning_trigger = trigger_ff_script:new({ team = Team.kUnassigned, warntext = "" })
@@ -145,14 +134,12 @@ base_warning_trigger = trigger_ff_script:new({ team = Team.kUnassigned, warntext
 blue_warning = base_warning_trigger:new({ team = Team.kBlue, warntext = "BLUE base is under threat!", textcol = Color.kBlue })
 red_warning = base_warning_trigger:new({ team = Team.kRed, warntext = "RED base is under threat!", textcol = Color.kRed })
 
-
 -- Infinite bag, stolen from ff_dm
 infini_bag = trigger_ff_script:new({ touchsound = "Backpack.Touch" })
 
 centre_infini_bag = infini_bag:new({ arena = "centre" })
 red_infini_bag = infini_bag:new({ arena = "red" })
 blue_infini_bag = infini_bag:new({ arena = "blue" })
-
 
 
 -----------------------------------------------------------------------------
@@ -178,11 +165,9 @@ function startup()
 
 end
 
-
 -----------------------------------------------------------------------------
 -- Entity-based functions
 -----------------------------------------------------------------------------
-
 
 function genericbackpack:precache( )
 	-- precache sounds
@@ -207,11 +192,9 @@ function genericbackpack:precache( )
 end
 
 
-
 -----
 -- base_scrum_pair
 -----
-
 
 function base_scrum_pair:ontouch( touch_entity )
 
@@ -260,7 +243,6 @@ function base_scrum_pair:ontouch( touch_entity )
 	end
 end
 
-
 function base_scrum_pair:onendtouch( touch_entity )
 
 	-- removes the player from the population collection
@@ -271,13 +253,11 @@ function base_scrum_pair:onendtouch( touch_entity )
 	end
 end
 
-
 function base_scrum_pair:oncapture( team, takeover )
 
 	SmartTeamMessage( GetTeam(team), "Arena Captured!", "Enemy Team captures Arena!", scrummage_state[self.name].textcol, scrummage_state[self.name].textcol)
 	pair_state[self.pair].controlling_team = team
 	SmartTeamSound( GetTeam(team), "misc.doop", "otherteam.flagstolen")
-
 
 		
 	-- Quick, hacky way of doing this, but fuck it :/
@@ -304,7 +284,6 @@ function base_scrum_pair:oncapture( team, takeover )
 		end
 	end
 
-
 	
 
 	RemoveHudItemFromAll( self.pair .. "-icon")
@@ -313,14 +292,11 @@ function base_scrum_pair:oncapture( team, takeover )
 
 end
 
-
 -----
 -- base_scrum_cap
 -----
 
-
 function base_scrum_cap:ontouch( touch_entity )
-
 
 	if win_state ~= true then
 
@@ -339,7 +315,6 @@ function base_scrum_cap:ontouch( touch_entity )
 	end
 end
 
-
 function base_scrum_cap:oncapture(team)
 
 	SmartTeamSound( team, "yourteam.flagcap", "otherteam.flagcap")
@@ -355,11 +330,9 @@ function base_scrum_cap:oncapture(team)
 	win_state = true
 end
 
-
 -----
 -- base_warning_trigger
 -----
-
 
 function base_warning_trigger:ontouch( touch_entity )
 	
@@ -382,11 +355,9 @@ function base_warning_trigger:ontouch( touch_entity )
 
 end
 
-
 -----
 -- base_teleporter
 -----
-
 
 function base_teleporter:allowed( allowed_entity )
 	if IsPlayer( allowed_entity ) then
@@ -400,11 +371,9 @@ function base_teleporter:allowed( allowed_entity )
 	return EVENT_DISALLOWED
 end
 
-
 -----
 -- infini_bag
 -----
-
 
 function infini_bag:ontouch( touch_entity )
 	if IsPlayer( touch_entity ) then
@@ -431,7 +400,6 @@ function infini_bag:ontouch( touch_entity )
 	end
 end
 
-
 function infini_bag:allowed( allowed_entity )
 -- teamchecking stuff
 	if IsPlayer( allowed_entity ) then
@@ -442,11 +410,9 @@ function infini_bag:allowed( allowed_entity )
 	return false
 end
 
-
 -----------------------------------------------------------------------------
 -- Regular functions
 -----------------------------------------------------------------------------
-
 
 function determine_total_control (team)
 	
@@ -457,7 +423,6 @@ function determine_total_control (team)
 		return false
 	end
 end
-
 
 function check_pair_state(paired_scrumpad, team)
 
@@ -478,7 +443,6 @@ function check_pair_state(paired_scrumpad, team)
 
 end
 
-
 -----------------------------------------------------------------------------
 -- Flaginfo function
 -----------------------------------------------------------------------------
@@ -494,11 +458,9 @@ function flaginfo( player_entity )
 
 end
 
-
 -----------------------------------------------------------------------------
 -- Scheduled functions
 -----------------------------------------------------------------------------
-
 
 function round_reset()
 
@@ -526,7 +488,6 @@ function round_reset()
 	AddHudIconToAll( icons[ pair_state["red"].controlling_team ].teamicon , pair_state["red"].arena .. "-icon", pair_state["red"].controlling_team.hudposx, pair_state["red"].controlling_team.hudposy, pair_state["red"].controlling_team.hudwidth, pair_state["red"].controlling_team.hudheight, pair_state["red"].controlling_team.hudalign)
 	AddHudIconToAll( icons[ pair_state["centre"].controlling_team ].teamicon , pair_state["centre"].arena .. "-icon", pair_state["centre"].controlling_team.hudposx, pair_state["centre"].controlling_team.hudposy, pair_state["centre"].controlling_team.hudwidth, pair_state["centre"].controlling_team.hudheight, pair_state["centre"].controlling_team.hudalign)
 end
-
 
 function warning_reactivate( id )
 

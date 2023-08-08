@@ -8,7 +8,6 @@ IncludeScript("base_location");
 POINTS_PER_CAPTURE = 10;
 FLAG_RETURN_TIME = 60
 
-
 -----------------------------------------------------------------------------
 -- startup 
 -----------------------------------------------------------------------------
@@ -78,7 +77,6 @@ red_resup = aardvarkresup:new({ team = Team.kRed })
 -----------------------------------------------------------------------------
 
 KILL_KILL_KILL = trigger_ff_script:new({ team = Team.kUnassigned })
-
 
 function KILL_KILL_KILL:allowed( activator )
 	local player = CastToPlayer( activator )

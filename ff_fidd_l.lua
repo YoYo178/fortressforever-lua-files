@@ -286,7 +286,6 @@ clip_brush = trigger_ff_clip:new({ clipflags = 0 })
 red_clip = clip_brush:new({ clipflags = {ClipFlags.kClipPlayers, ClipFlags.kClipTeamBlue} })
 blue_clip = clip_brush:new({ clipflags = {ClipFlags.kClipPlayers, ClipFlags.kClipTeamRed} })
 
-
 -----------------------------------------------------------------------------
 -- touch resupply
 -----------------------------------------------------------------------------

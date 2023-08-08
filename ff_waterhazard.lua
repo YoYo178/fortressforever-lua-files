@@ -10,7 +10,6 @@
 -- Clean up everything/make sure all cz2 code thats not needed is removed
 ------------------------------------------------
 
-
 -----------------------------------------------------------------------------
 -- includes
 -----------------------------------------------------------------------------
@@ -28,7 +27,6 @@ POINTS_FOR_COMPLETE_CONTROL = 30
 FORTPOINTS_FOR_COMPLETE_CONTROL = 1000
 FORTPOINTS_FOR_CAP = 200
 
-
 -- Other Globals (Initial round delay used only for first round, give people time to log in)
 
 INITIAL_ROUND_DELAY = 45
@@ -38,7 +36,6 @@ NORMAL_ROUND_DELAY = 30
 -- Counters for spawn validty
 cp_blue = 1
 cp_red = 5
-
 
 -- A global table for storing some team info
 team_info = {
@@ -86,7 +83,6 @@ icons = {
 	[Team.kUnassigned] = { teamicon = "hud_cp_neutral.vtf", disabled = "hud_disabled.vtf" }
 }
 
-
 function startup()
 
 	-- set up team limits
@@ -105,7 +101,6 @@ function startup()
 	team:SetClassLimit( Player.kEngineer, 0 )
 	team:SetClassLimit( Player.kCivilian, -1 )
 
-
 	local team = GetTeam(Team.kRed)
 	team:SetClassLimit( Player.kScout, 0 )
 	team:SetClassLimit( Player.kSniper, 0 )
@@ -117,7 +112,6 @@ function startup()
 	team:SetClassLimit( Player.kSpy, 0 )
 	team:SetClassLimit( Player.kEngineer, 0 )
 	team:SetClassLimit( Player.kCivilian, -1 )
-
 
 	-- Reset all command points
 	command_point_one:ChangeControllingTeam(Team.kBlue)
@@ -139,7 +133,6 @@ function precache()
 	PrecacheSound("otherteam.flagcap")
 	PrecacheSound("otherteam.flagstolen")
 
-
 	PrecacheSound("misc.bizwarn")
 	PrecacheSound("misc.bloop")
 	PrecacheSound("misc.buzwarn")
@@ -153,7 +146,6 @@ function precache()
 	-- Unagi Power!  Unagi!
 	PrecacheSound("misc.unagi")
 
-
 end
 
 -----------------------------------------------------------------------------
@@ -165,9 +157,7 @@ function complete_control_notification ( player )
 	SmartSound(player, "yourteam.flagcap", "yourteam.flagcap", "otherteam.flagcap")
 	SmartMessage(player, "Your team captured ALL Command Points!", "Your team captured ALL Command Points!", "The enemy team captured ALL Command Points!")
 
-
 end
-
 
 base_team_trigger = trigger_ff_script:new({ team = Team.kUnassigned, failtouch_message = "" })
 
@@ -190,7 +180,6 @@ end
 
 blue_door_trigger = base_team_trigger:new({ team = Team.kBlue , failtouch_message = "#FF_NOTALLOWEDDOOR" })
 red_door_trigger = base_team_trigger:new({ team = Team.kRed , failtouch_message = "#FF_NOTALLOWEDDOOR" })
-
 
 
 -----------------------------------------------------------------------------
@@ -219,15 +208,12 @@ function base_cp_trigger:ontrigger( trigger_entity )
 		local player = CastToPlayer( trigger_entity )
 		local cp = command_points[self.cp_number]
 
-
 		local new_controlling_team = player:GetTeamId()
 		local old_controlling_team = cp.controlling_team
 		local team = GetTeam(new_controlling_team)
 
-
 		-- No capping if player's team already controls this CP
 		if player:GetTeamId() == cp.controlling_team then return end
-
 
 		-- No Capping if team doesn't own preceeding point
 		if new_controlling_team == Team.kBlue then
@@ -238,10 +224,8 @@ function base_cp_trigger:ontrigger( trigger_entity )
 			if command_points[last_red_cp].controlling_team ~= new_controlling_team then return end
 		end
 
-
 		-- No Capping if disabled due to recent capture
 		if cp.disable_capture == 1 then return end
-
 
 		-- Find out if any team has complete control
 		local team_with_complete_control = Team.kUnassigned
@@ -295,12 +279,10 @@ function base_cp_trigger:ontrigger( trigger_entity )
 			-- Give points to player for single cap
 			player:AddFortPoints(FORTPOINTS_FOR_CAP, "Captured CP" .. self.cp_number)
 
-
 			-- Set new owning team, change spawn validity, then disable capture for a bit
 			self:ChangeControllingTeam(new_controlling_team, old_controlling_team)
 			cp.disable_capture = 1
 			AddSchedule ("cp" .. self.cp_number .. "_reenable", RECAPTURE_DELAY, cp_reenable, cp, new_controlling_team)
-
 
 			-- have to do messages here since player is here
 			-- could just pass player to ChangeControllingTeam, but fuck you
@@ -319,7 +301,6 @@ function base_cp_trigger:ontrigger( trigger_entity )
 			else
 				SmartSound(player, "misc.bloop", "misc.bloop", "misc.deeoo")
 			end
-
 
 		end
 
@@ -341,13 +322,11 @@ end
 
 function base_cp_trigger:ChangeControllingTeam( new_controlling_team, old_controlling_team )
 
-
 		-- Change the cap flag around
 		OutputEvent( "cp" .. self.cp_number .. "_flag", "Skin", team_info[new_controlling_team].skin )
 		OutputEvent( "cp" .. self.cp_number .. "_flag", team_info[new_controlling_team].flag_visibility)
 
 		local cp = command_points[self.cp_number]
-
 
 		-- remove old flaginfo icons and add new ones
 		RemoveHudItemFromAll( self.cp_number .. "-background-" .. cp.controlling_team )
@@ -361,7 +340,6 @@ function base_cp_trigger:ChangeControllingTeam( new_controlling_team, old_contro
 		if (new_controlling_team ~= Team.kUnassigned) then
 			AddHudIconToAll( icons[ new_controlling_team ].disabled, self.cp_number .. "-disabled-" .. new_controlling_team , cp.hudposx, cp.hudposy, cp.hudwidth, cp.hudheight, cp.hudalign)
 		end
-
 
 
 		-- Change valid spawns
@@ -379,18 +357,15 @@ function base_cp_trigger:ChangeControllingTeam( new_controlling_team, old_contro
 			end
 		end
 
-
 		cp.controlling_team = new_controlling_team
 
 end
-
 
 command_point_one = base_cp_trigger:new({ cp_number = 1 })
 command_point_two = base_cp_trigger:new({ cp_number = 2 })
 command_point_three = base_cp_trigger:new({ cp_number = 3 })
 command_point_four = base_cp_trigger:new({ cp_number = 4 })
 command_point_five = base_cp_trigger:new({ cp_number = 5 })
-
 
 
 -------------------------
@@ -421,7 +396,6 @@ function flaginfo( player_entity )
 	end
 end
 
-
 -------------------------------------------
 -- Door stuff
 -------------------------------------------
@@ -439,7 +413,6 @@ function round_start(doorname)
 end
 
 function round_10secwarn() BroadCastMessage("10 Seconds until round starts") end
-
 
 
 -------------------------------------------
@@ -460,7 +433,6 @@ redspawn_cp5 = base_red_spawn:new({cp=5})
 redspawn_cp4 = base_red_spawn:new({cp=4})
 redspawn_cp3 = base_red_spawn:new({cp=3})
 redspawn_cp2 = base_red_spawn:new({cp=2})
-
 
 --------------------------------------------
 --Grates
@@ -485,7 +457,6 @@ end
 
 red_grate_trigger = base_grate_trigger:new({ team = Team.kRed, team_name = "red" })
 blue_grate_trigger = base_grate_trigger:new({ team = Team.kBlue, team_name = "blue" })
-
 
 --------------------------------------------
 -- Custon Bags by the Mighty Mongoose

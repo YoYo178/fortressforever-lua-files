@@ -13,7 +13,6 @@ IncludeScript("base");
 IncludeScript("base_ctf");
 IncludeScript("base_location");
 
-
 -----------------------------------------------------------------------------
 -- aardvark security
 -----------------------------------------------------------------------------
@@ -81,7 +80,6 @@ function aardvarksecupblue()
 	RemoveHudItemFromAll( "blue-sec-down" )
 	AddHudIconToAll( "hud_secup_blue.vtf", "blue-sec-up", sec_iconx, sec_icony, sec_iconw, sec_iconh, 2 )
 end
-
 
 
 -----------------------------------------------------------------------------

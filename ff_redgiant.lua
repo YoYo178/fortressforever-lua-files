@@ -186,7 +186,6 @@ end
 -- Doors
 -----------------------------------------------------------------------------
 
-
 blue_door1_trigger = trigger_ff_script:new({ team = Team.kBlue }) 
 
 function blue_door1_trigger:allowed( touch_entity ) 
@@ -204,7 +203,6 @@ function blue_door1_trigger:ontrigger( touch_entity )
       OutputEvent("blue_door1_right", "Open") 
    end 
 end 
-
 
 blue_door2_trigger = trigger_ff_script:new({ team = Team.kBlue }) 
 
@@ -241,7 +239,6 @@ function red_door1_trigger:ontrigger( touch_entity )
       OutputEvent("red_door1_right", "Open") 
    end 
 end 
-
 
 red_door2_trigger = trigger_ff_script:new({ team = Team.kRed }) 
 

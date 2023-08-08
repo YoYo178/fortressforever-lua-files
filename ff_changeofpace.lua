@@ -238,4 +238,3 @@ blue_block = clip_brush:new({ clipflags = {ClipFlags.kClipPlayers, ClipFlags.kCl
 red_block = clip_brush:new({ clipflags = {ClipFlags.kClipPlayers, ClipFlags.kClipTeamRed} })
 
 
-

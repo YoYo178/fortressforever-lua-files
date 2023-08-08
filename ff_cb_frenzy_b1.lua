@@ -1,8 +1,6 @@
 IncludeScript("base_teamplay");
 
-
 function startup()
-
 
 AddScheduleRepeating( "check_teams", 1, check_teams )
 
@@ -35,13 +33,10 @@ local team = GetTeam(Team.kRed)
 	team:SetClassLimit(Player.kMedic, -1)
 
 
-
 	SetTeamName( Team.kBlue, "Feral Dachshunds" )
 	SetTeamName( Team.kRed, "Warrior King" )
 
-
 end
-
 
 
 -- Everyone to spawns with nothing

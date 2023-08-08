@@ -96,7 +96,6 @@ waterammobackpack = genericbackpack:new({
 	botgoaltype = Bot.kBackPack_Ammo
 })
 
-
 blue_flagammobackpack = genericbackpack:new({
 	health = 50,
 	armor = 50,
@@ -129,7 +128,6 @@ red_flagammobackpack = genericbackpack:new({
 	botgoaltype = Bot.kBackPack_Ammo
 })
 
-
 -----------------------------------------------------------------------------
 -- Lifts
 -----------------------------------------------------------------------------
@@ -155,7 +153,6 @@ end
 blue_lift = func_door:new({ team = Team.kBlue })
 red_lift = func_door:new({ team = Team.kRed })
 
-
 -----------------------------------------------------------------------------
 -- Respawn lasers
 -----------------------------------------------------------------------------
@@ -173,7 +170,6 @@ end
 
 blue_slayer = respawn_lasers:new({ team = Team.kBlue })
 red_slayer = respawn_lasers:new({ team = Team.kRed })
-
 
 -----------------------------------------------------------------------------
 -- Locations

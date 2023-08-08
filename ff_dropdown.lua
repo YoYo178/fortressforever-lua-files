@@ -50,7 +50,6 @@ end
 BLUEFIRE_TIMER_START = 60
 REDFIRE_TIMER_START = 60
 
-
 -----------------------------------------------------------------------------
 -- backpacks  smallpack1=bottomfloor  smallpack2=middlefloor  smallpack3=upperfloor
 -----------------------------------------------------------------------------
@@ -116,7 +115,6 @@ redsmallpack3 = genericbackpack:new({
 })
 
 function redsmallpack3:dropatspawn() return false end
-
 
 
 
@@ -197,7 +195,6 @@ location_red_tophole = location_info:new({ text = "Top Hole", team = Team.kRed }
 -- Grates
 -----------------------------------------------------------------------------
 
-
 red_grate_trigger = trigger_ff_script:new({ })
 
 function red_grate_trigger:onexplode( trigger_entity  ) 
@@ -212,7 +209,6 @@ function red_grate_trigger:allowed( trigger_entity ) return EVENT_DISALLOWED
 end
 
 
-
 blue_grate_trigger = trigger_ff_script:new({ })
 
 function blue_grate_trigger:onexplode( trigger_entity  ) 
@@ -225,7 +221,6 @@ function blue_grate_trigger:onexplode( trigger_entity  )
 end
 function blue_grate_trigger:allowed( trigger_entity ) return EVENT_DISALLOWED 
 end
-
 
 -----------------------------------------------------------------------------
 -- Generators Destroy
@@ -250,7 +245,6 @@ function red_gen_trigger:onexplode( trigger_entity  )
 end
 function red_gen_trigger:allowed( trigger_entity ) return EVENT_DISALLOWED 
 end
-
 
 
 blue_gen_trigger = trigger_ff_script:new({ })
@@ -319,13 +313,11 @@ function red_gen_repair_trigger:ondamage()
 end
 
 
-
 blue_gen_repair_trigger = func_button:new({})
 blue_gen_repair_trigger_script = trigger_ff_script:new()
 bluespannerclang = 0
 bluegenup = 1
 blueclangcntr = 0
-
 
 function blue_gen_repair_trigger_script:ontouch( touch_entity )
 	if IsPlayer( touch_entity ) then
@@ -362,14 +354,12 @@ function blue_gen_repair_trigger:ondamage()
 	return EVENT_DISALLOWED
 end
 
-
 -----------------------------------------------------------------------------
 -- Walls
 -----------------------------------------------------------------------------
 -- used to check if walls already broken
 red_wall = true
 blue_wall = true
-
 
 red_wall_trigger = trigger_ff_script:new({ })
 
@@ -387,7 +377,6 @@ function red_wall_trigger:allowed( trigger_entity ) return EVENT_DISALLOWED
 end
 
 
-
 blue_wall_trigger = trigger_ff_script:new({ })
 
 function blue_wall_trigger:onexplode( trigger_entity  ) 
@@ -402,7 +391,6 @@ function blue_wall_trigger:onexplode( trigger_entity  )
 end
 function blue_wall_trigger:allowed( trigger_entity ) return EVENT_DISALLOWED 
 end
-
 
 -----------------------------------------------------------------------------
 -- No builds: area where you can't build a jump pad
@@ -420,7 +408,6 @@ end
 
 no_build = nobuild
 
-
 -----------------------------------------------------------------------------
 -- Reset stuff
 -----------------------------------------------------------------------------
@@ -435,7 +422,6 @@ function RedDoFireResetLogic()
 	redfire = 0
 end
 
-
 function BlueDoFireResetLogic()
 --	ConsoleToAll( "BlueDoFireResetLogic" )	
 
@@ -446,7 +432,6 @@ function BlueDoFireResetLogic()
 	bluefire = 0
 end
 
-
 -----------------------------------------------------------------------------
 -- Generator delay before repair - schedules
 -----------------------------------------------------------------------------
@@ -456,7 +441,6 @@ function redfire_start_schedule()
 --	ConsoleToAll( "starting fire timer schedule" )
 	AddSchedule( "red_fire_timer_schedule", REDFIRE_TIMER_START, RedDoFireResetLogic )
 end
-
 
 function bluefire_start_schedule()	
 

@@ -24,7 +24,6 @@ function conc :dropatspawn() return false end
 red_conc = conc:new({ touchflags = {AllowFlags.kRed} })
 blue_conc = conc:new({ touchflags = {AllowFlags.kBlue} })
 
-
 ------------------------------------------
 -- base_trigger_jumppad
 -- A trigger that emulates a jump pad

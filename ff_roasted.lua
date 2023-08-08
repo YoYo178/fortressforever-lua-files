@@ -100,7 +100,6 @@ red_healthkit, red_armorkit, red_ammobackpack, red_bigpack, red_grenadebackpack,
 yellow_healthkit, yellow_armorkit, yellow_ammobackpack, yellow_bigpack, yellow_grenadebackpack, yellow_roasted_fr, yellow_roasted_upper, yellow_roasted_top, yellow_roasted_resup = build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kYellow})
 green_healthkit, green_armorkit, green_ammobackpack, green_bigpack, green_grenadebackpack, green_roasted_fr, green_roasted_upper, green_roasted_top, green_roasted_resup = build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kGreen})
 
-
 -----------------------------------------------------------------------------
 -- OFFENSIVE AND DEFENSIVE SPAWNS
 -- Medic, Spy, and Scout spawn in the offensive spawns, other classes spawn in the defensive spawn,
@@ -118,7 +117,6 @@ blue_d_only = function(self,player) return ((player:GetTeamId() == Team.kBlue) a
 
 blue_ospawn = { validspawn = blue_o_only }
 blue_dspawn = { validspawn = blue_d_only }
-
 
 -----------------------------------------------------------------------------
 -- Locations

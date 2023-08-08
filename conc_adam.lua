@@ -1,18 +1,20 @@
-IncludeScript("base_teamplay");
 -----------------------------------------------------------------------------
--- global overrides
+-- conc_adam.lua
+-----------------------------------------------------------------------------
+-- Includes
+-----------------------------------------------------------------------------
+
+IncludeScript("base_teamplay");
+
+-----------------------------------------------------------------------------
+-- Globals
 -----------------------------------------------------------------------------
 
 -- Disable conc effect
 CONC_EFFECT = 0
 
---
-function player_onconc( player_entity, concer_entity )
-
-	if CONC_EFFECT == 0 then
-		return EVENT_DISALLOWED
-	end
-
+function player_onconc()
+	if CONC_EFFECT == 0 then return EVENT_DISALLOWED end
 	return EVENT_ALLOWED
 end
 
@@ -37,4 +39,5 @@ grenadebackpack = genericbackpack:new({
 	touchsound = "Backpack.Touch",
 	botgoaltype = Bot.kBackPack_Ammo
 })
+
 function grenadebackpack:dropatspawn() return false end

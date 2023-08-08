@@ -4,7 +4,6 @@
 
 -- Default Settings --
 
-
 -- Useful Stuff --
 local offense_caps = 0
 local FULL_GAME = false

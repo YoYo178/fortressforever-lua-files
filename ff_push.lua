@@ -28,7 +28,6 @@ red_respawn_triggerB = respawndoor:new({ team = Team.kRed })
 blue_respawn_triggerA = respawndoor:new({ team = Team.kBlue })
 blue_respawn_triggerB = respawndoor:new({ team = Team.kBlue })
 
-
 -----------------------------------------------------------------------------
 -- unique push locations
 -----------------------------------------------------------------------------

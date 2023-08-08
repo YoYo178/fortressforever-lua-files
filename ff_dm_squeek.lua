@@ -165,7 +165,6 @@ function blue_spawn2door_trigger:ontrigger( touch_entity )
    end 
 end 
 
-
 -----------------------------------------------------------------------------
 -- Green Doors
 -----------------------------------------------------------------------------
@@ -209,7 +208,6 @@ function green_spawn2door_trigger:ontrigger( touch_entity )
       OutputEvent("green_spawn2door_right", "Open") 
    end 
 end 
-
 
 -----------------------------------------------------------------------------
 -- Yellow Doors

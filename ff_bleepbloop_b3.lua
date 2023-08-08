@@ -92,7 +92,6 @@ function robonades:dropatspawn() return false end
 redrobonades = robonades:new({ touchflags = {AllowFlags.kRed} })
 bluerobonades = robonades:new({ touchflags = {AllowFlags.kBlue} })
 
-
 -----------------------------------------------------------------------------
 -- aardvark security
 -----------------------------------------------------------------------------
@@ -260,7 +259,6 @@ red_supply = supply:new({ team = Team.kRed })
 -----------------------------------------------------------------------------
 -- hopefully dis my spawn lua
 -----------------------------------------------------------------------------
-
 
 red_o_only = function(self,player) return ((player:GetTeamId() == Team.kRed) and ((player:GetClass() == Player.kDemoman) or (player:GetClass() == Player.kEngineer))) end
 red_d_only = function(self,player) return ((player:GetTeamId() == Team.kRed) and (((player:GetClass() == Player.kDemoman) == false) and ((player:GetClass() == Player.kEngineer) == false))) end

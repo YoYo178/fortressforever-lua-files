@@ -23,7 +23,6 @@ blue_tele = specific_tele:new({ team = Team.kBlue })
 red_tele = specific_tele:new({ team = Team.kRed })
 
 
-
 function startup()
 
 	SetTeamName( Team.kBlue, "Quad" )
@@ -76,7 +75,6 @@ function player_ondamage( player, damageinfo )
 	damageinfo:SetDamage( 0 )
     end
 end
-
 
 specific_tele = info_ff_script:new({ class = Player.kCivilian, team = Team.kUnassigned })
 

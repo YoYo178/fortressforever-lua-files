@@ -24,13 +24,11 @@ tele_tried_activate = false
 tele_can_activate = false
 tele_is_active = false
 
-
 -- Respawn turrets. Initial state. alpha and beta will be changed as the game progresses.
 respawnturret_start = respawnturret:new({team = Team.kYellow})
 respawnturret_alpha = respawnturret:new({team = Team.kBlue})
 respawnturret_beta = respawnturret:new({team = Team.kBlue})
 respawnturret_final = respawnturret:new({team = Team.kBlue})
-
 
 function precache()
 	PrecacheSound("ff_anticitizen.warningbell1")
@@ -108,7 +106,6 @@ function startup()
 	UpdateTeamObjectiveIcon( GetTeam(DEFENDERS), ATTACKERS_OBJECTIVE_ENTITY )
 end
 
-
 -----------------------------------------
 -- Removes Yellow armor on startup
 -----------------------------------------
@@ -123,7 +120,6 @@ function RemoveYellowArmor()
 	end
 
 end
-
 
 -----------------------------------------
 -- Swaps out blue armor for yellow when CP is captured
@@ -149,7 +145,6 @@ function SwapCPArmor(bluearmor, yellowarmor)
 	end
 
 end
-
 
 -----------------------------------------
 -- 
@@ -218,7 +213,6 @@ function teleporter_activate()
 	end
 end
 
-
 -- timed function run at 2 mins after cp2's gates open
 -- will activate teleporter if half map time has passed already
 -- If half map time has not passed, will allow the above funtion to work.
@@ -236,7 +230,6 @@ function enable_teleporter()
 	end
 end
 
-
 -----------------------------------------
 -- anticitizen flag
 -----------------------------------------
@@ -244,7 +237,6 @@ base_ad_flag.modelskin = teamskins[ATTACKERS]
 base_ad_flag.team = ATTACKERS
 base_ad_flag.hudicon = team_hudicons[ATTACKERS]
 base_ad_flag.touchflags = {AllowFlags.kOnlyPlayers, AllowFlags.kYellow}
-
 
 -----------------------------------------
 -- anticitizen capture point
@@ -284,7 +276,6 @@ function base_ad_cap:oncapture(player, item)
 	-- Delay for a couple seconds after the cap
 	AddSchedule( "cap_delay_timer", POSTCAP_TIMER, cap_delay_timer, self )
 end
-
 
 -----------------------------------------
 -- waste a couple seconds before respawning/ending
@@ -366,7 +357,6 @@ function round_10secwarn()
 	
 end
 
-
 ----------------
 -- map timers --
 ----------------
@@ -444,7 +434,6 @@ function map_defenders_win( )
 	AddSchedule( "cap_delay_timer", POSTCAP_TIMER, cap_delay_timer, self )
 end
 
-
 function alter_pitch()
 	-- Alters the pitch of some of the voice stuff. I dunno.
 	OutputEvent( "p3_winddown", "Pitch", "80")
@@ -493,7 +482,6 @@ function map_cap2()
 	--SpeakAll("AD_CP2_" .. TeamName(ATTACKERS))
 	OutputEvent( "cp2_capped", "trigger" )
 end
-
 
 -----------------------------------------
 -- Packs 'n Stuff

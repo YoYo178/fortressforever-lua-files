@@ -92,4 +92,3 @@ pressure_button1 = func_button:new({})
 function pressure_button1:ondamage() OutputEvent( "pressure_button1", "Open" ) end 
 function pressure_button1:ontouch() OutputEvent( "pressure_button1", "Open" ) end 
 
-

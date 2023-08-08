@@ -25,10 +25,7 @@ CONC_EFFECT = 1
 -----------------------------------------------------------------------------
 function player_onconc( player_entity, concer_entity )
 
-	if CONC_EFFECT == 0 then
-		return EVENT_DISALLOWED
-	end
-
+	if CONC_EFFECT == 0 then return EVENT_DISALLOWED end
 	return EVENT_ALLOWED
 end
 
@@ -55,7 +52,6 @@ HWGUY = 0
 -- Disable/Enable Invunerability
 INVUL = 0
 
-
 ---------------------------------
 -- DO NOT CHANGE THESE
 ---------------------------------
@@ -63,7 +59,6 @@ reached_end = 0
 CONC_FREESTYLE = 0
 CONC_RACE = 0
 ---------------------------------
-
 
 function startup()
 
@@ -158,7 +153,6 @@ function rocketsbackpack:precache( )
 	-- precache models
 	PrecacheModel(self.model)
 end
-
 
 function rocketsbackpack:touch( touch_entity )
 	if IsPlayer( touch_entity ) then

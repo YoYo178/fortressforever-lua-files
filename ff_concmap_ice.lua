@@ -36,10 +36,7 @@ CONC_EFFECT = 0
 --
 function player_onconc( player_entity, concer_entity )
 
-	if CONC_EFFECT == 0 then
-		return EVENT_DISALLOWED
-	end
-
+	if CONC_EFFECT == 0 then return EVENT_DISALLOWED end
 	return EVENT_ALLOWED
 end
 

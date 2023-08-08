@@ -20,7 +20,6 @@ end
 blue_only = bluerespawndoor
 red_only = redrespawndoor
 
-
 -----------------------------------------------------------------------------
 -- Computer Explodeded
 -----------------------------------------------------------------------------
@@ -239,7 +238,6 @@ spawn_red_defence = function(self,player)
 	and ((player:GetClass() == Player.kMedic) == false)
 	and ((player:GetClass() == Player.kSpy) == false)))
 end
-
 
 spawn_blue_offence = function(self,player)
 	return ((player:GetTeamId() == Team.kBlue)

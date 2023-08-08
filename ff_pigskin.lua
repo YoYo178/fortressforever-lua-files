@@ -146,6 +146,3 @@ blue_safety = ob:new({ team = Team.kBlue, item = "ball" })
 
 
 
-
-
-

@@ -103,7 +103,6 @@ location_blue_upper_route	= location_info:new({ text = "Upper Connector", team =
 
 location_blue_flag_room		= location_info:new({ text = "Flag Room", team = Team.kBlue })
 
-
 location_red_upper_bments	= location_info:new({ text = "Upper Battlements", team = Team.kRed })
 
 location_red_lower_bments	= location_info:new({ text = "Lower Front Door", team = Team.kRed })
@@ -119,7 +118,6 @@ location_red_side_route	= location_info:new({ text = "Side Connector", team = Te
 location_red_upper_route	= location_info:new({ text = "Upper Connector", team = Team.kRed })
 
 location_red_flag_room		= location_info:new({ text = "Flag Room", team = Team.kRed })
-
 
 location_midmap	= location_info:new({ text = "Midmap", team = Team.kUnassigned })
 

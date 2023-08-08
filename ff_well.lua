@@ -35,11 +35,9 @@ location_red_concexit = location_info:new({ text = "Conc Route Exit", team = Tea
 location_blue_canal = location_info:new({ text = "Yard Canal", team = Team.kBlue })
 location_red_canal = location_info:new({ text = "Yard Canal", team = Team.kRed })
 
-
 -----------------------------------------------------------------------------
 -- Doors
 -----------------------------------------------------------------------------
-
 
 blue_door1_trigger = trigger_ff_script:new({ team = Team.kBlue }) 
 
@@ -58,7 +56,6 @@ function blue_door1_trigger:ontrigger( touch_entity )
       OutputEvent("blue_door1_right", "Open") 
    end 
 end 
-
 
 blue_door2_trigger = trigger_ff_script:new({ team = Team.kBlue }) 
 
@@ -96,7 +93,6 @@ function red_door1_trigger:ontrigger( touch_entity )
    end 
 end 
 
-
 red_door2_trigger = trigger_ff_script:new({ team = Team.kRed }) 
 
 function red_door2_trigger:allowed( touch_entity ) 
@@ -114,7 +110,6 @@ function red_door2_trigger:ontrigger( touch_entity )
       OutputEvent("red_door2_right", "Open") 
    end 
 end
-
 
 -----------------------------------------------------------------------------
 -- backpacks
@@ -165,7 +160,6 @@ end
 
 red_grate_trigger = base_grate_trigger:new({ team = Team.kRed, team_name = "red" })
 blue_grate_trigger = base_grate_trigger:new({ team = Team.kBlue, team_name = "blue" })
-
 
 -----------------------------------------------------------------------------
 -- Buttons

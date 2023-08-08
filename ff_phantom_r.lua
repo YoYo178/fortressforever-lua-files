@@ -48,7 +48,6 @@ red_phantompack = phantompack:new({ touchflags = {AllowFlags.kRed} })
 blue_phantompack = phantompack:new({ touchflags = {AllowFlags.kBlue} })
 
 
-
 -----------------------------------------------------------------------------
 -- phantom lasers and respawn shields
 -----------------------------------------------------------------------------
@@ -68,8 +67,6 @@ end
 
 red_slayer = KILL_KILL_KILL:new({ team = Team.kRed })
 blue_slayer = KILL_KILL_KILL:new({ team = Team.kBlue })
-
-
 
 
 

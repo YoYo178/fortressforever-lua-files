@@ -41,7 +41,6 @@ location_blue_spawn		= location_info:new({ text = "Team Respawn", team = Team.kB
 location_blue_topspawn		= location_info:new({ text = "Top Respawn", team = Team.kBlue })
 location_blue_topexit		= location_info:new({ text = "Top exit", team = Team.kBlue })
 
-
 location_red_hallway_front= location_info:new({ text = "Front Hallway", team = Team.kRed })
 location_red_flagroom	= location_info:new({ text = "Flag Room", team = Team.kRed })
 location_red_elevator		= location_info:new({ text = "Elevator", team = Team.kRed })
@@ -58,7 +57,6 @@ location_red_topspawn		= location_info:new({ text = "Top Respawn", team = Team.k
 location_red_topexit		= location_info:new({ text = "Top exit", team = Team.kRed })
 
 location_yard			= location_info:new({ text = "Yard", team = Team.kUnassigned })
-
 
 -----------------------------------------------------------------------------
 
@@ -88,7 +86,6 @@ red_phantompack = phantompack:new({ touchflags = {AllowFlags.kRed} })
 blue_phantompack = phantompack:new({ touchflags = {AllowFlags.kBlue} })
 
 
-
 -----------------------------------------------------------------------------
 -- phantom lasers and respawn shields
 -----------------------------------------------------------------------------
@@ -108,8 +105,6 @@ end
 
 red_slayer = KILL_KILL_KILL:new({ team = Team.kRed })
 blue_slayer = KILL_KILL_KILL:new({ team = Team.kBlue })
-
-
 
 
 

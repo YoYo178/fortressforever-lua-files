@@ -181,7 +181,6 @@ spawn_red_defence = function(self,player)
 	and ((player:GetClass() == Player.kSpy) == false)))
 end
 
-
 spawn_blue_offence = function(self,player)
 	return ((player:GetTeamId() == Team.kBlue)
 	and ((player:GetClass() == Player.kScout)
@@ -220,7 +219,6 @@ function resupply:ontouch( touch_entity )
 		end
 	end
 end
-
 
 function resupply:onendtouch( touch_entity )
 	if IsPlayer( touch_entity ) then

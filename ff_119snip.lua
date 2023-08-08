@@ -1,7 +1,6 @@
 
 IncludeScript("base_ff_119snip");
 
-
 -- Get team points for killing a player
 function player_killed( player_entity, damageinfo )
 	local killer = CastToPlayer( damageinfo:GetAttacker() )

@@ -38,7 +38,6 @@ function player_onconc( player_entity, concer_entity )
 	return false
 end
 
-
 -- Fully resupplies the player.
 function fullresupply( player )
 	player:AddHealth( 100 )

@@ -268,7 +268,6 @@ function player_ondamage( player, damageinfo )
 	end
 end
 
-
 -----------------------------------------------------------------------------
 -- ball information
 -- status: 0 = home, 1 = carried, 2 = dropped
@@ -502,7 +501,6 @@ ball = base_ball:new({
 
 
 
-
 -- generic goal
 base_goal = trigger_ff_script:new({
 	health = 100,
@@ -585,7 +583,6 @@ red_goal = base_goal:new({ item = "ball", team = TEAM1 })
 
 
 
-
 -- respawns a goalie
 base_goalie_respawner = trigger_ff_script:new({ team = Team.kUnassigned })
 
@@ -605,7 +602,6 @@ end
 -- goalie respawner
 blue_goalie_respawner = base_goalie_respawner:new({ team = TEAM1 })
 red_goalie_respawner = base_goalie_respawner:new({ team = TEAM2 })
-
 
 
 
@@ -665,7 +661,6 @@ bluespawn_goalie = { validspawn = function(self,player) return player:GetTeamId(
 redspawn_goalie = { validspawn = function(self,player) return player:GetTeamId() == TEAM2 and player:GetClass() == Player.kCivilian end }
 bluespawn_sniper = { validspawn = function(self,player) return player:GetTeamId() == TEAM1 and player:GetClass() == Player.kSniper end }
 redspawn_sniper = { validspawn = function(self,player) return player:GetTeamId() == TEAM2 and player:GetClass() == Player.kSniper end }
-
 
 -----------------------------------------------------------------------------
 -- unique fortball locations

@@ -159,7 +159,6 @@ function base_ball:touch( touch_entity )
 			ball:Pickup(player)
 			AddHudIcon( player, self.hudicon, ball:GetName(), self.hudx, self.hudy, self.hudwidth, self.hudheight, self.hudalign )
 
-
 			RemoveHudItemFromAll( "ball-icon-dropped" )
 			local team = player:GetTeamId()
 			if (team == Team.kBlue) then

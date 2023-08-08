@@ -93,7 +93,6 @@ defender_spawn = info_ff_teamspawn:new({ validspawn = function(self,player)
 	return player:GetTeamId() == defenders
 end })
 
-
 -----------------------------------------------------------------------------
 -- functions that do sh... stuff
 -----------------------------------------------------------------------------
@@ -473,7 +472,6 @@ function base_zone_area_trigger:oninactive()
 	zone_area_collection:RemoveAllItems()
 end
 
-
 -----------------------------------------------------------------------------
 -- zone functions
 -----------------------------------------------------------------------------
@@ -670,7 +668,6 @@ end
 function schedulesound( sound )
 	BroadCastSound( sound )
 end
-
 
 function schedulecountdown( time )
 	BroadCastMessage( ""..time.."" )

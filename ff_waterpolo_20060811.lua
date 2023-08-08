@@ -127,13 +127,11 @@ end
 --end
 
 
-
 function player_ondamage( player, damageinfo )
 
 	-- goalies are invincible
 	--local player = GetPlayerByID( player_id )
 	if player then
-
 
 		if player:GetTeamId() == Team.kYellow or player:GetTeamId() == Team.kGreen then
 			-- ConsoleToAll( player:GetName() .. " is an invincible goalie!" )
@@ -156,7 +154,6 @@ function player_ondamage( player, damageinfo )
 	end
 
 end
-
 
 
 
@@ -271,7 +268,6 @@ ball = base_ball:new({})
 
 
 
-
 -- generic goal
 base_goal = trigger_ff_script:new({
 	health = 100,
@@ -341,7 +337,6 @@ red_goal = base_goal:new({ item = "ball", team = Team.kBlue })
 
 
 
-
 -- returns the item
 base_item_returner = trigger_ff_script:new({
 	item = "",
@@ -379,7 +374,6 @@ ball_stripper = base_item_returner:new({ item = "ball", message = " took the bal
 
 
 
-
 -- goalie trigger_teleports
 trigger_teleport = trigger_ff_script:new({})
 base_goalie_teleport = trigger_teleport:new({ team = 0 })
@@ -397,7 +391,6 @@ blue_goalie_teleport = base_goalie_teleport:new({ team = Team.kYellow })
 
 -- red goalie is on the green team
 red_goalie_teleport = base_goalie_teleport:new({ team = Team.kGreen })
-
 
 
 

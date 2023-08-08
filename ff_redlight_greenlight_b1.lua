@@ -148,7 +148,6 @@ function the_wall_1secwarn()
 	BroadCastMessage("#FF_MAP_1SECWARN")
 end
 
-
 -- spawns attackers with flags
 function player_spawn( player_entity )
 
@@ -236,7 +235,6 @@ function player_killed ( player, damageinfo )
   end
   
 end
-
 
 function player_ondamage ( player, damageinfo )
 	

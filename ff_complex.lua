@@ -7,8 +7,6 @@ IncludeScript( "base_ctf" );
 
 
 
-
-
 -----------------------------------------------------------------------------
 -- aardvark security
 -----------------------------------------------------------------------------
@@ -80,8 +78,6 @@ end
 function aardvarksecup10blue()
 	BroadCastMessage("Blue Security Online in 10 Seconds")
 end
-
-
 
 
 
@@ -233,5 +229,4 @@ end
 
 red_slayer2 = KILL_KILL_KILL:new({ team = Team.kBlue })
 blue_slayer2 = KILL_KILL_KILL:new({ team = Team.kRed })
-
 

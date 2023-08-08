@@ -10,7 +10,6 @@ IncludeScript("base_respawnturret")
 -- global overrides that you can do what you want with
 -----------------------------------------------------------------------------
 
-
 POINTS_PER_CAPTURE = 5
 POINTS_PER_TOTAL_CONTROL = 30
 POINTS_PER_PERIOD = 1
@@ -77,7 +76,6 @@ phase = 1
 -- 0 = nothing (no attackers present/flags reverted), 1 = attackers count, 2 = countdown to revert
 hud_state = 0
 
-
 -----------------------------------------------------------------------------
 -- Entity definitions (flags/command points/backpacks etc.)
 -----------------------------------------------------------------------------
@@ -140,7 +138,6 @@ end })
 defender_spawn = info_ff_teamspawn:new({ validspawn = function(self,player)
 	return player:GetTeamId() == defenders
 end })
-
 
 -----------------------------------------------------------------------------
 -- functions that do sh... stuff
@@ -393,7 +390,6 @@ function base_cp_trigger:ReturnFlagFromPlayer( player )
 		end
 end
 
-
 -- returns flag instantly if carrier killed
 function base_flag:onownerdie( owner_entity )
 	-- drop the flag
@@ -418,7 +414,6 @@ function base_caproom_trigger:ontouch( trigger_entity )
 		if player:GetTeamId() == defenders then return end
 
 		cap_room_collection:AddItem( player )
-
 
 		if cap_room_collection:Count() == 1 then
 
@@ -546,7 +541,6 @@ function revert_flags( team )
 		end
 	end
 end
-
 
 -- Same as above, but without scoring. Definitly a quick-fix :(
 function reset_flags( team )
@@ -956,7 +950,6 @@ function round_end()
 	AddSchedule( "round_start", INITIAL_ROUND_PERIOD, round_start)
 end
 
-
 -----------------------------------------------------------------------------
 -- respawn shields
 -----------------------------------------------------------------------------
@@ -1013,7 +1006,6 @@ impact_pack = genericbackpack:new({
 })
 
 function impact_pack:dropatspawn() return false end
-
 
 -----------------------------------------------------------------------------
 -- detable frontgate2

@@ -141,7 +141,6 @@ holdbasekit = genericbackpack:new({
 
 function holdbasekit:dropatspawn() return false end
 
-
 holdarmorkit = genericbackpack:new({
 	armor = 200,
 	model = "models/items/armour/armour.mdl",
@@ -504,7 +503,6 @@ function holdarea:allowed ( allowed_entity )
 	end
 	return false
 end
-
 
 -----------------------------------------------------------------------------
 -- timed functions

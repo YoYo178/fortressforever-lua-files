@@ -61,14 +61,11 @@ function startup()
 	team:SetClassLimit( Player.kEngineer, -1 )
 	team:SetClassLimit( Player.kCivilian, -1 )
 
-
 end
-
 
 function precache()
 	PrecacheSound( "Backpack.Touch" )
 end
-
 
 -- Everyone to spawns with everything
 function player_spawn( player_entity )
@@ -97,7 +94,6 @@ function player_spawn( player_entity )
 	player:RemoveWeapon("ff_weapon_supershotgun")
 	player:RemoveWeapon("ff_weapon_shotgun")
 end
-
 
 -- Just here because
 function player_ondamage( player_entity, damageinfo )

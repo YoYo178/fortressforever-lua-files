@@ -1,6 +1,5 @@
 --FF_DEV_2FORTSNIPER--
 
-
 IncludeScript("base_teamplay");
 
 ------------------
@@ -93,7 +92,6 @@ function sniperammo :dropatspawn() return false end
 
 red_sniperammo = sniperammo:new({ touchflags = {AllowFlags.kRed} })
 blue_sniperammo = sniperammo:new({ touchflags = {AllowFlags.kBlue} })
-
 
 
 sniperhealth = genericbackpack:new({

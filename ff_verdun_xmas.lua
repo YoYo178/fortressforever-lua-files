@@ -139,16 +139,13 @@ spawn_red_civ = function(self,player) return ((player:GetTeamId() == Team.kRed) 
 spawn_red_other = function(self,player) return ((player:GetTeamId() == Team.kRed) and (((player:GetClass() == Player.kCivilian) == false) and ((player:GetClass() == Player.kMedic) == false))) end
 spawn_red_other_top = function(self,player) return ((player:GetTeamId() == Team.kRed) and (((player:GetClass() == Player.kCivilian) == false) and ((player:GetClass() == Player.kSoldier) == false) and ((player:GetClass() == Player.kSpy) == false) and ((player:GetClass() == Player.kDemoman) == false) and ((player:GetClass() == Player.kEngineer) == false) and ((player:GetClass() == Player.kHwguy) == false))) end
 
-
 red_spawn_civ = { validspawn = spawn_red_civ }
 red_spawn_other = { validspawn = spawn_red_other }
 red_spawn_other_top = { validspawn = spawn_red_other_top }
 
-
 spawn_blue_civ = function(self,player) return ((player:GetTeamId() == Team.kBlue) and ((player:GetClass() == Player.kCivilian))) end
 spawn_blue_other = function(self,player) return ((player:GetTeamId() == Team.kBlue) and (((player:GetClass() == Player.kCivilian) == false) and ((player:GetClass() == Player.kMedic) == false))) end
 spawn_blue_other_top = function(self,player) return ((player:GetTeamId() == Team.kBlue) and (((player:GetClass() == Player.kCivilian) == false) and ((player:GetClass() == Player.kSoldier) == false) and ((player:GetClass() == Player.kSpy) == false) and ((player:GetClass() == Player.kDemoman) == false) and ((player:GetClass() == Player.kEngineer) == false) and ((player:GetClass() == Player.kHwguy) == false))) end
-
 
 blue_spawn_civ = { validspawn = spawn_blue_civ }
 blue_spawn_other = { validspawn = spawn_blue_other }
@@ -174,7 +171,6 @@ function stay_or_die:onendtouch( touch_entity )
 		RestartPlayer ( player )
 	end
 end
-
 
 -----------------------------------------------------------------------------
 -- Footy. (edit from caesium battleships)

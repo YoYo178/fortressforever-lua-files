@@ -117,7 +117,6 @@ location_blue_shorthall	= location_info:new({ text = "Short Hall", team = Team.k
 
 location_blue_flagroom		= location_info:new({ text = "Flag Room", team = Team.kBlue })
 
-
 location_red_batts	= location_info:new({ text = "Upper Battlements", team = Team.kRed })
 
 location_red_fdoor	= location_info:new({ text = "Lower Front Door", team = Team.kRed })

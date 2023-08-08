@@ -12,7 +12,6 @@ POINTS_PER_CAPTURE = 10;
 FLAG_RETURN_TIME = 60;
 SECURITY_LENGTH = 30;
 
-
 -----------------------------------------------------------------------------
 -- bagless resupply
 -----------------------------------------------------------------------------
@@ -34,7 +33,6 @@ end
 
 blue_aardvarkresup = aardvarkresup:new({ team = Team.kBlue })
 red_aardvarkresup = aardvarkresup:new({ team = Team.kRed })
-
 
 -----------------------------------------------------------------------------
 -- aardvark security
@@ -168,7 +166,6 @@ end
 
 lift_red = base_jump:new({ pushz = 825 })
 lift_blue = base_jump:new({ pushz = 825 })
-
 
 -----------------------------------------------------------------------------
 -- ammo/hp packs

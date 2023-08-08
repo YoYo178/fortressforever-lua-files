@@ -19,7 +19,6 @@ yfni10 = clip_brush:new({ clipflags = {ClipFlags.kClipPlayers, ClipFlags.kClipPr
 yfni11 = clip_brush:new({ clipflags = {ClipFlags.kClipPlayers, ClipFlags.kClipProjectiles, ClipFlags.kClipGrenades, ClipFlags.kClipTeamBlue} })
 yfni12 = clip_brush:new({ clipflags = {ClipFlags.kClipPlayers, ClipFlags.kClipProjectiles, ClipFlags.kClipGrenades, ClipFlags.kClipTeamRed} })
 
-
 -----------------------------------------------------------------------------
 -- plasma resupply (bagless)
 -----------------------------------------------------------------------------
@@ -70,7 +69,6 @@ red_phantompack = phantompack:new({ touchflags = {AllowFlags.kRed} })
 blue_phantompack = phantompack:new({ touchflags = {AllowFlags.kBlue} })
 
 
-
 -----------------------------------------------------------------------------
 -- phantom lasers and respawn shields
 -----------------------------------------------------------------------------
@@ -90,7 +88,6 @@ end
 
 red_slayer = KILL_KILL_KILL:new({ team = Team.kRed })
 blue_slayer = KILL_KILL_KILL:new({ team = Team.kBlue })
-
 
 
 

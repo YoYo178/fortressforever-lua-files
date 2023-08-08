@@ -2,7 +2,6 @@
 -- ff_sonic.lua
 -- Author/ R00kie
 
-
 -----------------------------------------------------------------------------
 -- includes
 -----------------------------------------------------------------------------
@@ -33,7 +32,6 @@ function nade :dropatspawn() return false end
 
 red_nade = nade:new({ touchflags = {AllowFlags.kRed} })
 blue_nade = nade:new({ touchflags = {AllowFlags.kBlue} })
-
 
 -----------------------------------------------------------------------------
 -- aardvark security
@@ -107,7 +105,6 @@ function aardvarksecup10blue()
 	BroadCastMessage("Blue Security Online in 10 Seconds")
 end
 
-
 -----------------------------------------------------------------------------
 -- aardvark lasers and respawn shields
 -----------------------------------------------------------------------------
@@ -147,7 +144,6 @@ blue_slayer = KILL_KILL_KILL:new({ team = Team.kBlue })
 red_slayer = KILL_KILL_KILL:new({ team = Team.kRed })
 sec_blue_slayer = lasers_KILL_KILL_KILL:new({ team = Team.kBlue })
 sec_red_slayer = lasers_KILL_KILL_KILL:new({ team = Team.kRed })
-
 
 -------------------------
 -- flaginfo

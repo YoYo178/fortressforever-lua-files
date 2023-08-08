@@ -13,7 +13,6 @@ IncludeScript("base_location");
 
 SECURITY_LENGTH = 40
 
-
 -----------------------------------------------------------------------------
 -- TOUCH RESUP
 -- Brush volume which gives players health, ammo, etc...
@@ -115,7 +114,6 @@ blue_healthkit, blue_armorkit, blue_ammobackpack, blue_bigpack, blue_grenadeback
 red_healthkit, red_armorkit, red_ammobackpack, red_bigpack, red_grenadebackpack, red_aardvarkpack_fr, red_aardvarkpack_ramp, red_aardvarkpack_sec = build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kRed})
 yellow_healthkit, yellow_armorkit, yellow_ammobackpack, yellow_bigpack, yellow_grenadebackpack, yellow_aardvarkpack_fr, yellow_aardvarkpack_ramp, yellow_aardvarkpack_sec = build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kYellow})
 green_healthkit, green_armorkit, green_ammobackpack, green_bigpack, green_grenadebackpack, green_aardvarkpack_fr, green_aardvarkpack_ramp, green_aardvarkpack_sec = build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kGreen})
-
 
 -----------------------------------------------------------------------------
 -- SPAWN PROTECTION

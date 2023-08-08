@@ -140,7 +140,6 @@ sessionpack_lowmetal = genericbackpack:new({
 })
 function sessionpack_lowmetal:dropatspawn() return false end
 
-
 -----------------------------------------------------------------------------
 -- Conc Pack
 -- Gives concs, nothing else.

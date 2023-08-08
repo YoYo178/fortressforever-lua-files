@@ -14,7 +14,6 @@ function startup()
 	SetPlayerLimit(Team.kGreen, -1)
 
 
-
         local team = GetTeam( Team.kBlue )
        
 

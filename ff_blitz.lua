@@ -2,7 +2,6 @@ IncludeScript("base_ctf");
 IncludeScript("base_location");
 IncludeScript("base_respawnturret");
 
-
 --------------------------------------------------------
 -- Locations
 --------------------------------------------------------
@@ -11,7 +10,6 @@ location_blue_capture = location_info:new({ text = "Capture Point", team = Team.
 location_blue_flagroom	= location_info:new({ text = "Flag Room", team = Team.kBlue })
 location_blue_spawn		= location_info:new({ text = "Team Respawn", team = Team.kBlue })
 
-
 location_blue_battlements	= location_info:new({ text = "Battlements", team = Team.kBlue })
 location_blue_entrance	= location_info:new({ text = "Main Entrance", team = Team.kBlue })
 location_blue_tunnel		= location_info:new({ text = "Tunnel", team = Team.kBlue })
@@ -19,11 +17,9 @@ location_blue_water		= location_info:new({ text = "Flooded Tunnel", team = Team.
 location_blue_yard		= location_info:new({ text = "Yard", team = Team.kBlue })
 
 
-
 location_red_capture = location_info:new({ text = "Capture Point", team = Team.kRed })
 location_red_flagroom	= location_info:new({ text = "Flag Room", team = Team.kRed })
 location_red_spawn		= location_info:new({ text = "Team Respawn", team = Team.kRed })
-
 
 location_red_battlements	= location_info:new({ text = "Battlements", team = Team.kRed })
 location_red_entrance	= location_info:new({ text = "Main Entrance", team = Team.kRed })
@@ -31,10 +27,8 @@ location_red_tunnel		= location_info:new({ text = "Tunnel", team = Team.kRed })
 location_red_water		= location_info:new({ text = "Flooded Tunnel", team = Team.kRed })
 location_red_yard		= location_info:new({ text = "Yard", team = Team.kRed })
 
-
 location_bunker	= location_info:new({ text = "Middle Fort", team = Team.kUnassigned })
 location_bunkertop = location_info:new({ text = "Top Middle Fort", team = Team.kUnassigned })
-
 
 
 --------------------------------------------------------
@@ -57,7 +51,6 @@ engiPack = genericbackpack:new({
 	touchsound = "Backpack.Touch",
 	botgoaltype = Bot.kBackPack_Ammo
 })
-
 
 
 --------------------------------------------------------
@@ -83,7 +76,6 @@ function red_door1_trigger:ontrigger( touch_entity )
 end 
 
 
-
 red_door2_trigger = trigger_ff_script:new({ team = Team.kRed }) 
 
 function red_door2_trigger:allowed( touch_entity ) 
@@ -101,7 +93,6 @@ function red_door2_trigger:ontrigger( touch_entity )
       OutputEvent("red_door2_right", "Open") 
    end 
 end 
-
 
 blue_door1_trigger = trigger_ff_script:new({ team = Team.kBlue }) 
 
@@ -122,7 +113,6 @@ function blue_door1_trigger:ontrigger( touch_entity )
 end 
 
 
-
 blue_door2_trigger = trigger_ff_script:new({ team = Team.kBlue }) 
 
 function blue_door2_trigger:allowed( touch_entity ) 
@@ -140,7 +130,6 @@ function blue_door2_trigger:ontrigger( touch_entity )
       OutputEvent("blue_door2_right", "Open") 
    end 
 end 
-
 
 
 --------------------------------------------------------

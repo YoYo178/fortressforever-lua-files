@@ -739,7 +739,6 @@ function RaceMessage( player, string )
 	end
 end
 
-
 ------------------------------------------------------------
 -- General Utility Functions
 ------------------------------------------------------------
@@ -800,7 +799,6 @@ function to_string( tbl )
         return tostring(tbl)
     end
 end
-
 
 ------------------------------------------------------------
 -- Game callbacks and whatnot

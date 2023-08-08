@@ -40,7 +40,6 @@ function util_module.RandomLimb()
 end
 
 
-
 function util_module.NewUlt(name1, desc1, name2, desc2, name3, desc3, name4, desc4)
 	local self = {}
 	local ult_name = {name1, name2, name3, name4}

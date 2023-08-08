@@ -229,7 +229,6 @@ jumppad_nojump_red = base_trigger_jumppad:new({ needtojump = false, teamonly = t
 jumppad_nojump_green = base_trigger_jumppad:new({ needtojump = false, teamonly = true, team = Team.kGreen })
 jumppad_nojump_yellow = base_trigger_jumppad:new({ needtojump = false, teamonly = true, team = Team.kYellow })
 
-
 -----------------------------------------------------------------------------
 -- Give Full Concs on Respawn
 -----------------------------------------------------------------------------
@@ -309,7 +308,6 @@ location_blue_ramproom		= location_info:new({ text = "Ramp Room", team = Team.kB
 location_blue_toproute	= location_info:new({ text = "Top Connector", team = Team.kBlue })
 
 location_blue_flagroom		= location_info:new({ text = "Flag Room", team = Team.kBlue })
-
 
 
 

@@ -18,9 +18,6 @@ POINTS_PER_OPERATORS_RUNNERS_SUICIDE_FOR_OPERATORS = 5
 
 
 
-
-
-
 function startup()
 
  
@@ -63,9 +60,7 @@ function startup()
 	team:SetClassLimit( Player.kEngineer, -1 )
 	team:SetClassLimit( Player.kCivilian, 0 )
 
-
 end
-
 
 
 
@@ -91,12 +86,10 @@ function runners_escape:ontouch( touch_entity )
 
 end
 
-
 function precache()
 	-- precache sounds
 	PrecacheSound("yourteam.w00t")
 end
-
 
 
 
@@ -123,8 +116,6 @@ end
 
 
 
-
-
 -- runners tele damage
 tele_damage = trigger_ff_script:new({ })
 
@@ -148,11 +139,9 @@ end
 
 
 
-
 -- Dont give any one any thing, but strip grenades from operators
 function player_spawn( player_entity )
 	local player = CastToPlayer( player_entity )
-
 
 
 
@@ -162,8 +151,6 @@ function player_spawn( player_entity )
 		player:RemoveAmmo( Ammo.kGren2, 4 )
 	end
 end
-
-
 
 
 

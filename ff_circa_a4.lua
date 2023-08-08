@@ -12,7 +12,6 @@ POINTS_PER_CAPTURE = 10;
 FLAG_RETURN_TIME = 60;
 SECURITY_LENGTH = 30;
 
-
 -----------------------------------------------------------------------------
 -- bagless resupply
 -----------------------------------------------------------------------------
@@ -34,7 +33,6 @@ end
 
 blue_aardvarkresup = aardvarkresup:new({ team = Team.kBlue })
 red_aardvarkresup = aardvarkresup:new({ team = Team.kRed })
-
 
 -----------------------------------------------------------------------------
 -- aardvark security
@@ -175,7 +173,6 @@ end
 lift_red = base_jump:new({ pushz = 825 })
 lift_blue = base_jump:new({ pushz = 825 })
 
-
 -----------------------------------------------------------------------------
 -- custom packs
 -----------------------------------------------------------------------------
@@ -252,7 +249,6 @@ blue_healthkit, blue_armorkit, blue_ammobackpack, blue_bigpack, blue_grenadeback
 red_healthkit, red_armorkit, red_ammobackpack, red_bigpack, red_grenadebackpack, red_aardvarkpack_fr, red_aardvarkpack_ramp, red_aardvarkpack_sec = build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kRed})
 yellow_healthkit, yellow_armorkit, yellow_ammobackpack, yellow_bigpack, yellow_grenadebackpack, yellow_aardvarkpack_fr, yellow_aardvarkpack_ramp, yellow_aardvarkpack_sec = build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kYellow})
 green_healthkit, green_armorkit, green_ammobackpack, green_bigpack, green_grenadebackpack, green_aardvarkpack_fr, green_aardvarkpack_ramp, green_aardvarkpack_sec = build_backpacks({AllowFlags.kOnlyPlayers,AllowFlags.kGreen})
-
 
 -----------------------------------------------------------------------------
 -- SPAWNS

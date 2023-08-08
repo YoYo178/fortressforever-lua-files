@@ -160,7 +160,6 @@ function PlayerStopTouchingCapZone( touch_entity, cp )
 	
 end
 
-
 function DrawCCAlarmIcon( cc_team_number )
 
 	-- check whether command centers are enabled
@@ -776,7 +775,6 @@ function TeamCompleteControl( control_team )
 		
 end
 
-
 -----------------------------------------------------------------------------
 -- a cp's defending team successfully defended or capped
 -----------------------------------------------------------------------------
@@ -811,7 +809,6 @@ function SuccessfulCPDefense( cp, team_number, is_a_cap )
 	cp.former_touching_players[team_number]:RemoveAllItems()
 
 end
-
 
 -----------------------------------------------------------------------------
 -- timed cp capping
@@ -949,7 +946,6 @@ function cap_zone_timer( cp )
 
 end
 
-
 -----------------------------------------------------------------------------
 -- triggers
 -----------------------------------------------------------------------------
@@ -977,7 +973,6 @@ end
 
 cp_team1_door_trigger = cp_base_trigger:new({ team = TEAM1 , failtouch_message = "#FF_NOTALLOWEDDOOR" })
 cp_team2_door_trigger = cp_base_trigger:new({ team = TEAM2 , failtouch_message = "#FF_NOTALLOWEDDOOR" })
-
 
 -----------------------------------------------------------------------------
 -- packs
@@ -1019,7 +1014,6 @@ cp_cp3_armor = armorkit:new({cp_number = 3})
 cp_cp4_armor = armorkit:new({cp_number = 4})
 cp_cp5_armor = armorkit:new({cp_number = 5})
 
-
 -----------------------------------------------------------------------------
 -- grenade packs
 -----------------------------------------------------------------------------
@@ -1035,7 +1029,6 @@ cp_base_grenade_pack = cp_base_pack:new({
 
 cp_team1_grenade_pack = cp_base_grenade_pack:new( { touchflags = team_info[TEAM1].touchflags } )
 cp_team2_grenade_pack = cp_base_grenade_pack:new( { touchflags = team_info[TEAM2].touchflags } )
-
 
 -----------------------------------------------------------------------------
 -- cp zones
@@ -1105,7 +1098,6 @@ cp_cp2_cp_zone = cp_base_cp_zone:new({ cp_number = 2 })
 cp_cp3_cp_zone = cp_base_cp_zone:new({ cp_number = 3 })
 cp_cp4_cp_zone = cp_base_cp_zone:new({ cp_number = 4 })
 cp_cp5_cp_zone = cp_base_cp_zone:new({ cp_number = 5 })
-
 
 -----------------------------------------------------------------------------
 -- cp triggers
@@ -1179,7 +1171,6 @@ cp_cp2_cp_trigger = cp_base_cp_trigger:new({ cp_number = 2 })
 cp_cp3_cp_trigger = cp_base_cp_trigger:new({ cp_number = 3 })
 cp_cp4_cp_trigger = cp_base_cp_trigger:new({ cp_number = 4 })
 cp_cp5_cp_trigger = cp_base_cp_trigger:new({ cp_number = 5 })
-
 
 -----------------------------------------------------------------------------
 -- flags
@@ -1312,7 +1303,6 @@ cp_team2_flag = cp_base_flag:new({
 	touchflags = team_info[TEAM2].touchflags
 })
 
-
 -----------------------------------------------------------------------------
 -- flag dispensers
 -----------------------------------------------------------------------------
@@ -1404,7 +1394,6 @@ cp_team2_flag_dispenser = cp_base_flag_dispenser:new({
 	hudicon = "hud_flag_" .. team_info[TEAM2].team_name .. ".vtf",
 	flags = { team_info[TEAM2].team_name .. "_flag" }
 })
-
 
 -----------------------------------------------------------------------------
 -- command centers
@@ -1505,7 +1494,6 @@ end
 cp_team1_command_center = cp_base_command_center:new({ team = TEAM1, enemy_team = TEAM2 })
 cp_team2_command_center = cp_base_command_center:new({ team = TEAM2, enemy_team = TEAM1 })
 
-
 -------------------------------------------
 -- cc computers
 -------------------------------------------
@@ -1540,7 +1528,6 @@ end
 cp_team1_cc_computer = cp_base_cc_computer:new({ prefix = team_info[TEAM1].team_name, enemy_team = TEAM2 })
 cp_team2_cc_computer = cp_base_cc_computer:new({ prefix = team_info[TEAM2].team_name, enemy_team = TEAM1 })
 
-
 -------------------------------------------
 -- cp flaginfo
 -------------------------------------------
@@ -1564,7 +1551,6 @@ function flaginfo( player_entity )
 	DrawCCAlarmIcon( TEAM2 )
 
 end
-
 
 -------------------------------------------
 -- cp teleporters
@@ -1631,7 +1617,6 @@ cp_team2_teleporter_cp3 = cp_base_teleporter:new({ cp_number = 3 })
 cp_team2_teleporter_cp4 = cp_base_teleporter:new({ cp_number = 4 })
 cp_team2_teleporter_cp5 = cp_base_teleporter:new({ cp_number = 5 })
 
-
 -----------------------------------------------------------------------------
 -- locations
 -----------------------------------------------------------------------------
@@ -1661,7 +1646,6 @@ location_red_cc = location_info:new({ text = "#FF_LOCATION_COMMAND_CENTER", team
 location_red_outside_base = location_info:new({ text = "#FF_LOCATION_OUTSIDE_BASE", team = TEAM2 })
 location_red_canal = location_info:new({ text = "#FF_LOCATION_CANAL", team = TEAM2 })
 location_red_catacombs = location_info:new({ text = "#FF_LOCATION_CATACOMBS", team = TEAM2 })
-
 
 -----------------------------------------------------------------------------
 -- backwards compatiblity - use "cp_*" names in your map instead!
@@ -1731,5 +1715,4 @@ red_teleporter_cp2 = cp_team2_teleporter_cp2
 red_teleporter_cp3 = cp_team2_teleporter_cp3
 red_teleporter_cp4 = cp_team2_teleporter_cp4
 red_teleporter_cp5 = cp_team2_teleporter_cp5
-
 

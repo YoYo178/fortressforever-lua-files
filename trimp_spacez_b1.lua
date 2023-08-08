@@ -4,20 +4,15 @@
 IncludeScript("base_ctf4");
 IncludeScript("base_location");
 
-
 ----------------------------
 -- Toggle Concussion Effect.
 ----------------------------
 CONC_EFFECT = 0
 
 
-
 function player_onconc( player_entity, concer_entity )
 
-	if CONC_EFFECT == 0 then
-		return EVENT_DISALLOWED
-	end
-
+	if CONC_EFFECT == 0 then return EVENT_DISALLOWED end
 	return EVENT_ALLOWED
 end
 
@@ -185,7 +180,6 @@ function player_spawn( player_entity )
                 
 	end
 
-
 	-- Add items (similar to both teams)
 	player:AddAmmo( Ammo.kShells, 200 )
 	player:AddAmmo( Ammo.kNails, 200 )
@@ -349,21 +343,9 @@ location_stage125 = location_info:new({ text = "The Final", team = NO_TEAM })
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 --------------------
 --Finish Zones
 --------------------
-
 
 finish = trigger_ff_script:new({})
 
@@ -399,9 +381,7 @@ end
 ------------------------------------------------------
 -----
 
-
 local flags = {"red_flag", "blue_flag", "green_flag", "yellow_flag", "red_flag2", "blue_flag2", "green_flag2", "yellow_flag2"}
-
 
 -----------------------------------------------------------------------------
 -- entities
@@ -579,7 +559,6 @@ yellow_cap = basecap:new({team = Team.kYellow,
 green_cap = basecap:new({team = Team.kGreen,
 						item = {"red_flag", "blue_flag", "green_flag", "yellow_flag", "red_flag2", "blue_flag2", "green_flag2", "yellow_flag2"}})
 
-
 -----------------------------------------------------------------------------
 -- Flag (allows own team to get their flag)
 -----------------------------------------------------------------------------
@@ -723,7 +702,6 @@ function basecap:oncapture(player, item)
 	SmartSpeak(player, "CTF_YOUCAP", "CTF_TEAMCAP", "CTF_THEYCAP")
 	SmartMessage(player, "#FF_YOUCAP", "#FF_TEAMCAP", "#FF_OTHERTEAMCAP")
 end
-
 
 ------------------
 --No Damage-------

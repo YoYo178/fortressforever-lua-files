@@ -26,10 +26,7 @@ CONC_EFFECT = 0
 -----------------------------------------------------------------------------
 function player_onconc( player_entity, concer_entity )
 
-	if CONC_EFFECT == 0 then
-		return EVENT_DISALLOWED
-	end
-
+	if CONC_EFFECT == 0 then return EVENT_DISALLOWED end
 	return EVENT_ALLOWED
 end
 
@@ -56,7 +53,6 @@ HWGUY = 0
 -- Disable/Enable Invunerability
 INVUL = 0
 
-
 ---------------------------------
 -- DO NOT CHANGE THESE
 ---------------------------------
@@ -64,7 +60,6 @@ reached_end = 0
 CONC_FREESTYLE = 0
 CONC_RACE = 0
 ---------------------------------
-
 
 function startup()
 
@@ -133,7 +128,6 @@ function precache()
 	PrecacheSound("misc.doop")
 end
 
-
 -----------------------------------------------------------------------------
 -- Conc Backpack
 -----------------------------------------------------------------------------
@@ -154,7 +148,6 @@ fullbackpack = info_ff_script:new({
 })
 
 function fullbackpack:dropatspawn() return true end
-
 
 function fullbackpack:touch( touch_entity )
 	if IsPlayer( touch_entity ) then
@@ -198,7 +191,6 @@ function fullbackpack:materialize( )
 	entity:EmitSound(self.materializesound)
 end
 
-
 -----------------------------------------------------------------------------
 -- Health Backpack
 -----------------------------------------------------------------------------
@@ -228,7 +220,6 @@ function rocketsbackpack:precache( )
 	-- precache models
 	PrecacheModel(self.model)
 end
-
 
 function rocketsbackpack:touch( touch_entity )
 	if IsPlayer( touch_entity ) then
@@ -298,7 +289,6 @@ function grenbackpack:precache( )
 	-- precache models
 	PrecacheModel(self.model)
 end
-
 
 function grenbackpack:touch( touch_entity )
 	if IsPlayer( touch_entity ) then
@@ -379,7 +369,6 @@ function trigger_health:ontouch( touch_entity )
 	end
 end
 
-
 ------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------
@@ -390,20 +379,17 @@ area6_ar3 = func_button:new({})
 area6_cr1 = func_button:new({})
 area6_cr2 = func_button:new({})
 
-
 area6_arl1 = func_button:new({})
 area6_arl2 = func_button:new({})
 area6_arl3 = func_button:new({})
 area6_crl1 = func_button:new({})
 area6_crl2 = func_button:new({})
 
-
 area6_alr1 = func_button:new({})
 area6_alr2 = func_button:new({})
 area6_alr3 = func_button:new({})
 area6_clr1 = func_button:new({})
 area6_clr2 = func_button:new({})
-
 
 area6_all1 = func_button:new({})
 area6_all2 = func_button:new({})
@@ -471,7 +457,6 @@ function area6_clr2:ondamage()
 	OutputEvent("area6_door_clr2", "Open" )
 end
 
-
 function area6_all1:ondamage() 
 	OutputEvent("area6_door_all1", "Open" ) 
 end
@@ -501,7 +486,6 @@ area9_btn_rl2 = func_button:new({})
 area9_btn_rr1 = func_button:new({})
 area9_btn_rr2 = func_button:new({})
 
-
 function area9_btn_rl1:ondamage()
 	OutputEvent("area9_door_rl1", "Open" )
 end
@@ -522,7 +506,6 @@ area9_btn_ll1 = func_button:new({})
 area9_btn_ll2 = func_button:new({})
 area9_btn_lr1 = func_button:new({})
 area9_btn_lr2 = func_button:new({})
-
 
 function area9_btn_ll1:ondamage()
 	OutputEvent("area9_door_ll1", "Open" )

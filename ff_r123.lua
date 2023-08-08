@@ -23,7 +23,6 @@ rbluejump = base_jump:new({ pushx = 1500, pushy = 1500, pushz = 0  })
 --redside red ramp
 lbluejump = base_jump:new({ pushx = -1500, pushy = 1500, pushz = 0  })
 
-
 --redside blue ramp
 lredjump = base_jump:new({ pushx = 1500, pushy = -1500, pushz = 0  })
 

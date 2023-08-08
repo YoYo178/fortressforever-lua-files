@@ -72,7 +72,6 @@ function location_redflagin:ontrigger( touch_entity )
 	end
 end
 
-
 -- overrided version of the base_teamplay function
 function baseflag:touch( touch_entity )
 	-----------------------------------------------------------------------------
@@ -116,7 +115,6 @@ function baseflag:touch( touch_entity )
 		self.status = 1
 	end
 end
-
 
 
 
@@ -245,7 +243,6 @@ blue_slayer = KILL_KILL_KILL:new({ team = Team.kBlue })
 red_slayer = KILL_KILL_KILL:new({ team = Team.kRed })
 sec_blue_slayer = lasers_KILL_KILL_KILL:new({ team = Team.kBlue })
 sec_red_slayer = lasers_KILL_KILL_KILL:new({ team = Team.kRed })
-
 
 
 -----------------------------------------------------------------------------

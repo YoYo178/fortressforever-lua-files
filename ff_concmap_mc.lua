@@ -26,17 +26,13 @@ CONC_RACE = 1
 -----------------------------------------------------------------------------
 function player_onconc( player_entity, concer_entity )
 
-	if CONC_EFFECT == 0 then
-		return EVENT_DISALLOWED
-	end
-
+	if CONC_EFFECT == 0 then return EVENT_DISALLOWED end
 	return EVENT_ALLOWED
 end
 
 -----------------------------------------------------------------------------
 -- Team settings
 -----------------------------------------------------------------------------
-
 
 function startup()
 	-- set up team limits on each team
@@ -47,11 +43,9 @@ function startup()
 
 	SetTeamName(Team.kBlue, "Concers")
 
-
 -----------------------------------------------------------------------------
 -- Class Settings
 -----------------------------------------------------------------------------
-
 
 local team = GetTeam(Team.kBlue)
 	team:SetClassLimit(Player.kDemoman, -1)
@@ -121,7 +115,6 @@ function concbackpack:touch( touch_entity )
 	end
 end
 
-
 trigger_conc = trigger_ff_script:new({})
 function trigger_conc:ontouch( touch_entity )
 	if IsPlayer( touch_entity ) then
@@ -156,5 +149,4 @@ function player_spawn( player_entity )
 	player:AddAmmo( Ammo.kGren2, 4 )
     end
 end
-
 

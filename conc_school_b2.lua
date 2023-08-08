@@ -1,5 +1,15 @@
+-----------------------------------------------------------------------------
+--conc_school_b2.lua
+-----------------------------------------------------------------------------
+-- Includes
+-----------------------------------------------------------------------------
+
 IncludeScript("base_location");
 IncludeScript("base_ctf4");
+
+-----------------------------------------------------------------------------
+-- Globals
+-----------------------------------------------------------------------------
 
 -- Points and Frags you receive for touching EndZone.
 CONC_POINTS = 5000
@@ -15,55 +25,52 @@ ENGINEER = 0
 PYRO = 0
 
 function startup()
+	SetTeamName(Team.kBlue, "Students")
+	SetTeamName(Team.kRed, "Jugglers")
 
-	SetTeamName( Team.kBlue, "Students" )
-	SetTeamName( Team.kRed, "Jugglers" )
+	SetPlayerLimit(Team.kBlue, 0)
+	SetPlayerLimit(Team.kRed, 0)
+	SetPlayerLimit(Team.kYellow, -1)
+	SetPlayerLimit(Team.kGreen, -1)
 
-	SetPlayerLimit( Team.kBlue, 0 )
-	SetPlayerLimit( Team.kRed, 0 )
-	SetPlayerLimit( Team.kYellow, -1 )
-	SetPlayerLimit( Team.kGreen, -1 ) 
-	
 	-- BLUE TEAM
-	local team = GetTeam( Team.kBlue )
-	team:SetAllies( Team.kRed )
-	
-	team:SetClassLimit( Player.kHwguy, -1 )
-	team:SetClassLimit( Player.kSpy, -1 )
-	team:SetClassLimit( Player.kCivilian, -1 )
-	team:SetClassLimit( Player.kSniper, -1 )
-	team:SetClassLimit( Player.kSoldier, -1 )
-	team:SetClassLimit( Player.kDemoman, -1 )
-	team:SetClassLimit( Player.kPyro, -1 )
-	team:SetClassLimit( Player.kEngineer, -1)
-	
-	ShouldEnableClass( team, SCOUT, Player.kScout )
-	ShouldEnableClass( team, MEDIC, Player.kMedic )
-	
-	
+	local team = GetTeam(Team.kBlue)
+	team:SetAllies(Team.kRed)
+
+	team:SetClassLimit(Player.kHwguy, -1)
+	team:SetClassLimit(Player.kSpy, -1)
+	team:SetClassLimit(Player.kCivilian, -1)
+	team:SetClassLimit(Player.kSniper, -1)
+	team:SetClassLimit(Player.kSoldier, -1)
+	team:SetClassLimit(Player.kDemoman, -1)
+	team:SetClassLimit(Player.kPyro, -1)
+	team:SetClassLimit(Player.kEngineer, -1)
+
+	ShouldEnableClass(team, SCOUT, Player.kScout)
+	ShouldEnableClass(team, MEDIC, Player.kMedic)
+
 	-- RED TEAM
-	team = GetTeam( Team.kRed )
-	team:SetAllies( Team.kBlue )
-	
-	team:SetClassLimit( Player.kHwguy, -1 )
-	team:SetClassLimit( Player.kSpy, -1 )
-	team:SetClassLimit( Player.kCivilian, -1 )
-	team:SetClassLimit( Player.kSniper, -1 )
-	team:SetClassLimit( Player.kSoldier, -1 )
-	team:SetClassLimit( Player.kDemoman, -1 )
-	team:SetClassLimit( Player.kPyro, -1 )
-	team:SetClassLimit( Player.kEngineer, -1)
-	
-	ShouldEnableClass( team, SCOUT, Player.kScout )
-	ShouldEnableClass( team, MEDIC, Player.kMedic )
-	
+	team = GetTeam(Team.kRed)
+	team:SetAllies(Team.kBlue)
+
+	team:SetClassLimit(Player.kHwguy, -1)
+	team:SetClassLimit(Player.kSpy, -1)
+	team:SetClassLimit(Player.kCivilian, -1)
+	team:SetClassLimit(Player.kSniper, -1)
+	team:SetClassLimit(Player.kSoldier, -1)
+	team:SetClassLimit(Player.kDemoman, -1)
+	team:SetClassLimit(Player.kPyro, -1)
+	team:SetClassLimit(Player.kEngineer, -1)
+
+	ShouldEnableClass(team, SCOUT, Player.kScout)
+	ShouldEnableClass(team, MEDIC, Player.kMedic)
 end
 
-function ShouldEnableClass( team, classtype, class )
+function ShouldEnableClass(team, classtype, class)
 	if classtype == 1 then
-		team:SetClassLimit( class, 0 )
+		team:SetClassLimit(class, 0)
 	else
-		team:SetClassLimit( class, -1 )
+		team:SetClassLimit(class, -1)
 	end
 end
 
@@ -73,27 +80,25 @@ function precache()
 end
 
 -- Disable conc effect.
-function player_onconc( player_entity, concer_entity )
+function player_onconc()
 	return false
 end
 
-
 -- Gives player concs / removes all other ammo
-function fullresupply( player )
-	player:AddHealth( 100 )
-	player:AddArmor( 300 )
+function fullresupply(player)
+	player:AddHealth(100)
+	player:AddArmor(300)
 
-	player:RemoveWeapon( "ff_weapon_shotgun" )
-	player:RemoveWeapon( "ff_weapon_supershotgun" )
-	player:RemoveWeapon( "ff_weapon_nailgun" )
-	player:RemoveWeapon( "ff_weapon_supernailgun" )
-	player:RemoveAmmo( Ammo.kManCannon, 1 )
-	player:RemoveAmmo( Ammo.kCells, 400 )
-		
-	player:RemoveAmmo( Ammo.kGren1, 4 )
-	player:AddAmmo( Ammo.kGren2, 4 )
+	player:RemoveWeapon("ff_weapon_shotgun")
+	player:RemoveWeapon("ff_weapon_supershotgun")
+	player:RemoveWeapon("ff_weapon_nailgun")
+	player:RemoveWeapon("ff_weapon_supernailgun")
+	player:RemoveAmmo(Ammo.kManCannon, 1)
+	player:RemoveAmmo(Ammo.kCells, 400)
+
+	player:RemoveAmmo(Ammo.kGren1, 4)
+	player:AddAmmo(Ammo.kGren2, 4)
 end
-
 
 -----------------------------------------------------------------------------
 -- End Zone Entity
@@ -101,21 +106,18 @@ end
 
 endzone = trigger_ff_script:new()
 
-function endzone:ontouch( touch_entity )
+function endzone:ontouch(touch_entity)
+	if IsPlayer(touch_entity) then
+		local player = CastToPlayer(touch_entity)
 
-	if IsPlayer( touch_entity ) then
-		local player = CastToPlayer( touch_entity )
-			
-		ConsoleToAll( player:GetName() .. " has graduated from conc_school!" )
-		BroadCastMessage( player:GetName() .. " has graduated from conc_school!" )
-		
+		ConsoleToAll(player:GetName() .. " has graduated from conc_school!")
+		BroadCastMessage(player:GetName() .. " has graduated from conc_school!")
+
 		SmartSound(player, "yourteam.flagcap", "yourteam.flagcap", "yourteam.flagcap")
-			
-		player:AddFrags( CONC_FRAGS )
-		player:AddFortPoints( CONC_POINTS, "Graduated!" )
-			
+
+		player:AddFrags(CONC_FRAGS)
+		player:AddFortPoints(CONC_POINTS, "Graduated!")
 	end
-	
 end
 
 -----------------------------------------------------------------------------
@@ -123,27 +125,27 @@ end
 -----------------------------------------------------------------------------
 
 -- Resupplies the player on spawn.
-function player_spawn( player_entity )
-	local player = CastToPlayer( player_entity )
-	fullresupply( player )
-	BroadCastMessageToPlayer(player, "Your weapons have been stripped. You must complete the map with your concussion grenades ONLY.")
+function player_spawn(player_entity)
+	local player = CastToPlayer(player_entity)
+	fullresupply(player)
+	BroadCastMessageToPlayer(player,
+		"Your weapons have been stripped. You must complete the map with your concussion grenades ONLY.")
 end
 
-resupplyzone = trigger_ff_script:new({ })
+resupplyzone = trigger_ff_script:new({})
 
 -- Resupplies the players once every 0.1 seconds when they are inside the resupply zone.
-function resupplyzone:allowed( allowed_entity )
-	if IsPlayer( allowed_entity ) then
-		local player = CastToPlayer( allowed_entity )
-		fullresupply( player )
+function resupplyzone:allowed(allowed_entity)
+	if IsPlayer(allowed_entity) then
+		local player = CastToPlayer(allowed_entity)
+		fullresupply(player)
 	end
 	-- Return true to allow triggering the zone if needed.
 	return true
 end
 
-
 -----------------------------------------------------------------------------
--- Jump Locations 
+-- Jump Locations
 -----------------------------------------------------------------------------
 
 location_tele_room = location_info:new({ text = "Teleport Room", team = Team.kBlue })
@@ -166,71 +168,70 @@ location_tunnel = location_info:new({ text = "The Tunnel of Love", team = Team.k
 location_endzone = location_info:new({ text = "You have completed conc_school!", team = Team.kGreen })
 
 -----------------------------------------------------------------------------
--- Juggle Locations (taken from ff_juggle_this) 
+-- Juggle Locations (taken from ff_juggle_this)
 -- modified to work with conc_school
 -----------------------------------------------------------------------------
 
 -- Keeps track of players record.
-max_level = { }
+max_level = {}
 
-location_juggle = trigger_ff_script:new({ })
+location_juggle = trigger_ff_script:new({})
 
-function location_juggle:ontouch( touch_entity )
+function location_juggle:ontouch(touch_entity)
+	if IsPlayer(touch_entity) then
+		local player = CastToPlayer(touch_entity)
 
-	if IsPlayer( touch_entity ) then
-		local player = CastToPlayer( touch_entity )
-		
 		local level = self.level
 		local color = Team.kUnassigned
-		
+
 		-- Set the value to 0 if it's still nil
 		if max_level[player:GetId()] == nil then
 			max_level[player:GetId()] = 0
 		end
-		
+
 		if max_level[player:GetId()] < level then
 			max_level[player:GetId()] = level
 			-- Player has made some progress, play a sound, show a message and add some fortress points!
 			BroadCastSoundToPlayer(player, "misc.doop")
 			BroadCastMessageToPlayer(player, "New record: " .. level)
 			player:AddFortPoints(1000, "Reaching level " .. level)
-			player:AddFrags( JUGGLE_FRAGS )
+			player:AddFrags(JUGGLE_FRAGS)
 		end
-		
+
 		local maxlevel = max_level[player:GetId()]
-		
+
 		-- Display FINISHED! as max level if the player has reached the top and change the color to green
 		if maxlevel == 30 then
 			maxlevel = "FINISHED!"
 			color = Team.kGreen
 		end
-		
+
 		-- If FINISHED! was just enabled to the player and the player falls down before fully exiting the previous location trigger,
 		-- the record is shown wrong for the time the player is inside the current location trigger... this happens because the location
 		-- is only removed when the player exits the trigger brush (see location_info:onendtouch).
 		-- I'm not quite sure how to fix this easily but it's visible only for a second or so, no big deal :P
-		player:SetLocation(entity:GetId(), "Level: " .. level .. " Record: " .. maxlevel , color)
+		player:SetLocation(entity:GetId(), "Level: " .. level .. " Record: " .. maxlevel, color)
 	end
 end
 
-function location_juggle:onendtouch( touch_entity )
+function location_juggle:onendtouch(touch_entity)
 	-- remove the location from the player
-	if IsPlayer( touch_entity ) then
-		local player = CastToPlayer( touch_entity )
+	if IsPlayer(touch_entity) then
+		local player = CastToPlayer(touch_entity)
 		player:RemoveLocation(entity:GetId())
 	end
 end
 
-location_0 =  location_juggle:new({ level = 0 })
-location_1 =  location_juggle:new({ level = 1 })
-location_2 =  location_juggle:new({ level = 2 })
-location_3 =  location_juggle:new({ level = 3 })
-location_4 =  location_juggle:new({ level = 4 })
-location_5 =  location_juggle:new({ level = 5 })
-location_6 =  location_juggle:new({ level = 6 })
-location_7 =  location_juggle:new({ level = 7 })
-location_8 =  location_juggle:new({ level = 8 })
-location_9 =  location_juggle:new({ level = 9 })
+location_0 = location_juggle:new({ level = 0 })
+location_1 = location_juggle:new({ level = 1 })
+location_2 = location_juggle:new({ level = 2 })
+location_3 = location_juggle:new({ level = 3 })
+location_4 = location_juggle:new({ level = 4 })
+location_5 = location_juggle:new({ level = 5 })
+location_6 = location_juggle:new({ level = 6 })
+location_7 = location_juggle:new({ level = 7 })
+location_8 = location_juggle:new({ level = 8 })
+location_9 = location_juggle:new({ level = 9 })
 location_10 = location_juggle:new({ level = 10 })
 location_11 = location_juggle:new({ level = 11 })
 location_12 = location_juggle:new({ level = 12 })

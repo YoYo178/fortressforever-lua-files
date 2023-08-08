@@ -295,7 +295,6 @@ function player_onchat(playerID, chatstring)
         return false
     end
 
-
 	if message == "!reset" then
         player.ResetSkills()
         return false

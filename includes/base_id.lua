@@ -223,7 +223,6 @@ function baseflag:onreturn( )
 	
 	LogLuaEvent(0, 0, "flag_returned","flag_name",flag:GetName());
 
-
 	-- objective icon
 	ATTACKERS_OBJECTIVE_ENTITY = flag
 	UpdateDefendersObjective()
@@ -395,7 +394,6 @@ end
 
 backpack_attackers = idbackpack:new({team = attackers})
 backpack_defenders = idbackpack:new({team = defenders})
-
 
 -----------------------------------------
 -- base flag
@@ -631,7 +629,6 @@ function flag_start(flagname)
 end
 function flag_30secwarn() BroadCastMessage("#AD_30SecReturn") end
 function flag_10secwarn() BroadCastMessage("#AD_10SecReturn") end
-
 
 function timer_schedule()
 	current_timer = current_timer -1

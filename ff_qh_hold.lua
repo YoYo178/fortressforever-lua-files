@@ -284,7 +284,6 @@ holdbasekit = genericbackpack:new({
 
 function holdbasekit:dropatspawn() return false end
 
-
 holdarmorkit = genericbackpack:new({
 	armor = 200,
 	model = "models/items/armour/armour.mdl",

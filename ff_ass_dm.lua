@@ -7,7 +7,6 @@ IncludeScript("base");
 IncludeScript("base_ctf");
 IncludeScript("base_location");
 
-
 -- checks that enemies are damaging, not self or fall damage
 function player_ondamage( player, damageinfo )
 	-- Entity that is attacking
@@ -38,7 +37,6 @@ function player_ondamage( player, damageinfo )
 		return 
   	end
 end
-
 
 -----------------------------------------------------------------------------
 -- Teams
@@ -131,7 +129,6 @@ if (player:GetId() == playerAttacker:GetId()) or (player:GetTeamId() == playerAt
   end
 
 --unlimited rockets
-
 
 
 -----------------------------------------------------------------------------

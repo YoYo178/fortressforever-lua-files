@@ -3,10 +3,8 @@
 --ff_tomb_dm.lua
 
 
-
 -- Includes
 IncludeScript("base_teamplay");
-
 
 
 function startup()
@@ -116,7 +114,6 @@ function weapon:touch( touch_entity )
 end
 function weapon:dropatspawn() return true end
 
-
 weapon_rpg = weapon:new({ useweapon = "ff_weapon_rpg", rockets = 4, model =  "models/weapons/rpg/w_rpg.mdl" })
 weapon_sniperrifle = weapon:new({ useweapon = "ff_weapon_sniperrifle", shells = 16, model =  "models/weapons/sniperrifle/w_sniperrifle.mdl" })
 weapon_autorifle = weapon:new({ useweapon = "ff_weapon_autorifle", shells = 32, model =  "models/weapons/autorifle/w_autorifle.mdl" })
@@ -127,7 +124,6 @@ weapon_ic = weapon:new({ useweapon = "ff_weapon_ic", rockets = 8, model = "model
 weapon_supershotgun = weapon:new({ useweapon = "ff_weapon_supershotgun", shells = 16, model =  "models/weapons/supershotgun/w_supershotgun.mdl" })
 weapon_gl = weapon:new({ useweapon = "ff_weapon_grenadelauncher", secondweapon = "ff_weapon_pipelauncher", rockets = 6, model =  "models/weapons/pipelauncher/w_pipelauncher.mdl" })
 weapon_supernailgun = weapon:new({ useweapon = "ff_weapon_supernailgun", nails = 50, model =  "models/weapons/supernailgun/w_supernailgun.mdl" })
-
 
 grenade = weapon:new({	gren1 = 1, respawntime = 30, model = "models/grenades/frag/frag.mdl" })
 grenade2 = weapon:new({	gren2 = 1, respawntime = 30, model = "models/grenades/mirv/mirv.mdl" })
@@ -161,5 +157,4 @@ function player_killed( player_entity, damageinfo )
 end
 
 --]]
-
 

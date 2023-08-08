@@ -24,10 +24,7 @@ CONC_EFFECT = 1
 -----------------------------------------------------------------------------
 function player_onconc( player_entity, concer_entity )
 
-	if CONC_EFFECT == 0 then
-		return EVENT_DISALLOWED
-	end
-
+	if CONC_EFFECT == 0 then return EVENT_DISALLOWED end
 	return EVENT_ALLOWED
 end
 
@@ -54,7 +51,6 @@ HWGUY = 0
 -- Disable/Enable Invunerability
 INVUL = 0
 
-
 ---------------------------------
 -- DO NOT CHANGE THESE
 ---------------------------------
@@ -62,7 +58,6 @@ reached_end = 0
 CONC_FREESTYLE = 0
 CONC_RACE = 0
 ---------------------------------
-
 
 function startup()
 
@@ -130,7 +125,6 @@ function precache()
 	PrecacheSound("misc.doop")
 end
 
-
 -----------------------------------------------------------------------------
 -- Conc Backpack
 -----------------------------------------------------------------------------
@@ -149,7 +143,6 @@ concbackpack = info_ff_script:new({
 })
 
 function concbackpack:dropatspawn() return true end
-
 
 function concbackpack:touch( touch_entity )
 	if IsPlayer( touch_entity ) then
@@ -192,7 +185,6 @@ function concbackpack:materialize( )
 	entity:EmitSound(self.materializesound)
 end
 
-
 -----------------------------------------------------------------------------
 -- Health Backpack
 -----------------------------------------------------------------------------
@@ -220,7 +212,6 @@ function healthbackpack:precache( )
 	-- precache models
 	PrecacheModel(self.model)
 end
-
 
 function healthbackpack:touch( touch_entity )
 	if IsPlayer( touch_entity ) then
@@ -284,7 +275,6 @@ function grenbackpack:precache( )
 	-- precache models
 	PrecacheModel(self.model)
 end
-
 
 function grenbackpack:touch( touch_entity )
 	if IsPlayer( touch_entity ) then

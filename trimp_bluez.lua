@@ -4,20 +4,15 @@
 IncludeScript("base_ctf4");
 IncludeScript("base_location");
 
-
 ----------------------------
 -- Toggle Concussion Effect.
 ----------------------------
 CONC_EFFECT = 0
 
 
-
 function player_onconc( player_entity, concer_entity )
 
-	if CONC_EFFECT == 0 then
-		return EVENT_DISALLOWED
-	end
-
+	if CONC_EFFECT == 0 then return EVENT_DISALLOWED end
 	return EVENT_ALLOWED
 end
 
@@ -102,7 +97,6 @@ function player_spawn( player_entity )
 	player:AddHealth( 400 )
 	player:AddArmor( 400 )
 
-
 	-- Add items (similar to both teams)
 	player:AddAmmo( Ammo.kShells, 200 )
 	player:AddAmmo( Ammo.kNails, 200 )
@@ -121,7 +115,7 @@ end
 --------------------
 
 location_stage1 = location_info:new({ text = "1.WTF is this", team = NO_TEAM })
-location_stage2 = location_info:new({ text = "2.hmm I´m lost", team = NO_TEAM })
+location_stage2 = location_info:new({ text = "2.hmm Iï¿½m lost", team = NO_TEAM })
 location_stage3 = location_info:new({ text = "3.reminds me egipt", team = NO_TEAM })
 location_stage4 = location_info:new({ text = "4.wich one?", team = NO_TEAM })
 location_stage5 = location_info:new({ text = "5.time to take a bath", team = NO_TEAM })
@@ -136,11 +130,9 @@ location_stage13 = location_info:new({ text = "13.lol.. .", team = NO_TEAM })
 location_stage14 = location_info:new({ text = "14.la grand final!", team = NO_TEAM })
 
 
-
 --------------------
 --Finish Zones
 --------------------
-
 
 finish = trigger_ff_script:new({})
 
@@ -176,9 +168,7 @@ end
 ------------------------------------------------------
 -----
 
-
 local flags = {"red_flag", "blue_flag", "green_flag", "yellow_flag", "red_flag2", "blue_flag2", "green_flag2", "yellow_flag2"}
-
 
 -----------------------------------------------------------------------------
 -- entities
@@ -356,7 +346,6 @@ yellow_cap = basecap:new({team = Team.kYellow,
 green_cap = basecap:new({team = Team.kGreen,
 						item = {"red_flag", "blue_flag", "green_flag", "yellow_flag", "red_flag2", "blue_flag2", "green_flag2", "yellow_flag2"}})
 
-
 -----------------------------------------------------------------------------
 -- Flag (allows own team to get their flag)
 -----------------------------------------------------------------------------
@@ -487,7 +476,6 @@ function basecap:oncapture(player, item)
 	SmartMessage(player, "#FF_YOUCAP", "#FF_TEAMCAP", "#FF_OTHERTEAMCAP")
 end
 
-
 ------------------
 --No Damage-------
 ------------------
@@ -517,6 +505,5 @@ function player_ondamage( player, damageinfo )
 end
 
 ------------------
-
 
          

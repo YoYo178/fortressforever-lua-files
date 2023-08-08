@@ -47,7 +47,6 @@ bluesmallpack = genericbackpack:new({
 function bluesmallpack:dropatspawn() return false end
 
 
-
 redsmallpack = genericbackpack:new({
 	grenades = 100,
 	bullets = 100,
@@ -68,7 +67,6 @@ redsmallpack = genericbackpack:new({
 })
 
 function redsmallpack:dropatspawn() return false end
-
 
 ---------------------------------------------
 -- Main section
@@ -115,7 +113,6 @@ function startup()
 	team:SetClassLimit( Player.kSniper, -1 )
 	team:SetClassLimit( Player.kMedic, -1 )
 	team:SetClassLimit( Player.kCivilian, -1)
-
 
 	team = GetTeam( red )
 	
@@ -184,7 +181,6 @@ function player_spawn( player_entity )
 	player:RemoveWeapon( "ff_weapon_autorifle" )
 
 end
-
 
 function player_ondamage( player, damageinfo )
   

@@ -28,7 +28,6 @@ stowpack = genericbackpack:new({
 })
 function stowpack:dropatspawn() return false end
 
-
 -----------------------------------------------------------------------------
 -- custom packs   > modified from aardvark
 -----------------------------------------------------------------------------
@@ -48,7 +47,6 @@ stowaway_fr = genericbackpack:new({
 	touchsound = "Backpack.Touch",
 	botgoaltype = Bot.kBackPack_Ammo
 })
-
 
 stowaway_resup = genericbackpack:new({
 	health = 100,
@@ -90,7 +88,6 @@ green_healthkit, green_armorkit, green_ammobackpack, green_bigpack, green_grenad
 
 
 
-
 -----------------------------------------------------------------------------
 -- OFFENSIVE AND DEFENSIVE SPAWNS
 -- Medic, Spy, and Scout spawn in the offensive spawns, other classes spawn in the defensive spawn,
@@ -111,7 +108,6 @@ blue_dspawn = { validspawn = blue_d_only }
 
 
 
-
 -----------------------------------------------------------------------------
 -- bouncepads for lifts
 -----------------------------------------------------------------------------
@@ -128,7 +124,6 @@ end
 
 lift_red = base_jump:new({ pushz = 850 })
 lift_blue = base_jump:new({ pushz = 850 })
-
 
 
 
@@ -169,11 +164,9 @@ location_blue_frpassage = location_info:new({ text = "Flag Room Passage", team =
 location_red_frpassage = location_info:new({ text = "Flag Room Passage", team = Team.kRed })
 
 
-
 -----------------------------------------------------------------------------
 -- breakables
 -----------------------------------------------------------------------------
-
 
 base_grate_trigger = trigger_ff_script:new({ team = Team.kUnassigned, team_name = "neutral" })
 

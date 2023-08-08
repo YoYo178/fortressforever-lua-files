@@ -310,7 +310,6 @@ red_o_only = function(self,player) return ((player:GetTeamId() == Team.kRed) and
 red_o2_only = function(self,player) return ((player:GetTeamId() == Team.kRed) and ((player:GetClass() == Player.kSniper) or (player:GetClass() == Player.kPyro))) end
 red_d_only = function(self,player) return ((player:GetTeamId() == Team.kRed) and (((player:GetClass() == Player.kScout) == false) and ((player:GetClass() == Player.kMedic) == false) and ((player:GetClass() == Player.kSpy) == false) and ((player:GetClass() == Player.kSniper) == false) and ((player:GetClass() == Player.kPyro) == false))) end
 
-
 red_ospawn = { validspawn = red_o_only }
 red_ospawn2 = { validspawn = red_o2_only }
 red_dspawn = { validspawn = red_d_only }

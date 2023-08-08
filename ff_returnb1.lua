@@ -1,6 +1,5 @@
 
 
-
 -----------------------------------------------------------------------------
 -- includes
 -----------------------------------------------------------------------------
@@ -11,7 +10,6 @@ IncludeScript("base_respawnturret")
 
 POINTS_PER_CAPTURE = 10;
 FLAG_RETURN_TIME = 45
-
 
 
 
@@ -26,10 +24,8 @@ function startup()
 	SetTeamName( Team.kBlue, "Blue Team" )
 end
 
-
 blue_only = bluerespawndoor
 red_only = redrespawndoor
-
 
 blue_flag = baseflag:new({team = Team.kBlue,
 						 modelskin = 1,
@@ -100,9 +96,6 @@ function baseflag:ondrop( owner_entity )
 	local flag = CastToInfoScript(entity)
 	flag:EmitSound(self.tosssound)
 end
-
-
-
 
 
 

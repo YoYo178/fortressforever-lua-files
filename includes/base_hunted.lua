@@ -151,7 +151,6 @@ function hunted_location_timer()
 
 end
 
-
 function respawn_everyone()
 	ApplyToAll({ AT.kAllowRespawn, AT.kRespawnPlayers, AT.kRemoveProjectiles, AT.kStopPrimedGrens })
 
@@ -311,7 +310,6 @@ function player_disconnected( player )
 	end
 end
 
-
 BLOCKTEAMCHANGE = {}
 
 function player_switchteam( player, currentteam, desiredteam )
@@ -380,7 +378,6 @@ function player_spawn( player_entity )
 --	end
 end
 
-
 -- escape portal entrance
 hunted_escape = trigger_ff_script:new({
 	botgoaltype = Bot.kHuntedEscape,
@@ -412,7 +409,6 @@ function hunted_escape:ontouch( touch_entity )
 
 end
 
-
 base_escape_door = trigger_ff_script:new({})
 
 function base_escape_door:onopen()
@@ -440,7 +436,6 @@ function base_escape_door:onfullyclosed()
 end
 
 escape_door_top = base_escape_door
-
 
 base_escape_door_button = func_button:new({}) 
 

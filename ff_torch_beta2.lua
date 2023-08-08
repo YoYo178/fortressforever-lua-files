@@ -1,7 +1,6 @@
 IncludeScript("base_location");
 IncludeScript("base_respawnturret");
 
-
 -- base_teamplay.lua
 
 -----------------------------------------------------------------------------
@@ -694,7 +693,6 @@ green_healthkit, green_armorkit, green_ammobackpack, green_bigpack, green_grenad
 
 
 
-
 -----------------------------------------------------------------------------
 -- entities
 -----------------------------------------------------------------------------
@@ -863,11 +861,9 @@ function flaginfo( player_entity )
 	end
 end
 
-
 -----------------------------------------------------------------------------
 -- CAP POINT SPECIAL TRIGGERS
 -----------------------------------------------------------------------------
-
 
 my_cap = basecap:new({})
 
@@ -888,7 +884,6 @@ function my_cap:oncapture(player, item)
     OutputEvent( "red_cap_fire", "enable", "", 1 )
     end
 
-
     -- let the teams know that a capture occured
     SmartSound(player, "yourteam.flagcap", "yourteam.flagcap", "otherteam.flagcap")
     SmartSpeak(player, "CTF_YOUCAP", "CTF_TEAMCAP", "CTF_THEYCAP")
@@ -907,7 +902,6 @@ my_cap_blue = my_cap:new({team = Team.kBlue,
 -----------------------------------------------------------------------------------------------------------------------------
 
 
-
 blue_location_spawn 	= location_info:new({ text = "Blue Spawn", team = Team.kBlue })
 blue_location_fr 	= location_info:new({ text = "Blue Flagroom", team = Team.kBlue })
 blue_location_bats 	= location_info:new({ text = "Blue Battlements", team = Team.kBlue })
@@ -919,7 +913,6 @@ red_location_fr		= location_info:new({ text = "Red Flagroom", team = Team.kRed }
 red_location_bats	= location_info:new({ text = "Red Battlements", team = Team.kRed })
 red_location_fd		= location_info:new({ text = "Red Frontdoor", team = Team.kRed })
 red_location_resup	= location_info:new({ text = "Red Resupply", team = Team.kRed })
-
 
 
 

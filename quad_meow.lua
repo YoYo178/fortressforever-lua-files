@@ -100,10 +100,7 @@ CONC_EFFECT = 0
 --
 function player_onconc( player_entity, concer_entity )
 
-	if CONC_EFFECT == 0 then
-		return EVENT_DISALLOWED
-	end
-
+	if CONC_EFFECT == 0 then return EVENT_DISALLOWED end
 	return EVENT_ALLOWED
 end
 
@@ -140,7 +137,6 @@ function finish2:ontouch(touch_entity)
 
             BroadCastMessage( player:GetName() .. " has Completed the Map!" )
 
-
          end
 end
 
@@ -149,9 +145,7 @@ end
 ------------------------------------------------------
 -----
 
-
 local flags = {"red_flag", "blue_flag", "green_flag", "yellow_flag", "red_flag2", "blue_flag2", "green_flag2", "yellow_flag2"}
-
 
 -----------------------------------------------------------------------------
 -- entities
@@ -353,7 +347,6 @@ function baseflag:touch( touch_entity )
 		self.status = 1
 end
 
-
 function baseflag:dropitemcmd( owner_entity )
 
 end
@@ -365,7 +358,8 @@ end
 grenadebackpack = genericbackpack:new({
 	rockets = 50,
 	gren = 4,
-	shells = 60,
+	shells = 60,
+
 	cells = 60,
 	nails = 60,
 	respawntime = 3,
@@ -377,7 +371,6 @@ grenadebackpack = genericbackpack:new({
 })
 
 function grenadebackpack:dropatspawn() return false end
-
 
 function grenadebackpack:touch( touch_entity )
 	if IsPlayer( touch_entity ) then

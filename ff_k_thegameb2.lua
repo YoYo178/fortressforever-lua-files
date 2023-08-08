@@ -13,7 +13,6 @@ function startup()
 --62 seconds in the interrogation room!
 AddSchedule("breakout", 62, setBreakoutSpawn)
 
-
 -- set up team names
 SetTeamName( Team.kBlue, "NONE" )
 SetTeamName( Team.kRed, "NONE" )

@@ -3,7 +3,6 @@ IncludeScript("base_location");
 IncludeScript("base_respawnturret");
 IncludeScript("base_teamplay")
 
-
 -----------------------------------------------------------------------------
 -- global overrides
 -----------------------------------------------------------------------------

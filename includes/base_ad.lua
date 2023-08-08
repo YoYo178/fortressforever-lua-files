@@ -116,7 +116,6 @@ function blow_cp2_extra_route( )
 	OutputEvent( "cp2_extraroute", "Break" ) -- delay of 780 secs
 end
 
-
 -----------------------------------------
 -- Remove a flag by name
 -----------------------------------------
@@ -232,7 +231,6 @@ function base_ad_flag:dropitemcmd( owner_entity )
 --		RemoveHudItem( player, "base_ad_flag" )
 --	end
 end
-
 
 function base_ad_flag:touch( touch_entity )
 	-- should only respond to players
@@ -478,7 +476,6 @@ function round_10secwarn( )
 	BroadCastMessage( "#FF_ROUND_10SECWARN" )
 end
 
-
 ----------------
 -- map timers --
 ----------------
@@ -643,7 +640,6 @@ function UpdateDefendersObjective()
     UpdateTeamObjectiveIcon( GetTeam(defenders), DEFENDERS_OBJECTIVE_ENTITY )
 end
 
-
 -----------------------------------------
 -- instanciate everything
 -----------------------------------------
@@ -663,7 +659,6 @@ beta_door = respawndoor:new({allowed = beta_allowedmethod})
 beta_spawn = {validspawn = beta_allowedmethod}
 final_door = respawndoor:new({allowed = final_allowedmethod})
 final_spawn = {validspawn = final_allowedmethod}
-
 
 ------------------------------------------------
 -- hud info

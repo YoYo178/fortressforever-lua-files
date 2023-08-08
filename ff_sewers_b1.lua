@@ -23,7 +23,6 @@ blue_plasmaresup = plasmaresup:new({ team = Team.kBlue })
 red_plasmaresup = plasmaresup:new({ team = Team.kRed })
 
 
-
 -----------------------------------------------------------------------------
 -- bouncepads for lifts
 -----------------------------------------------------------------------------
@@ -116,8 +115,6 @@ sewerpack_metal = genericbackpack:new({
 
 function sewerpack:dropatspawn() return false end
 function sewerpack_metal:dropatspawn() return false end
-
-
 
 
 

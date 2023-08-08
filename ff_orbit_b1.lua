@@ -141,4 +141,3 @@ end
 blue_aardvarkresup = aardvarkresup:new({ team = Team.kBlue })
 red_aardvarkresup = aardvarkresup:new({ team = Team.kRed })
 
-

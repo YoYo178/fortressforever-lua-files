@@ -181,7 +181,6 @@ function setup_return_timer()
 	AddSchedule( "water_check", 5, check_flag_position)
 end
 
-
 function check_flag_position()
 	local flag = GetInfoScriptByName(current_flag)
 	local o = flag:GetOrigin()

@@ -24,7 +24,6 @@ function precache()
 end
 
 
-
 -- Everyone to spawns with everything
 function player_spawn( player_entity )
 	-- 400 for overkill. of course the values
@@ -44,7 +43,6 @@ function player_spawn( player_entity )
 	player:AddAmmo( Ammo.kGren2, -4 )
 	
 end
-
 
 -- Get team points for killing a player
 function player_killed( player_entity, damageinfo )
@@ -129,7 +127,6 @@ function fullpack :dropatspawn() return false end
 
 red_fullpack = fullpack:new({ touchflags = {AllowFlags.kRed} })
 blue_fullpack = fullpack:new({ touchflags = {AllowFlags.kBlue} })
-
 
 
 ---------------------------------

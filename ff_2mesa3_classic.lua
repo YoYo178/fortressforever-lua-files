@@ -87,7 +87,6 @@ end
 blue_only = bluerespawndoor
 red_only = redrespawndoor
 
-
 ---------------------------------
 -- Packs
 ---------------------------------

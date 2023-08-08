@@ -309,7 +309,6 @@ location_blue_button_route	= location_info:new({ text = "Button Side", team = Te
 
 location_blue_flag_room		= location_info:new({ text = "Flag Room", team = Team.kBlue })
 
-
 location_red_bments	= location_info:new({ text = "Battlements", team = Team.kRed })
 
 location_red_front_door	= location_info:new({ text = "Front Door", team = Team.kRed })
@@ -325,7 +324,6 @@ location_red_side_route	= location_info:new({ text = "Upper Side Connector", tea
 location_red_button_route	= location_info:new({ text = "Button Side", team = Team.kRed })
 
 location_red_flag_room		= location_info:new({ text = "Flag Room", team = Team.kRed })
-
 
 
 location_midmap	= location_info:new({ text = "Midmap", team = Team.kUnassigned })

@@ -25,7 +25,6 @@ function KILL_KILL_KILL:allowed( allowed_entity )
 	return EVENT_DISALLOWED
 end
 
-
 blue_slayer = KILL_KILL_KILL:new({ team = Team.kBlue })
 red_slayer = KILL_KILL_KILL:new({ team = Team.kRed })
 

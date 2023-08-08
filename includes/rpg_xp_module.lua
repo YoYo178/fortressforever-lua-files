@@ -28,7 +28,6 @@ function xp_module.NewExperienceLine(playerID)
         xp_module.LevelUp(playerID)
     end
 
-
     local unused_skills = 0
     function self.GetUnusedSkills() return unused_skills end
     function self.SetUnusedSkills(int) unused_skills = int end

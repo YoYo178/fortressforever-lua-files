@@ -15,7 +15,6 @@ POINTS_PER_CAPTURE = 10;
 FLAG_RETURN_TIME = 60;
 
 
-
 -----------------------------------------------------------------------------
 -- doors
 -----------------------------------------------------------------------------
@@ -150,7 +149,6 @@ function blue_tri_elev:ontrigger( touch_entity )
       OutputEvent("blue_elevator", "Open") 
    end 
 end 
-
 
 ------------------------------
 
@@ -289,7 +287,6 @@ end
 -- locations
 -----------------------------------------------------------------------------
 
-
 loc_elev_area_red = location_info:new({ text = "elevator area", team = Team.kRed })
 loc_basement_red = location_info:new({ text = "basement", team = Team.kRed })
 loc_spiral_red = location_info:new({ text = "spiral", team = Team.kRed })
@@ -297,7 +294,6 @@ loc_floorlevel_red = location_info:new({ text = "floor level", team = Team.kRed 
 loc_water_red = location_info:new({ text = "water", team = Team.kRed })
 loc_tsp_red = location_info:new({ text = "top spiral", team = Team.kRed })
 loc_rspawn_red = location_info:new({ text = "outer spawn", team = Team.kRed })
-
 
 loc_elev_area_blue = location_info:new({ text = "elevator area", team = Team.kBlue })
 loc_basement_blue = location_info:new({ text = "basement", team = Team.kBlue })
@@ -308,7 +304,6 @@ loc_tsp_blue = location_info:new({ text = "top spiral", team = Team.kBlue })
 loc_rspawn_blue = location_info:new({ text = "outer spawn", team = Team.kBlue })
 
 loc_yard = location_info:new({ text = "yard", team = Team.kUnassigned })
-
 
 
 

@@ -318,7 +318,6 @@ stage_info = {
 	}
 }
 
-
 VERTICAL_JUMP_TOUCHED = 0
 VERTICAL_JUMP_BROADCASTED = 0
 VERTICAL_JUMP_MESSAGE = "What?"
@@ -336,7 +335,6 @@ current_stage = 1
 failed_attempts = 0
 best_run = nil
 show_timer = false
-
 
 -- startup
 function startup()
@@ -837,7 +835,6 @@ function v_jump:onendtouch()
 
 end
 
-
 -------------------------------------
 -- Jump Application Rooms
 -------------------------------------
@@ -938,7 +935,6 @@ end
 function a_jump:onendtouch() 
 
 end
-
 
 -------------------------------------
 -- Misc Jump Start
@@ -1069,7 +1065,6 @@ function move_room:ontouch( touch_entity )
 	end
 end
 
-
 -------------------------------------
 -- Movement Start
 -------------------------------------
@@ -1116,7 +1111,6 @@ function move_start:ontouch( touch_entity )
 		end
 	end
 end
-
 
 -------------------------------------
 -- Movement Area
@@ -1335,7 +1329,6 @@ function move_aircontrolspeed_showfinishblock:ontouch( touch_entity )
 	end	
 end
 
-
 -------------------------------------
 -- Bhop
 -------------------------------------
@@ -1393,7 +1386,6 @@ function move_bhop_start:ontouch( touch_entity )
 		end
 	end
 end
-
 
 move_bhop_finish = trigger_ff_script:new({ technique_id = 0, stage_number = 0, step = 0 })
 
@@ -1861,7 +1853,6 @@ Jump8			= VerticalJumpMarker:new({ message="Almost There", number=8 })
 Jump9			= VerticalJumpMarker:new({ message="So Close...", number=9 })
 Jump10			= VerticalJumpMarker:new({ message="Complete!", number=10 })
 
-
 function flaginfo( player_entity )
 	local player = CastToPlayer( player_entity )
 	
@@ -1922,7 +1913,6 @@ function flaginfo( player_entity )
 	
 	show_current( player )
 end
-
 
 function message( text )
 	BroadCastMessage( text )

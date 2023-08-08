@@ -2,7 +2,6 @@ IncludeScript("base_teamplay")
 
 
 
-
 local Balls = 
 	{
 	"models/props/ff_crazygolf/balls/bluesmiley/bluesmiley.mdl",
@@ -75,7 +74,6 @@ function startup()
 	team:SetClassLimit( Player.kEngineer, -1 )
 	team:SetClassLimit( Player.kCivilian, -1 )
 end
-
 
 function player_spawn( player_entity )
 	local player = CastToPlayer ( player_entity )

@@ -2,7 +2,6 @@
 -- includes
 -----------------------------------------------------------------------------
 
-
 IncludeScript("base");
 IncludeScript("base_teamplay");
 IncludeScript("base_location");
@@ -66,7 +65,6 @@ team_info = {
 	},
 }
 
-
 -- objectives
 objective_entities = { [TEAM1] = nil, [TEAM2] = nil }
 goal_entities = { [TEAM1] = nil, [TEAM2] = nil }
@@ -84,11 +82,9 @@ GOALIE_SPEED = 2.0
 THE_WALL_TIMER_DISABLE = 12.5
 THE_WALL_TIMER_WARN = 2.5
 
-
 -- arena globals
 RED_PRESENT = 0
 BLUE_PRESENT = 0
-
 
 blue_competitors = Collection()
 red_competitors = Collection()
@@ -237,7 +233,6 @@ function base_ball:spawn()
 	self.status = 0
 end
 
-
 -- For when this object is carried, these offsets are used to place
 -- the info_ff_script relative to the players feet
 function base_ball:attachoffset()
@@ -268,7 +263,6 @@ ball = base_ball:new({
 })
 
 
-
 -----------------------------------------------------------------------------
 -- arenaclips
 -----------------------------------------------------------------------------
@@ -276,7 +270,6 @@ ball = base_ball:new({
 clip_brush = trigger_ff_clip:new({ clipflags = 0 })
 
 arena_clipall = clip_brush:new({ clipflags = {ClipFlags.kClipPlayersByTeam, ClipFlags.kClipTeamBlue, ClipFlags.kClipTeamRed, ClipFlags.kClipAllBullets, ClipFlags.kClipAllProjectiles, ClipFlags.kClipAllGrenades, ClipFlags.kClipAllNonPlayers} })
-
 
 -----------------------------------------------------------------------------------------------------------------------------
 -- door triggers
@@ -348,7 +341,6 @@ end
 
 
 
-
 trigger_arena_blueplayer = trigger_ff_script:new({ team = Team.kBlue })
 function trigger_arena_blueplayer:allowed( touch_entity )
   if IsPlayer( touch_entity ) then
@@ -381,7 +373,6 @@ function trigger_arena_blueplayer:onendtouch( touch_entity )
 end
 
 
-
 -----------------------------------------------------------------------------
 -- bagless resupply
 -----------------------------------------------------------------------------
@@ -407,7 +398,6 @@ end
 blue_aardvarkresup = aardvarkresup:new({ team = Team.kBlue })
 red_aardvarkresup = aardvarkresup:new({ team = Team.kRed })
 
-
 -----------------------------------------------------------------------------
 -- arena indicators
 -----------------------------------------------------------------------------
@@ -432,7 +422,6 @@ function blue_door_indicator:onclose()
   end
 end
 
-
 -----------------------------------------------------------------------------
 -- arena points
 -----------------------------------------------------------------------------
@@ -453,7 +442,6 @@ end
 --
 --	end
 --end
-
 
 function player_killed( player_entity, damageinfo )
 	-- suicides have no damageinfo

@@ -11,7 +11,6 @@ IncludeScript("base_respawnturret");
 POINTS_PER_CAPTURE = 10;
 FLAG_RETURN_TIME = 60
 
-
 -----------------------------------------------------------------------------
 -- startup 
 -----------------------------------------------------------------------------
@@ -32,7 +31,6 @@ function startup()
 	team = GetTeam( Team.kGreen )
 	team:SetPlayerLimit( -1 )
 end
-
 
 hurt = trigger_ff_script:new({ team = Team.kUnassigned })
 function hurt:allowed( allowed_entity )

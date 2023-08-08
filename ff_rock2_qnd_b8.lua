@@ -33,7 +33,6 @@ SUIT_PROTECTION_DURATION = 20
 SPOTLIGHT_DURATION = 10
 POINTS_PER_CAPTURE = 15
 
-
 -----------------------------------------------------------------------------
 -- Game Mode Constants (DO NOT OVERRIDE!)
 -----------------------------------------------------------------------------
@@ -47,7 +46,6 @@ suits = {"gas_suit"}
 
 -- Hook Hurts, so I can tell it to ignore suited players
 basehurt = trigger_ff_script:new({ team = Team.kUnassigned, item = "gas suit" })
-
 
 -----------------------------------------------------------------------------
 -- entities
@@ -109,7 +107,6 @@ red_gasbutton = basecap:new({			team = Team.kRed,
 						closedoor = "gasdoor"
 						})
 
-
 -- The suits (half flag, half bullshit :P)
 basesuit = info_ff_script:new({
 	name = "base suit",
@@ -120,10 +117,8 @@ basesuit = info_ff_script:new({
 	touchflags = {AllowFlags.kOnlyPlayers, AllowFlags.kBlue, AllowFlags.kRed, AllowFlags.kYellow, AllowFlags.kGreen}
 })
 
-
 gas_suit = basesuit:new({name = "gas suit"})
 gas_hurt = basehurt:new({ })
-
 
 -----------------------------------------------------------------------------
 -- map handlers
@@ -174,11 +169,9 @@ function genericbackpack:precache()
 	PrecacheSound("rock2qnd.tochamber")
 
 
-
 	-- precache models
 	PrecacheModel(self.model)
 end
-
 
 -----------------------------------------------------------------------------
 -- altered functions from base_teamplay.lua
@@ -250,7 +243,6 @@ function baseflag:attachoffset()
 	return offset
 end
 
-
 -- Again, speech changes mostly. 
 function basecap:oncapture(player, item)
 
@@ -300,7 +292,6 @@ end
 -- Well, it doesn't!
 function basesuit:hasanimation() return false end
 
-
 -- Pickup a suit
 function basesuit:touch( touch_entity )
 
@@ -331,7 +322,6 @@ function basesuit:attachoffset()
 end
 
 
-
 -- Only hurt players if they have no suit.
 function gas_hurt:allowed ( allowed_entity )
 	if IsPlayer( allowed_entity ) then
@@ -347,7 +337,6 @@ function gas_hurt:allowed ( allowed_entity )
 	
 	return EVENT_ALLOWED
 end
-
 
 -- checks that enemies are damaging, not self or fall damage
 function player_ondamage( player, damageinfo )
@@ -365,7 +354,6 @@ function player_ondamage( player, damageinfo )
 	end
 
 end
-
 
 ---------------------------------------------------
 -- Hurts (Copied and very slightly altered from Shutdown LUA)
@@ -387,7 +375,6 @@ blue_respawnlaser = hurt:new({ team = Team.kBlue })
 red_respawnlaser = hurt:new({ team = Team.kRed })
 green_respawnlaser = hurt:new({ team = Team.kGreen })
 yellow_respawnlaser = hurt:new({ team = Team.kYellow })
-
 
 
 
@@ -414,7 +401,6 @@ red_detpack_trigger_multiple = detpack_trigger_multiple:new({ team = Team.kRed, 
 blue_detpack_trigger_multiple = detpack_trigger_multiple:new({ team = Team.kBlue, team_name = "blue" })
 green_detpack_trigger_multiple = detpack_trigger_multiple:new({ team = Team.kGreen, team_name = "green" })
 yellow_detpack_trigger_multiple = detpack_trigger_multiple:new({ team = Team.kYellow, team_name = "yellow" })
-
 
 -- Single Variety - used for the base breach.
 detpack_trigger_single = trigger_ff_script:new({ team = Team.kUnassigned, team_name = "neutral" })
@@ -458,7 +444,6 @@ blue_frontdoor_trigger = frontdoor_trigger:new({ door = "blue_frontdoor" })
 red_frontdoor_trigger = frontdoor_trigger:new({ door = "red_frontdoor" })
 green_frontdoor_trigger = frontdoor_trigger:new({ door = "green_frontdoor" })
 yellow_frontdoor_trigger = frontdoor_trigger:new({ door = "yellow_frontdoor" })
-
 
 -----------------------------------------------------------------------------
 -- spotlights
@@ -512,7 +497,6 @@ function spotlight_turnoff(lightname, pointname, model)
 	OutputEvent( model, "Skin", "1" )
 end
 
-
 -- Suit effect wears out, suit returns.
 function returnsuit(suit, player)
 	suit:Return()
@@ -527,7 +511,6 @@ function gas_effect_ON()
 	OutputEvent( "gas_fade1", "Fade" )
 end
 
-
 function gas_effect_OFF()
 
 	OutputEvent( "gas_sound", "StopSound" )
@@ -535,12 +518,10 @@ function gas_effect_OFF()
 	OutputEvent( "gas_fade2", "Fade" )
 end
 
-
 function gas_hurt_ON()
 	ApplyToAll({AT.kDisallowRespawn})
 	OutputEvent( "gas_hurt", "Enable" )
 end
-
 
 function gas_hurt_OFF()
 
@@ -548,19 +529,16 @@ function gas_hurt_OFF()
 	ApplyToAll({AT.kAllowRespawn})
 end
 
-
 function siren_OFF()
 
 	OutputEvent( "siren_sound", "StopSound" )
 end
-
 
 function protective_suit_doors_CLOSE()
 
 	OutputEvent( "gasmask_door", "Close" )
 	OutputEvent( "gasmask_light", "TurnOff")
 end
-
 
 function control_center_door_OPEN( door )
 
@@ -571,7 +549,6 @@ function gas_timewarn( time )
 	BroadCastMessage( "#FF_MAP_" .. time .. "SECWARN", 1, Color.kWhite )
 	SpeakAll( "AD_" .. time .. "SEC" )
 end
-
 
 
 -----------------------------------------------------------------------------------------------------------------------------

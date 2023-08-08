@@ -61,14 +61,11 @@ function startup()
 	team:SetClassLimit( Player.kEngineer, 0 )
 	team:SetClassLimit( Player.kCivilian, -1 )
 
-
 end
-
 
 function precache()
 	PrecacheSound( "Backpack.Touch" )
 end
-
 
 -- Everyone to spawns with everything
 function player_spawn( player_entity )
@@ -88,7 +85,6 @@ function player_spawn( player_entity )
 	player:AddAmmo( Ammo.kGren1, 4 )
 	player:AddAmmo( Ammo.kGren2, -4 )
 end
-
 
 -- Just here because
 function player_ondamage( player_entity, damageinfo )
@@ -111,7 +107,6 @@ function player_killed( player_entity, damageinfo )
 		end	
 	end
 end
-
 
 fullpack = genericbackpack:new({
 	grenades = 400,

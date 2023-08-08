@@ -86,7 +86,6 @@ function concpack:dropatspawn() return false end
 red_concpack = concpack:new({ touchflags = {AllowFlags.kRed} })
 blue_concpack = concpack:new({ touchflags = {AllowFlags.kBlue} })
 
-
 -----------------------------------------------------------------------------
 -- phantom lasers and respawn shields
 -----------------------------------------------------------------------------
@@ -125,7 +124,6 @@ function blue_air_lift_button1:ondamage() OutputEvent( "blue_air_lift_push1", "C
 function blue_air_lift_button1:ontouch() OutputEvent( "blue_air_lift_push1", "Open" ) end
 function blue_air_lift_button1:ontouch() OutputEvent( "blue_air_lift_push1", "close", "6.0" ) end 
 
-
 red_air_lift_button = func_button:new({})
 function red_air_lift_button:ondamage() OutputEvent( "red_air_lift_push", "Enable" ) end
 function red_air_lift_button:ondamage() OutputEvent( "red_air_lift_push", "Disable", "4.0" ) end
@@ -141,7 +139,6 @@ function red_air_lift_button1:ondamage() OutputEvent( "red_air_lift_push1", "Ope
 function red_air_lift_button1:ondamage() OutputEvent( "red_air_lift_push1", "Close", "6.0" ) end
 function red_air_lift_button1:ontouch() OutputEvent( "red_air_lift_push1", "Open" ) end
 function red_air_lift_button1:ontouch() OutputEvent( "red_air_lift_push1", "close", "6.0" ) end 
-
 
 grenpack = genericbackpack:new({
 	health = 0,

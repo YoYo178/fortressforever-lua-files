@@ -195,7 +195,6 @@ function event_StartTeamCPCapping( cp, team_number )
 	end
 end
 
-
 team_info = {
 
 	[Team.kUnassigned] = {
@@ -279,7 +278,6 @@ team_info = {
 		}
 	}
 }
-
 
 -------------------------------------------
 -- Round start functions
@@ -535,7 +533,6 @@ function red_respawn_door:onfailtouch( touch_entity )
 		--end
 	end
 end
-
 
 -- Spawn Doors (actual entities with command point condition attached)
 bluerespawn_cp2 = blue_respawn_door:new({cp_number=2})

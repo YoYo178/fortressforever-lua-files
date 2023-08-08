@@ -606,7 +606,6 @@ red_goal = base_goal:new({ item = "ball", team = Team.kBlue })
 
 
 
-
 -- returns the item
 base_item_returner = trigger_ff_script:new({ item = "", message = "" })
 

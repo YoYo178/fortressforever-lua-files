@@ -349,7 +349,6 @@ function TeleportToEntity( player, entity_name )
 	end
 end
 
-
 -- Teleport player back to the starting point of the current hole
 function reset_hole(player)
 	local hole = player_table[player:GetId()].current_hole

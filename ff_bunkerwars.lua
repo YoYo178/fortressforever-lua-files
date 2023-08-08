@@ -252,7 +252,7 @@ function blue_target:ondamage(damageinfo)
                 end
             else
                 -- round to the nearest whole number
-                scaled_damage = math.floor(scaled_damage) + .5)
+                scaled_damage = math.floor(scaled_damage + .5)
             end
 
             if scaled_damage > 0 then
@@ -312,7 +312,7 @@ function red_target:ondamage(damageinfo)
                 end
             else
                 -- round to the nearest whole number
-                scaled_damage = math.floor(scaled_damage) + .5)
+                scaled_damage = math.floor(scaled_damage + .5)
             end
 
             if scaled_damage > 0 then
@@ -336,7 +336,6 @@ function red_target:ondamage(damageinfo)
 
 end
 
-
 function sound_script()
 	AddScheduleRepeatingNotInfinitely( "BOOM", 0.3, play_sound, 1, 1)
 	AddScheduleRepeatingNotInfinitely( "BOOM2", 0.5, play_sound, 1, 1)
@@ -350,7 +349,6 @@ function play_sound(sound)
 		BroadCastSound ( "ff_anticitizen.explode_3" )
 	end
 end
-
 
 function intermission()
     GoToIntermission()

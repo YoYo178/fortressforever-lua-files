@@ -111,7 +111,6 @@ red_grenadecustom = genericbackpack:new({
 	touchflags = {AllowFlags.kOnlyPlayers,AllowFlags.kRed}
 })
 
-
 -----------------------------------------------------------------------------
 -- Locations
 -----------------------------------------------------------------------------
@@ -122,7 +121,6 @@ location_bluefloor = location_info:new({ text = "Blue Floor", team = Team.kBlue 
 location_bluesails = location_info:new({ text = "Blue Sails", team = Team.kBlue })
 location_blueboat = location_info:new({ text = "Blue Dinghy", team = Team.kBlue })
 
-
 location_redspawn = location_info:new({ text = "Red Spawn", team = Team.kRed })
 location_reddeck = location_info:new({ text = "Red Deck", team = Team.kRed })
 location_redfloor = location_info:new({ text = "Red Floor", team = Team.kRed })
@@ -131,7 +129,6 @@ location_redmess = location_info:new({ text = "Captains Mess", team = Team.kRed 
 location_redledge = location_info:new({ text = "Captains Windows", team = Team.kRed })
 location_redroof = location_info:new({ text = "Captains Roof", team = Team.kRed })
 location_redboat = location_info:new({ text = "Red Dinghy", team = Team.kRed })
-
 
 location_middleoutside = location_info:new({ text = "Mid Deck", team = NO_TEAM })
 location_middleinside = location_info:new({ text = "Interior", team = NO_TEAM })

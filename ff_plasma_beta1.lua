@@ -46,4 +46,3 @@ plasmapackgeneric = genericbackpack:new({
 
 function plasmapackgeneric:dropatspawn() return false end
 
-

@@ -14,7 +14,6 @@ function startup()
 	team:SetClassLimit(Player.kCivilian, -1)
 end
 
-
 ftw = trigger_ff_script:new()
 
 function ftw:ontouch()

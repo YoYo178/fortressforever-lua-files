@@ -9,13 +9,9 @@ IncludeScript("base_location")
 CONC_EFFECT = 0
 
 
-
 function player_onconc( player_entity, concer_entity )
 
-	if CONC_EFFECT == 0 then
-		return EVENT_DISALLOWED
-	end
-
+	if CONC_EFFECT == 0 then return EVENT_DISALLOWED end
 	return EVENT_ALLOWED
 end
 -------------------
@@ -140,7 +136,7 @@ end
 --------------------
 
 location_stage1 = location_info:new({ text = "1.WTF is this", team = NO_TEAM })
-location_stage2 = location_info:new({ text = "2.hmm I´m lost", team = NO_TEAM })
+location_stage2 = location_info:new({ text = "2.hmm Iï¿½m lost", team = NO_TEAM })
 location_stage3 = location_info:new({ text = "3.reminds me egipt", team = NO_TEAM })
 location_stage4 = location_info:new({ text = "4.wich one?", team = NO_TEAM })
 location_stage5 = location_info:new({ text = "5.time to take a bath", team = NO_TEAM })
@@ -153,7 +149,6 @@ location_stage11 = location_info:new({ text = "11.dont like this", team = NO_TEA
 location_stage12 = location_info:new({ text = "12.the end?", team = NO_TEAM })
 location_stage13 = location_info:new({ text = "13.lol.. .", team = NO_TEAM })
 location_stage14 = location_info:new({ text = "14.la grand final!", team = NO_TEAM })
-
 
 --------------------
 --JuggleZone
@@ -190,7 +185,6 @@ end
 --Finish Zones
 --------------------
 
-
 finish = trigger_ff_script:new({})
 
 function finish:ontouch(touch_entity)
@@ -219,6 +213,5 @@ function finish2:ontouch(touch_entity)
          end
 end
 --------------------
-
 
          

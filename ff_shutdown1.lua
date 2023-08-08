@@ -72,7 +72,6 @@ function location_redflagin:ontrigger( touch_entity )
 	end
 end
 
-
 -- overrided version of the base_teamplay function
 function baseflag:touch( touch_entity )
 	-----------------------------------------------------------------------------
@@ -116,7 +115,6 @@ function baseflag:touch( touch_entity )
 		self.status = 1
 	end
 end
-
 
 
 
@@ -254,15 +252,12 @@ reddefspawn =  function(self,player) return ((player:GetTeamId() == Team.kRed) a
 redoffspawn = function(self,player) return ((player:GetTeamId() == Team.kRed) and (((player:GetClass() == Player.kCivilian) == false) and ((player:GetClass() == Player.kSoldier) == false) and ((player:GetClass() == Player.kDemoman) == false) and ((player:GetClass() == Player.kEngineer) == false) and ((player:GetClass() == Player.kHwguy) == false))) end
 
 
-
 reddefspawn = { validspawn = reddefspawn }
 redoffspawn = { validspawn = redoffspawn }
 
 
-
 bluedefspawn =  function(self,player) return ((player:GetTeamId() == Team.kBlue) and (((player:GetClass() == Player.kCivilian) == false) and ((player:GetClass() == Player.kMedic) == false) and ((player:GetClass() == Player.kSpy) == false) and ((player:GetClass() == Player.kScout) == false))) end
 blueoffspawn = function(self,player) return ((player:GetTeamId() == Team.kBlue) and (((player:GetClass() == Player.kCivilian) == false) and ((player:GetClass() == Player.kSoldier) == false) and ((player:GetClass() == Player.kDemoman) == false) and ((player:GetClass() == Player.kEngineer) == false) and ((player:GetClass() == Player.kHwguy) == false))) end
-
 
 
 bluedefspawn = { validspawn = bluedefspawn }

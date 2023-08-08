@@ -347,7 +347,6 @@ function schedulesound( sound )
 	BroadCastSound( sound )
 end
 
-
 function schedulecountdown( time )
 	BroadCastMessage( ""..time.."" )
 	SpeakAll( "AD_" .. time .. "SEC" )

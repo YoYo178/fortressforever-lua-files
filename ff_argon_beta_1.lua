@@ -1,6 +1,5 @@
 -- ff_argon_beta_1.lua
 
-
 -----------------------------------------------------------------------------
 -- includes
 -----------------------------------------------------------------------------
@@ -68,7 +67,6 @@ function startup()
 	team:SetClassLimit( Player.kEngineer, 0 )
 	team:SetClassLimit( Player.kCivilian, -1 )
 end
-
 
 
 -----------------------------------------------------
@@ -252,7 +250,6 @@ function argon_baseflag:onreturn( )
 	UpdateTeamObjectiveIcon( GetTeam(Team.kRed), GetEntityByName("red_flag") )
 end
 
-
 blue_flag = argon_baseflag:new({team = Team.kBlue,
 						 modelskin = 0,
 						 name = "Blue Flag",
@@ -332,7 +329,6 @@ green_flag = argon_baseflag:new({team = Team.kGreen,
 						 hudstatusiconalign = 3,
 						 objectiveicon = true,
 						 touchflags = {AllowFlags.kOnlyPlayers,AllowFlags.kBlue,AllowFlags.kRed,AllowFlags.kYellow} })
-
 
 -----------------------------------------------------------------------------
 -- Capture Points

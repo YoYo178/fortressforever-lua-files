@@ -40,7 +40,6 @@ red_phantompack = phantompack:new({ touchflags = {AllowFlags.kRed} })
 blue_phantompack = phantompack:new({ touchflags = {AllowFlags.kBlue} })
 
 
-
 -----------------------------------------------------------------------------
 -- phantom lasers and respawn shields
 -----------------------------------------------------------------------------
@@ -102,8 +101,6 @@ redspawntop = base_top_spawn:new({ team = Team.kRed })
 
 bluespawnbtm = base_bottom_spawn:new({ team = Team.kBlue })
 bluespawntop = base_top_spawn:new({ team = Team.kBlue })
-
-
 
 
 

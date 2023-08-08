@@ -93,7 +93,6 @@ end
 
 
 
-
 -----------------------------------------------------------------------------
 --Team points for killing
 -----------------------------------------------------------------------------
@@ -211,7 +210,6 @@ function healthkit:dropatspawn() return true end
 red_health = rlife:new({ touchflags = {AllowFlags.kRed} })
 blue_health = rlife:new({ touchflags = {AllowFlags.kBlue} })
 
-
 -----------------------------------------------------------------------------
 --Locations
 -----------------------------------------------------------------------------
@@ -227,5 +225,4 @@ location_viewing = location_info:new({ text = "Aristocrat's Viewing Area", team 
 location_shhh = location_info:new({ text = "SHHH its a secret", team = NO_TEAM })
 location_dynamic = location_info:new({ text = "Dynamic Arena", team = NO_TEAM })
 location_shot = location_info:new({ text = "Dont get shot!", team = NO_TEAM })
-
 

@@ -56,4 +56,3 @@ function player_ondamage( player, damageinfo )
     end
 end
 
-
