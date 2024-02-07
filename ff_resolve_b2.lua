@@ -30,11 +30,13 @@ function startup()
 	team:SetClassLimit(Player.kCivilian, -1)
 	team:SetClassLimit(Player.kSniper, -1)
 	team:SetClassLimit(Player.kPyro, -1)
+	team:SetClassLimit(Player.kEngineer, 2)
 	
 	team = GetTeam(Team.kRed)
 	team:SetClassLimit(Player.kCivilian, -1)
 	team:SetClassLimit(Player.kSniper, -1)
 	team:SetClassLimit(Player.kPyro, -1)
+	team:SetClassLimit(Player.kEngineer, 2)
 end
 
 -----------------------------------------------------------------------------

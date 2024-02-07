@@ -6,17 +6,13 @@
 IncludeScript("base_teamplay");
 IncludeScript("base_location");
 IncludeScript("base_respawnturret");
+
+SetConvar( "sv_skillutility", 1 )
+SetConvar( "sv_helpmsg", 1 )
+SetConvar( "sm_jetpack", 0 )
 -----------------------------------------------------------------------------
 -- global overrides
 -----------------------------------------------------------------------------
-
-
-
-
-
-
-
-
 
 function startup()
 
@@ -49,8 +45,3 @@ function startup()
 
 
 end
-
-
-
-
-

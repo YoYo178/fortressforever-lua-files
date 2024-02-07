@@ -92,15 +92,6 @@ function robonades:dropatspawn() return false end
 redrobonades = robonades:new({ touchflags = {AllowFlags.kRed} })
 bluerobonades = robonades:new({ touchflags = {AllowFlags.kBlue} })
 
--------------------------------------
--------------------
--- hurts
-------------------
--------------------------------------
-
-red_laser_hurtspawn = hurt:new({ team = Team.kBlue })
-blue_laser_hurtspawn = hurt:new({ team = Team.kRed })
-
 -----------------------------------------------------------------------------
 -- aardvark security
 -----------------------------------------------------------------------------
@@ -219,6 +210,9 @@ end
 red_laser_hurt = hurt:new({ team = Team.kBlue })
 blue_laser_hurt = hurt:new({ team = Team.kRed })
 
+red_laser_hurtspawn = hurt:new({ team = Team.kBlue })
+blue_laser_hurtspawn = hurt:new({ team = Team.kRed })
+
 -- function precache()
 	-- precache sounds
 --	PrecacheSound("vox.blueup")
@@ -267,14 +261,22 @@ red_supply = supply:new({ team = Team.kRed })
 -----------------------------------------------------------------------------
 
 
-red_o_only = function(self,player) return ((player:GetTeamId() == Team.kRed) and ((player:GetClass() == Player.kDemoman) or (player:GetClass() == Player.kEngineer))) end
-red_d_only = function(self,player) return ((player:GetTeamId() == Team.kRed) and (((player:GetClass() == Player.kDemoman) == false) and ((player:GetClass() == Player.kEngineer) == false))) end
+red_o_only = function(self,player) return ((player:GetTeamId() == Team.kRed) and ((player:GetClass() == Player.kScout) or (player:GetClass() == Player.kMedic) or (player:GetClass() == Player.kSpy))) end
+red_d_only = function(self,player) return ((player:GetTeamId() == Team.kRed) and (((player:GetClass() == Player.kScout) == false) and ((player:GetClass() == Player.kMedic) == false) and ((player:GetClass() == Player.kSpy) == false))) end
 
 red_ospawn = { validspawn = red_o_only }
 red_dspawn = { validspawn = red_d_only }
 
-blue_o_only = function(self,player) return ((player:GetTeamId() == Team.kBlue) and ((player:GetClass() == Player.kDemoman) or (player:GetClass() == Player.kEngineer))) end
-blue_d_only = function(self,player) return ((player:GetTeamId() == Team.kBlue) and (((player:GetClass() == Player.kDemoman) == false) and ((player:GetClass() == Player.kEngineer) == false))) end
+blue_o_only = function(self,player) return ((player:GetTeamId() == Team.kBlue) and ((player:GetClass() == Player.kScout) or (player:GetClass() == Player.kMedic) or (player:GetClass() == Player.kSpy))) end
+blue_d_only = function(self,player) return ((player:GetTeamId() == Team.kBlue) and (((player:GetClass() == Player.kScout) == false) and ((player:GetClass() == Player.kMedic) == false) and ((player:GetClass() == Player.kSpy) == false))) end
 
 blue_ospawn = { validspawn = blue_o_only }
 blue_dspawn = { validspawn = blue_d_only }
+
+
+----
+
+clip_brush = trigger_ff_clip:new({ clipflags = 0 })
+
+bluedoor = clip_brush:new({ clipflags = {ClipFlags.kClipPlayers, ClipFlags.kClipTeamBlue} })
+reddoor = clip_brush:new({ clipflags = {ClipFlags.kClipPlayers, ClipFlags.kClipTeamRed} })

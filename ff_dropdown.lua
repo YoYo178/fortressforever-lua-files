@@ -411,7 +411,8 @@ end
 nobuild = trigger_ff_script:new({})
 
 function nobuild:onbuild( build_entity )
-	if IsJumpPad(build_entity) then
+	local player = CastToPlayer( build_entity )
+	if player:GetClass() == Player.kScout then
 		DisplayMessage( player, "#HINT_NOJUMPPAD" )
 		return EVENT_DISALLOWED
 	end
@@ -462,4 +463,30 @@ function bluefire_start_schedule()
 
 --	ConsoleToAll( "starting fire timer schedule" )
 	AddSchedule( "blue_fire_timer_schedule", BLUEFIRE_TIMER_START, BlueDoFireResetLogic )
+end
+
+-----------------------------------------------------------------------------
+-- aardvark security
+-----------------------------------------------------------------------------
+SECURITY_LENGTH = 35
+red_aardvarksec = red_security_trigger:new()
+blue_aardvarksec = blue_security_trigger:new()
+
+-- utility function for getting the name of the opposite team, 
+-- where team is a string, like "red"
+local function get_opposite_team(team)
+	if team == "red" then return "blue" else return "red" end
+end
+
+local security_off_base = security_off
+function security_off( team )
+	security_off_base( team )
+
+	OpenDoor(team.."_aardvarkdoorhack")
+	local opposite_team = get_opposite_team(team)
+	OutputEvent("sec_"..opposite_team.."_slayer", "Disable")
+
+	AddSchedule("secup10"..team, SECURITY_LENGTH - 10, function()
+		BroadCastMessage("#FF_"..team:upper().."_SEC_10")
+	end)
 end
