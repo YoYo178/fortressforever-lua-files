@@ -1,0 +1,1 @@
+IncludeScript("base_doom")
